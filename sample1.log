@@ -1,0 +1,14 @@
+FORM 4.1 (May 11 2015) 64-bits                   Run: Wed Sep 30 15:41:39 2015
+    Symbols a,b;
+    Local [(a+b)^2] = (a+b)^2;
+    Print;
+    .end
+
+Time =       0.00 sec    Generated terms =          3
+       [(a+b)^2]         Terms in output =          3
+                         Bytes used      =        108
+
+   [(a+b)^2] =
+      b^2 + 2*a*b + a^2;
+
+  0.00 sec out of 0.00 sec
