@@ -56,9 +56,10 @@ Function int;
 *           s-channel                 t-channel 
 *
 
-Global amp = 1/4*(srtc - srsc)*(srt - srs);
+Global amp = 1/4*(srsc-srtc)*(srs-srt);
+* Global amp = 1/4*(srtc - srsc)*(srt - srs);
 
-* this is the string corresponding to the  (complex conjugate)
+* this is the string corresponding to the (complex conjugate)
 * tree level bhabha in the  t-channel
 *
 * qe  is  the momentum of the incoming  e^- (p1) 
