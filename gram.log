@@ -1,0 +1,229 @@
+FORM 4.1 (May 11 2015) 64-bits                   Run: Fri Oct  2 20:20:47 2015
+    * gram.frm
+    
+    AutoDeclare Vector v;
+    On statistics;
+    Local G10 = e_(v1,...,v10)^2;
+    contract;
+    .end
+
+Time =       0.07 sec    Generated terms =      72563
+             G10       1 Terms left      =      42895
+                         Bytes used      =    3250092
+
+Time =       0.15 sec    Generated terms =     144894
+             G10       1 Terms left      =      96206
+                         Bytes used      =    7232216
+
+Time =       0.23 sec    Generated terms =     217413
+             G10       1 Terms left      =     150164
+                         Bytes used      =   11042364
+
+Time =       0.31 sec    Generated terms =     289894
+             G10       1 Terms left      =     204379
+                         Bytes used      =   14844048
+
+Time =       0.39 sec    Generated terms =     362325
+             G10       1 Terms left      =     257355
+                         Bytes used      =   18543000
+
+Time =       0.46 sec    Generated terms =     437918
+             G10       1 Terms left      =     302682
+                         Bytes used      =   21908872
+
+Time =       0.54 sec    Generated terms =     509584
+             G10       1 Terms left      =     360102
+                         Bytes used      =   26227672
+
+Time =       0.61 sec    Generated terms =     581272
+             G10       1 Terms left      =     418362
+                         Bytes used      =   30355848
+
+Time =       0.69 sec    Generated terms =     652980
+             G10       1 Terms left      =     475821
+                         Bytes used      =   34401908
+
+Time =       0.77 sec    Generated terms =     724648
+             G10       1 Terms left      =     531520
+                         Bytes used      =   38299584
+
+Time =       0.84 sec    Generated terms =     796775
+             G10       1 Terms left      =     586095
+                         Bytes used      =   42430324
+
+Time =       0.92 sec    Generated terms =     869424
+             G10       1 Terms left      =     648936
+                         Bytes used      =   47124204
+
+Time =       1.00 sec    Generated terms =     942108
+             G10       1 Terms left      =     712274
+                         Bytes used      =   51583192
+
+Time =       1.08 sec    Generated terms =    1014786
+             G10       1 Terms left      =     775620
+                         Bytes used      =   56013508
+
+Time =       1.17 sec    Generated terms =    1086969
+             G10       1 Terms left      =     839771
+                         Bytes used      =   60497060
+
+Time =       1.25 sec    Generated terms =    1159608
+             G10       1 Terms left      =     899111
+                         Bytes used      =   64961056
+
+Time =       1.33 sec    Generated terms =    1231498
+             G10       1 Terms left      =     959139
+                         Bytes used      =   69474280
+
+Time =       1.41 sec    Generated terms =    1304093
+             G10       1 Terms left      =    1023177
+                         Bytes used      =   73940052
+
+Time =       1.51 sec    Generated terms =    1376686
+             G10       1 Terms left      =    1086926
+                         Bytes used      =   78350660
+
+Time =       1.59 sec    Generated terms =    1449313
+             G10       1 Terms left      =    1150276
+                         Bytes used      =   82723208
+
+Time =       1.67 sec    Generated terms =    1521899
+             G10       1 Terms left      =    1209971
+                         Bytes used      =   87104168
+
+Time =       1.74 sec    Generated terms =    1594069
+             G10       1 Terms left      =    1273610
+                         Bytes used      =   91752120
+
+Time =       1.82 sec    Generated terms =    1666403
+             G10       1 Terms left      =    1337365
+                         Bytes used      =   96118672
+
+Time =       1.91 sec    Generated terms =    1739031
+             G10       1 Terms left      =    1401423
+                         Bytes used      =  100385544
+
+Time =       2.17 sec
+             G10         Terms active    =    1030395
+                         Bytes used      =   73232420
+
+Time =       2.25 sec    Generated terms =    1811607
+             G10       1 Terms left      =    1093626
+                         Bytes used      =   77452728
+
+Time =       2.33 sec    Generated terms =    1884215
+             G10       1 Terms left      =    1153419
+                         Bytes used      =   81681276
+
+Time =       2.41 sec    Generated terms =    1956574
+             G10       1 Terms left      =    1217225
+                         Bytes used      =   86123180
+
+Time =       2.49 sec    Generated terms =    2028761
+             G10       1 Terms left      =    1277541
+                         Bytes used      =   90226000
+
+Time =       2.58 sec    Generated terms =    2101317
+             G10       1 Terms left      =    1341679
+                         Bytes used      =   94455312
+
+Time =       2.66 sec    Generated terms =    2173930
+             G10       1 Terms left      =    1404914
+                         Bytes used      =   98617936
+
+Time =       2.73 sec    Generated terms =    2246537
+             G10       1 Terms left      =    1464745
+                         Bytes used      =  102804440
+
+Time =       2.82 sec    Generated terms =    2318966
+             G10       1 Terms left      =    1528669
+                         Bytes used      =  107193292
+
+Time =       2.90 sec    Generated terms =    2391395
+             G10       1 Terms left      =    1592668
+                         Bytes used      =  111476752
+
+Time =       2.98 sec    Generated terms =    2463630
+             G10       1 Terms left      =    1654935
+                         Bytes used      =  115672616
+
+Time =       3.06 sec    Generated terms =    2536258
+             G10       1 Terms left      =    1718148
+                         Bytes used      =  119844852
+
+Time =       3.14 sec    Generated terms =    2608865
+             G10       1 Terms left      =    1778184
+                         Bytes used      =  124053088
+
+Time =       3.21 sec    Generated terms =    2681286
+             G10       1 Terms left      =    1842121
+                         Bytes used      =  128459356
+
+Time =       3.30 sec    Generated terms =    2753910
+             G10       1 Terms left      =    1906159
+                         Bytes used      =  132696136
+
+Time =       3.38 sec    Generated terms =    2825954
+             G10       1 Terms left      =    1966511
+                         Bytes used      =  136823248
+
+Time =       3.46 sec    Generated terms =    2898574
+             G10       1 Terms left      =    2029694
+                         Bytes used      =  141002348
+
+Time =       3.54 sec    Generated terms =    2971202
+             G10       1 Terms left      =    2089814
+                         Bytes used      =  145215368
+
+Time =       3.62 sec    Generated terms =    3043601
+             G10       1 Terms left      =    2153482
+                         Bytes used      =  149633044
+
+Time =       3.71 sec    Generated terms =    3116220
+             G10       1 Terms left      =    2217485
+                         Bytes used      =  153879412
+
+Time =       3.78 sec    Generated terms =    3188714
+             G10       1 Terms left      =    2281396
+                         Bytes used      =  158138816
+
+Time =       3.86 sec    Generated terms =    3260896
+             G10       1 Terms left      =    2341527
+                         Bytes used      =  162214696
+
+Time =       3.94 sec    Generated terms =    3333523
+             G10       1 Terms left      =    2401669
+                         Bytes used      =  166397428
+
+Time =       4.02 sec    Generated terms =    3405922
+             G10       1 Terms left      =    2465237
+                         Bytes used      =  170786864
+
+Time =       4.31 sec
+             G10         Terms active    =    1993043
+                         Bytes used      =  139167744
+
+Time =       4.39 sec    Generated terms =    3478533
+             G10       1 Terms left      =    2057002
+                         Bytes used      =  143392344
+
+Time =       4.47 sec    Generated terms =    3551096
+             G10       1 Terms left      =    2121051
+                         Bytes used      =  147621668
+
+Time =       4.55 sec    Generated terms =    3623231
+             G10       1 Terms left      =    2181429
+                         Bytes used      =  151696752
+
+Time =       4.55 sec    Generated terms =    3628800
+             G10       1 Terms left      =    2186042
+                         Bytes used      =  152032572
+
+Time =       4.60 sec
+             G10         Terms active    =    2151169
+                         Bytes used      =  149654660
+
+Time =       5.00 sec    Generated terms =    3628800
+             G10         Terms in output =    1436714
+                         Bytes used      =  100227244
+  5.01 sec out of 5.25 sec
