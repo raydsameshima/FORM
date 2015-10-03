@@ -3,9 +3,13 @@
 
 Off statistics;
 
-AutoDeclare Vectors q,p,k;
+* q's are momentum of in/out electrons
+AutoDeclare Vectors q;
+* never use p and k
+* AutoDeclare Vectors q,p,k;
 Vectors Q,P,V;
-AutoDeclare Symbols i,j,l,m,r,sr; 
+AutoDeclare Symbols i,j,l,r,sr; 
+* AutoDeclare Symbols i,j,l,m,r,sr; 
 Symbols m,M,n;
 
 * kinem invariants
@@ -103,10 +107,10 @@ elseif (match(hpt2*hps2)==1);
   argument;
   #do hp =1,4
     id g_(`hp',mu?) = g_(tu,mu);
-    id u(`hp',q?) = u(tu,q);
-    id ub(`hp',q?) = ub(tu,q);
-    id v(`hp',q?) = v(tu,q);
-    id vb(`hp',q?) = vb(tu,q);
+    id u(`hp',q?)   = u(tu,q);
+    id ub(`hp',q?)  = ub(tu,q);
+    id v(`hp',q?)   = v(tu,q);
+    id vb(`hp',q?)  = vb(tu,q);
   #enddo
   endargument;
 
@@ -136,7 +140,7 @@ repeat;
   id R(a?,i1?,i2?)*R(b?,i2?,i3?) = R(a*b,i1,i3);
 endrepeat;
 
-b hpt2, hps2,hpt2;
+Bracket hpt2,hps2,hpt2;
 *print;
 .sort;
 *
@@ -150,9 +154,9 @@ id R(a?,b?,c?) = 1/(1-1);
 #do hp =1,4
   trace4 `hp';
 #enddo
-*
+
 * trace the s-t interference
-*
+* trace4 is the statement for 4*4 gamma matrices
 trace4 tu;
 *
 Bracket hpt2,hps2;
@@ -162,10 +166,10 @@ Bracket hpt2,hps2;
 * simplify the expression
 *
 *id qa = qap + qep -qe;
-id qap = qe + qa - qep;  
-id qe.qe = -m^2;
-id qep.qep =-m^2;
-id qa.qa = -m^2;
+id qap     = qe + qa - qep;  
+id qe.qe   = -m^2;
+id qep.qep = -m^2;
+id qa.qa   = -m^2;
 *id qap.qap = -m^2;
 *
 Bracket hps2,hpt2;
@@ -174,12 +178,12 @@ Bracket hps2,hpt2;
 *
 * go to the P Q V basis P = qa +qe; Q =qe -qep; V =qe +qep;
 *
-id qe = 1/2*V+1/2*Q;
-id qa = P - (1/2*V+1/2*Q);
+id qe  = 1/2*V+1/2*Q;
+id qa  = P - (1/2*V+1/2*Q);
 id qep = 1/2*V-1/2*Q;
 *
-id qe = 1/(1-1);
-id qa = 1/(1-1);
+id qe  = 1/(1-1);
+id qa  = 1/(1-1);
 id qep = 1/(1-1);
 *
 * impose the simplifying relations of after formula 3.3
@@ -214,7 +218,6 @@ Bracket [1/t],[1/s];
 *print;
 .store;
 
-*
 #endprocedure;
 
 * calculation of the differential cross section
@@ -228,7 +231,7 @@ id hpMs  = 1/16*1/Vl^4*[1/Ee*Eep*Ea*Eap]*amp*[2*pi]^8*e^4;
 
 id hpDELT = Vl*T*[1/(2*pi)]^4*del(4,qe+qa-qep-qap);
 
-id [1/(2*pi)]*[2*pi] =1;
+id [1/(2*pi)]*[2*pi] = 1;
 
 Bracket [1/t],[1/s],[1/Ee*Eep*Ea*Eap],
         hpINT,hpFLUX,hpDELT,[1/(2*pi)],int,Vl,e,del;
@@ -237,6 +240,7 @@ Bracket [1/t],[1/s],[1/Ee*Eep*Ea*Eap],
 *
 * kill  int(3,qap) with the delta function;
 *
+
 id int(3,qap)*del(4,qe+qa-qep-qap) = del(1,qe+qa-qep-qap);
 
 * introduce the flux factor: crucial!!
@@ -246,13 +250,13 @@ id int(3,qap)*del(4,qe+qa-qep-qap) = del(1,qe+qa-qep-qap);
 *
 id hpFLUX = Vl/T*2*Ee*Ea*[1/Sqrt(s^2 -4*s*m^2)];
 id Ee*Ea*[1/Ee*Eep*Ea*Eap] = [1/Eep*Eap];
-*
+
 Bracket [1/t],[1/s],[1/Eep*Eap],hpINT,hpFLUX,hpDELT,
         [1/(2*pi)],int,Vl,T,e,del,[1/Sqrt(s^2 -4*s*m^2)];
 *print;
 .sort;
 
-*integration over  int(3,qep)
+*integration over int(3,qep)
 *
 * use the fact that |qep|^2*d|qep| = Eep*|qep|*d Eep = 
 * Eep*d Eep*Sqrt(Eep^2 - m^2) = Eep*d Eep*Sqrt(s/4 - m^2) = 
@@ -286,7 +290,7 @@ id [1/Eap] = 2*[1/Sqrt(s)];
 id [1/Sqrt(s)]^2 = [1/s];
 
 * since we are interested in the differential cross section, set int =1
-id int(1,hpANGLE) =1;
+id int(1,hpANGLE) = 1;
 
 Bracket [1/t],[1/s],[1/Eap],hpINT,hpFLUX,hpDELT,
         [1/(2*pi)],Vl,T,e,int,[1/Sqrt(s)];
@@ -319,7 +323,7 @@ id [t-2*m^2] =t-2*m^2;
 id t = -2*(E^2 - m^2)*(1- cos_(th));
 id [1/t] = -1/2*[1/(E^2 - m^2)]*[1/(1- cos_(th))];
 
-id [1/E]*E =1;
+id [1/E]*E = 1;
 
 b [1/(E^2 - m^2)],[1/(1- cos_(th))],alph,[1/E];
 *print;
@@ -329,7 +333,7 @@ b [1/(E^2 - m^2)],[1/(1- cos_(th))],alph,[1/E];
 
 id m = 0;
 id [1/(E^2 - m^2)] = [1/E]^2;
-id [1/E]*E =1;
+id [1/E]*E = 1;
 
 Bracket [1/(E^2 - m^2)],[1/(1- cos_(th))],alph,[1/E];
 *print;
@@ -370,27 +374,26 @@ Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int;
 id [s-2*m^2] = s;
 id [t-2*m^2] = t;
 id m = 0;
-id [s+t] =s+t;
+id [s+t] = s+t;
 
-Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,
-[1/Sqrt(s)];
+Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,[1/Sqrt(s)];
 *print;
 .sort;
 
 id alph^2*[1/s] = [alph^2/s];
 
-id s^2*[1/t]^2 = 1/2*([s/t]^2  +[1/s]^2*[1/t]^2*s^4);
-id t^2*[1/s]^2 = 1/2*([t/s]^2  +[1/t]^2*[1/s]^2*t^4);
+id s^2*[1/t]^2 = 1/2*([s/t]^2 + [1/s]^2*[1/t]^2*s^4);
+id t^2*[1/s]^2 = 1/2*([t/s]^2 + [1/t]^2*[1/s]^2*t^4);
 
 multiply hpt;
 
 id hpt*[1/t]^2*[1/s]^2 = [1/t]^2*[1/s]^2;
-id hpt*[1/t]*[1/s] = s*t*[1/t]^2*[1/s]^2;
-id hpt*[1/t]^2 = [1/t]^2*[1/s]^2*s^2; 
-id hpt*[1/s]^2 = [1/t]^2*[1/s]^2*t^2;
-id hpt =1;
+id hpt*[1/t]*[1/s]     = s*t*[1/t]^2*[1/s]^2;
+id hpt*[1/t]^2         = [1/t]^2*[1/s]^2*s^2; 
+id hpt*[1/s]^2         = [1/t]^2*[1/s]^2*t^2;
+id hpt                 = 1;
 
-id s^4 = [s+t]^4 -(s+t)^4+s^4;
+id s^4 = [s+t]^4 - (s+t)^4+s^4;
 
 Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,[alph^2/s];
 
@@ -411,10 +414,9 @@ Global dsig = hpdum;
 
 id hpdum = sig;
 
-id e^2*[1/(2*pi)] =  2*alph;
+id e^2*[1/(2*pi)] = 2*alph;
 
-Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,
-[1/Sqrt(s)];
+Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,[1/Sqrt(s)];
 *print;
 .sort;
 
@@ -458,7 +460,7 @@ multiply pw(0);
 *
 id pw(0)*[1/v]^n? = pw(-n)*[1/v]^n;
 *
-Bracket pw,[1/(E^2 - m^2)],[1/(1- cos_(th))],[1/sin_(th/2)],alph,[1/m],[1/v];
+Bracket pw,[1/(E^2-m^2)],[1/(1-cos_(th))],[1/sin_(th/2)],alph,[1/m],[1/v];
 
 #message BHABHA DIFFERENTIAL CROSS SECTION: low energy limit
 #message expressed in terms of the velocity of the incoming 
@@ -470,6 +472,7 @@ print;
 #endprocedure
 
 *************************************************************************
+
 #call s1(dummy)
 #call s2(dummy)
 #call s3(dummy)
