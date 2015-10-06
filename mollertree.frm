@@ -1,26 +1,27 @@
-*                                                                        *
 * MOLLER SCATTERING DIFFERENTIAL CROSS SECTION AT THE TREE LEVEL
-*
-nwrite statistics;
+* by Professor Ferroglia (rewritten by Ray D. Sameshima)
+
+*onwrite statistics;
+Off statistics;
 *
 *dimension n;
-autodeclare v q,p,k;
-v Q, P, V;
-autodeclare s i,j,l,m,r,sr; 
-s m,M,n;
+AutoDeclare Vectors q,p,k;
+Vectors Q, P, V;
+AutoDeclare s i,j,l,m,r,sr; 
+Symbols m,M,n;
 *kinem invariants
-s s,t,uu,[s - 2*m^2],[t - 2*m^2],[s+t],[1/t],[1/s],[1/Sqrt(s^2 -4*s*m^2)];
-s [1/s/t],[1/s+1/t],[t/s],[s/t],[1/v],[1/m],[1/u],[u+t],[u - 2*m^2];
+Symbols s,t,uu,[s - 2*m^2],[t - 2*m^2],[s+t],[1/t],[1/s],[1/Sqrt(s^2 -4*s*m^2)];
+Symbols [1/s/t],[1/s+1/t],[t/s],[s/t],[1/v],[1/m],[1/u],[u+t],[u - 2*m^2];
 *energies and momenta;
-s [1/Ee*Eep*Ea*Eap],[1/Eep*Eap],[Sqrt(s - 4*m^2)],[1/Sqrt(s)],[1/Eap];
-s [1/E],th,[1/(E^2 - 4*m^2)],[1/(1- cos_(th))],[alph^2/2/E^2];
-s [1/(E^2-m^2)],[1/(E^2 - m^2)/(1- cos_(th))],[1/sin_(th/2)],[alph^2/s];
-s [1/(1+ cos_(th))],[1/cos_(th/2)];
-autodeclare i du,t;
-i mu,nu,ro,de,al,be,ga,si,la;
-autodeclare s a,b,c,e,hp,tr,T,[2*pi],[1/(2*pi)],Vl,E;
-cf R,ub,vb,u,v,gd,pw,del,cos;
-f int;
+Symbols [1/Ee*Eep*Ea*Eap],[1/Eep*Eap],[Sqrt(s - 4*m^2)],[1/Sqrt(s)],[1/Eap];
+Symbol [1/E],th,[1/(E^2 - 4*m^2)],[1/(1- cos_(th))],[alph^2/2/E^2];
+Symbols [1/(E^2-m^2)],[1/(E^2 - m^2)/(1- cos_(th))],[1/sin_(th/2)],[alph^2/s];
+Symbols [1/(1+ cos_(th))],[1/cos_(th/2)];
+AutoDeclare Indices du,t;
+Indices mu,nu,ro,de,al,be,ga,si,la;
+AutoDeclare Symbols a,b,c,e,hp,tr,T,[2*pi],[1/(2*pi)],Vl,E;
+CFunctions R,ub,vb,u,v,gd,pw,del,cos;
+Function int;
 *
 .global
 *
@@ -79,30 +80,29 @@ R(ub(4,qep),r3)*R(g_(4,be),r3,r4)*R(u(4,qa),r4)*hps2;
 *
 if ((match(hps2*hps2)==1) || (match(hpt2*hpt2)==1));
 *
-#do hp =1,4
-id R(u(`hp',q?),i1?)*R(ub(`hp',q?),i2?) = R(-i_*g_(`hp',q)+m,i1,i2);
-id R(v(`hp',q?),i1?)*R(vb(`hp',q?),i2?) = R(-i_*g_(`hp',q)-m,i1,i2);
-#enddo
+  #do hp =1,4
+    id R(u(`hp',q?),i1?)*R(ub(`hp',q?),i2?) = R(-i_*g_(`hp',q)+m,i1,i2);
+    id R(v(`hp',q?),i1?)*R(vb(`hp',q?),i2?) = R(-i_*g_(`hp',q)-m,i1,i2);
+  #enddo
 *
 elseif (match(hpt2*hps2)==1);
+  argument;
+    #do hp =1,4
+      id g_(`hp',mu?) = g_(tu,mu);
+      id u(`hp',q?) = u(tu,q);
+      id ub(`hp',q?) = ub(tu,q);
+      id v(`hp',q?) = v(tu,q);
+      id vb(`hp',q?) = vb(tu,q);
+    #enddo
+  endargument;
 *
-argument;
-#do hp =1,4
-id g_(`hp',mu?) = g_(tu,mu);
-id u(`hp',q?) = u(tu,q);
-id ub(`hp',q?) = ub(tu,q);
-id v(`hp',q?) = v(tu,q);
-id vb(`hp',q?) = vb(tu,q);
-#enddo
-endargument;
-*
-repeat;
-id R(u(tu,q?),i1?)*R(ub(tu,q?),i2?) = R(-i_*g_(tu,q)+m,i1,i2);
-id R(v(tu,q?),i1?)*R(vb(tu,q?),i2?) = R(-i_*g_(tu,q)-m,i1,i2);
-endrepeat;
+  repeat;
+    id R(u(tu,q?),i1?)*R(ub(tu,q?),i2?) = R(-i_*g_(tu,q)+m,i1,i2);
+    id R(v(tu,q?),i1?)*R(vb(tu,q?),i2?) = R(-i_*g_(tu,q)-m,i1,i2);
+  endrepeat;
 *	
 else;
-multiply 1/(1-1);
+  multiply 1/(1-1);
 endif;
 
 * tu is the index of the unique trace that one gets when interfering
@@ -111,18 +111,20 @@ endif;
 * check that all the spinor components are gone
 *
 *
-b hpt2, hps2,hps4;
-*print;
+Bracket hpt2,hps2;
+*b hpt2, hps2,hps4;
+Print;
+* Print "here is line 116";
 .sort;
 *
 * put the terms belonging to the same trace together
 *
 *
 repeat;
-id R(a?,i1?,i2?)*R(b?,i2?,i3?) = R(a*b,i1,i3);
+  id R(a?,i1?,i2?)*R(b?,i2?,i3?) = R(a*b,i1,i3);
 endrepeat;
 *
-b hpt2, hps2,hpt2;
+Bracket hpt2,hps2;
 *print;
 .sort;
 *
@@ -134,14 +136,14 @@ id R(a?,b?,c?) = 1/(1-1);
 .sort;
 *
 #do hp =1,4
-trace4 `hp';
+  trace4 `hp';
 #enddo
 *
 * trace the s-t interference
 *
 trace4 tu;
 *
-b hpt2, hps2;
+Bracket hpt2, hps2;
 *print;
 .sort;
 *
@@ -154,7 +156,7 @@ id qep.qep =-m^2;
 id qa.qa = -m^2;
 *id qap.qap = -m^2;
 *
-b hps2,hpt2;
+Bracket hps2,hpt2;
 *print;
 .sort;
 *
@@ -175,7 +177,7 @@ id V.Q = 0;
 id P.V = P.P;
 id V.V = -Q.Q - 4*m^2;
 *
-b hpt2 ,hps2;
+Bracket hpt2 ,hps2;
 *print;
 .sort;
 *
@@ -184,17 +186,17 @@ id Q.Q = -t;
 id s = 4*m^2 -t -uu;
 *
 if (match( hpt2^2)==1);
-id uu^2 = [u - 2*m^2]^2 - 4*m^4 + 4*uu*m^2;
+  id uu^2 = [u - 2*m^2]^2 - 4*m^4 + 4*uu*m^2;
 elseif (match( hps2^2)==1);
-id t^2 = [t - 2*m^2]^2 - 4*m^4 + 4*t*m^2;
+  id t^2 = [t - 2*m^2]^2 - 4*m^4 + 4*t*m^2;
 else;
-id uu^2 = [u+t]^2 - t^2 -2*uu*t;
+  id uu^2 = [u+t]^2 - t^2 -2*uu*t;
 endif;
 *
 id hpt2 = -[1/t];
 id hps2 = -[1/u];
 *
-b [1/t],[1/s],[1/u];
+Bracket [1/t],[1/s],[1/u];
 *print;
 .store;
 
@@ -207,7 +209,7 @@ b [1/t],[1/s],[1/u];
 *
 #procedure s2(dummy)
 *
-g sig = hpINT*hpFLUX*hpDELT*hpMs;
+Global sig = hpINT*hpFLUX*hpDELT*hpMs;
 *
 id hpINT = Vl^2*[1/(2*pi)]^6*int(3,qep)*int(3,qap);
 id hpMs  = 1/16*1/Vl^4*[1/Ee*Eep*Ea*Eap]*amp*[2*pi]^8*e^4;
@@ -216,8 +218,8 @@ id hpDELT = Vl*T*[1/(2*pi)]^4*del(4,qe+qa-qep-qap);
 *
 id [1/(2*pi)]*[2*pi] =1;
 *
-b [1/t],[1/s],[1/Ee*Eep*Ea*Eap],hpINT,hpFLUX,hpDELT,[1/(2*pi)],int,Vl,e,
-del;
+Bracket [1/t],[1/s],[1/Ee*Eep*Ea*Eap],hpINT,hpFLUX,hpDELT,[1/(2*pi)],
+        int,Vl,e,del;
 *print;
 .sort;
 *
@@ -233,8 +235,8 @@ id int(3,qap)*del(4,qe+qa-qep-qap) = del(1,qe+qa-qep-qap);
 id hpFLUX = Vl/T*2*Ee*Ea*[1/Sqrt(s^2 -4*s*m^2)];
 id Ee*Ea*[1/Ee*Eep*Ea*Eap] = [1/Eep*Eap];
 *
-b [1/t],[1/s],[1/Eep*Eap],hpINT,hpFLUX,hpDELT,[1/(2*pi)],int,Vl,T,e,
-del,[1/Sqrt(s^2 -4*s*m^2)];
+Bracket [1/t],[1/s],[1/Eep*Eap],hpINT,hpFLUX,hpDELT,[1/(2*pi)],
+        int,Vl,T,e,del,[1/Sqrt(s^2 -4*s*m^2)];
 *print;
 .sort;
 *
@@ -263,7 +265,7 @@ id Eep*[1/Eep*Eap] = [1/Eap];
 *
 id int(1,Eep)*del(1, - qep - qap + qe + qa) =1/2;
 *
-b [1/t],[1/s],[1/Eap],hpINT,hpFLUX,hpDELT,[1/(2*pi)],Vl,T,e,int,[1/Sqrt(s)];
+Bracket [1/t],[1/s],[1/Eap],hpINT,hpFLUX,hpDELT,[1/(2*pi)],Vl,T,e,int,[1/Sqrt(s)];
 *print;
 .sort;
 *
@@ -293,14 +295,13 @@ print;
 *
 #procedure s3(dummy) 
 *
-g dsig = hpdum;
+Global dsig = hpdum;
 *
 id hpdum = sig;
 *
 id e^2*[1/(2*pi)] =  2*alph;
 *
-b [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,
-[1/Sqrt(s)];
+Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,[1/Sqrt(s)];
 *print;
 .sort;
 *
@@ -319,7 +320,7 @@ id [1/u] = -1/2*[1/(E^2 - m^2)]*[1/(1+ cos_(th))];
 *
 id [1/E]*E =1;
 *
-b [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/(1+ cos_(th))],alph,[1/E];
+Bracket [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/(1+ cos_(th))],alph,[1/E];
 *print;
 .sort;
 *
@@ -329,15 +330,15 @@ id m = 0;
 id [1/(E^2 - m^2)] = [1/E]^2;
 id [1/E]*E =1;
 *
-b [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/(1+ cos_(th))],alph,[1/E];
+Bracket [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/(1+ cos_(th))],alph,[1/E];
 *print;
 .sort;
 *
 * bring all in 1/(1- cos_(th))
 *
 repeat;
-id [1/(1- cos_(th))]*cos_(th) = -(1-[1/(1- cos_(th))]);
-id [1/(1+ cos_(th))]*cos_(th) = (1-[1/(1+ cos_(th))]);
+  id [1/(1- cos_(th))]*cos_(th) = -(1-[1/(1- cos_(th))]);
+  id [1/(1+ cos_(th))]*cos_(th) = (1-[1/(1+ cos_(th))]);
 endrepeat;
 *
 id [1/(1- cos_(th))] = 1/2*[1/sin_(th/2)]^2;
@@ -347,15 +348,14 @@ multiply hpt;
 *
 id hpt*[1/sin_(th/2)]^4 = [1/sin_(th/2)]^4;
 id hpt*[1/cos_(th/2)]^4 = [1/cos_(th/2)]^4;
-id hpt*[1/sin_(th/2)]^2*[1/cos_(th/2)]^2 =
-[1/sin_(th/2)]^2*[1/cos_(th/2)]^2;
+id hpt*[1/sin_(th/2)]^2*[1/cos_(th/2)]^2 = [1/sin_(th/2)]^2*[1/cos_(th/2)]^2;
 id hpt*[1/sin_(th/2)]^2 = [1/sin_(th/2)]^2*[1/cos_(th/2)]^2*cos_(th/2)^2;
 id hpt*[1/cos_(th/2)]^2 = [1/sin_(th/2)]^2*[1/cos_(th/2)]^2*sin_(th/2)^2;
 id hpt =1;
 id sin_(th/2)^2 = 1-cos_(th/2)^2;
 *
-b [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/(1+ cos_(th))],Vl,T,alph,[1/E],
-[1/u],[1/sin_(th/2)],[1/cos_(th/2)];
+Bracket [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/(1+ cos_(th))],Vl,T,alph,[1/E],
+        [1/u],[1/sin_(th/2)],[1/cos_(th/2)];
 #message MOLLER DIFFERENTIAL CROSS SECTION: UR limit
 #message expressed in terms of E (energy of the incoming particles)
 #message and theta, the scattering angle. It matches with the 
@@ -369,13 +369,13 @@ print;
 *
 #procedure s4(dummy) 
 *
-g dsig = hpdum;
+Global dsig = hpdum;
 *
 id hpdum = sig;
 *
 id e^2*[1/(2*pi)] =  2*alph;
 *
-b [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int;
+Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int;
 *print;
 .sort;
 *
@@ -385,7 +385,7 @@ id [u-2*m^2] = uu;
 id m = 0;
 id [s+t] =s+t;
 *
-b [1/u],[1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,
+Bracket [1/u],[1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,
 [alph^2/s];
 #message MOLLER DIFFERENTIAL CROSS SECTION: UR limit
 #message expressed in terms of the Mandelstam invariants
@@ -400,14 +400,13 @@ print;
 *
 #procedure s5(dummy) 
 *
-g dsig = hpdum;
+Global dsig = hpdum;
 *
 id hpdum = sig;
 *
 id e^2*[1/(2*pi)] =  2*alph;
 *
-b [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,
-[1/Sqrt(s)];
+Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,[1/Sqrt(s)];
 *print;
 .sort;
 *
@@ -426,7 +425,7 @@ id [1/u] = -1/2*[1/(E^2 - m^2)]*[1/(1+ cos_(th))];
 *
 id [1/E]*E =1;
 *
-b [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/(1+ cos_(th))],alph,[1/E];
+Bracket [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/(1+ cos_(th))],alph,[1/E];
 *print;
 .sort;
 *
@@ -447,7 +446,7 @@ endrepeat;
 id [1/(1- cos_(th))] = 1/2*[1/sin_(th/2)]^2;
 id [1/(1+ cos_(th))] = 1/2*[1/cos_(th/2)]^2;
 *
-b [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/sin_(th/2)],[1/cos_(th/2)],
+Bracket [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/sin_(th/2)],[1/cos_(th/2)],
 alph,[1/m],[1/v];
 *print;
 .sort;
@@ -458,7 +457,7 @@ multiply pw(0);
 *
 id pw(0)*[1/v]^n? = pw(-n)*[1/v]^n;
 *
-b pw,[1/(E^2 - m^2)],[1/(1- cos_(th))],[1/sin_(th/2)],[1/cos_(th/2)],
+Bracket pw,[1/(E^2 - m^2)],[1/(1- cos_(th))],[1/sin_(th/2)],[1/cos_(th/2)],
 alph,[1/m],[1/v];
 #message MOLLER DIFFERENTIAL CROSS SECTION: low energy limit
 #message expressed in terms of the velocity of the incoming 
