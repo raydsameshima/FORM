@@ -1,3 +1,8 @@
+* sample4.frm
+* 1.1.3 Exercises
+* To see how much the intermediate terms, 
+* see the following different usage of ():
+
 Symbol a;
 Functions B,C;
 Local F1 = (a+B+C)^5;

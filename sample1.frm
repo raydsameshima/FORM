@@ -1,4 +1,5 @@
 * sample1.frm
+* 1.1.2 Our First Example
 
 * The first line informs the system that a and b are 
 * algebraic symbols.

@@ -1,4 +1,4 @@
-s,t,u;
+Symbols t,u;
 Local F = (t+u)^2;
 Print;
 .end
