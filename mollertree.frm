@@ -14,7 +14,7 @@ Symbols s,t,uu,[s - 2*m^2],[t - 2*m^2],[s+t],[1/t],[1/s],[1/Sqrt(s^2 -4*s*m^2)];
 Symbols [1/s/t],[1/s+1/t],[t/s],[s/t],[1/v],[1/m],[1/u],[u+t],[u - 2*m^2];
 *energies and momenta;
 Symbols [1/Ee*Eep*Ea*Eap],[1/Eep*Eap],[Sqrt(s - 4*m^2)],[1/Sqrt(s)],[1/Eap];
-Symbol [1/E],th,[1/(E^2 - 4*m^2)],[1/(1- cos_(th))],[alph^2/2/E^2];
+Symbols [1/E],th,[1/(E^2 - 4*m^2)],[1/(1- cos_(th))],[alph^2/2/E^2];
 Symbols [1/(E^2-m^2)],[1/(E^2 - m^2)/(1- cos_(th))],[1/sin_(th/2)],[alph^2/s];
 Symbols [1/(1+ cos_(th))],[1/cos_(th/2)];
 AutoDeclare Indices du,t;
@@ -42,7 +42,7 @@ Function int;
 *                         
 *                             
 *
-g amp = 1/4*(srtc - srsc)*(srt - srs);
+Global amp = 1/4*(srtc - srsc)*(srt - srs);
 *
 * this is the string corresponding to the  (complex conjugate)
 * tree level bhabha in the  t-channel
