@@ -1,6 +1,8 @@
 * toVectorAndToTensor.frm
 
-* FORM has convenience methods to replace tensors by a product of vector components and vice versa.
+* FORM has convenience methods to replace tensors by a product of 
+* vector components and vice versa.
+
 * ... but for me, these experessions are unclear.
 * It seems no definition of t, but FORM implicitly assume the forms of each t.
 

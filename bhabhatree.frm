@@ -31,6 +31,9 @@ AutoDeclare Symbols a,b,c,e,hp,tr,T,[2*pi],[1/(2*pi)],Vl,E;
 CFunctions R,ub,vb,u,v,gd,pw,del,cos;
 Function int;
 
+* There is one other module instruction, viz., .global. 
+* It makes the definitions and declarations in the module global 
+* so that they cannot be so easily removed again.
 .global
 
 #procedure s1(dummy)
@@ -95,6 +98,11 @@ id srs = R(vb(3,qa),r1)*R(g_(3,be),r1,r2)*R(u(3,qe),r2)*
 .sort;
 
 * sum over the spins
+* match functions only see it as the string
+* Warning! 
+* The if-statement knows only logical values as the result of operations. 
+* Hence the answer to anything that contains parenthesis (which counts as the evaluation of an expression) is either true (1) or false (0). 
+* Hence the object (5) evaluates to true.
 if ((match(hps2*hps2)==1) || (match(hpt2*hpt2)==1));
 * hp is now from 1 to 4
   #do hp =1,4
@@ -130,7 +138,8 @@ endif;
 * check that all the spinor components are gone
 
 * bracket
-Bracket hpt2,hps2,hps4;
+* Bracket hpt2,hps2,hps4;
+Bracket hpt2,hps2;
 *print;
 .sort;
 *
@@ -141,7 +150,7 @@ repeat;
   id R(a?,i1?,i2?)*R(b?,i2?,i3?) = R(a*b,i1,i3);
 endrepeat;
 
-Bracket hpt2,hps2,hpt2;
+Bracket hpt2,hps2;
 *print;
 .sort;
 *
