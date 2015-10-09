@@ -1,9 +1,12 @@
 * buildInFunctions.frm
 
 Symbol x;
+
+Off statistics;
+
 Local F1 = invfac_(3) + x*fac_(3);
 Local F2 = cos_(0) + cos_(x)^2 + sin_(x)^2;
-* sig_ function is given by
+* sig_ of sign function is given by
 * sig_(x) = +1, if x > 0 or x = 0
 * sig_(x) = -1, if x < 0
 * sig_(x) = sig_(x), otherwise

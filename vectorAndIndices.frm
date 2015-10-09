@@ -6,15 +6,15 @@
 Vectors u,v,w;
 Indices i,j;
 Function f;
-Local w1 = u(1) + v(i);
-Local w2 = u(i) * v(j);
+Local [u(1)+v(i)] = u(1) + v(i);
+Local [u(i)*v(j)] = u(i) * v(j);
 * FORM uses the Einstein summation convention.
-Local w3 = u(i) * u(i);
-Local w4 = v(i) * u(i);
+Local [u(i)*u(i)] = u(i) * u(i);
+Local [v(i)*u(i)] = v(i) * u(i);
 * So called SCHOONSCHIP notation:
-Local w5 = f(i,j) * u(i) * v(j);
+Local [f(i,j)*u(i)*v(j)] = f(i,j) * u(i) * v(j);
 
 * This is a bad example that FORM fails to evaluate:
-Local w6 = u(i)*v(i)*w(i);
+Local [u(i)*v(i)*w(i)] = u(i)*v(i)*w(i);
 Print;
 .end

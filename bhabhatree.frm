@@ -95,6 +95,11 @@ id srs = R(vb(3,qa),r1)*R(g_(3,be),r1,r2)*R(u(3,qe),r2)*
 .sort;
 
 * sum over the spins
+* The argument of the match condition can be any left hand side of an id statement, including options as once, only, multi, many and select (see 7.61). 
+* The id of the id statement should not be included. 
+* FORM will invoke the pattern matcher and see how many times the pattern matches. 
+* This number is returned. 
+* In the case of once or only this is of course at most one.
 if ((match(hps2*hps2)==1) || (match(hpt2*hpt2)==1));
 * hp is now from 1 to 4
   #do hp =1,4
@@ -216,7 +221,7 @@ id hpt2 = -[1/t];
 id hps2 = -[1/s];
 
 Bracket [1/t],[1/s];
-*print;
+print;
 .store;
 
 #endprocedure;
@@ -283,7 +288,7 @@ id int(1,Eep)*del(1, - qep - qap + qe + qa) =1/2;
 
 Bracket [1/t],[1/s],[1/Eap],hpINT,hpFLUX,hpDELT,
         [1/(2*pi)],Vl,T,e,int,[1/Sqrt(s)];
-*print;
+print;
 .sort;
 
 * finally Eap = Sqrt(s)/2
@@ -312,7 +317,7 @@ Global dsig = hpdum;
 id hpdum = sig;
 id e^2*[1/(2*pi)] =  2*alph;
 Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,[1/Sqrt(s)];
-*print;
+print;
 .sort;
 
 id [s+t] = s+t;
@@ -327,7 +332,7 @@ id [1/t] = -1/2*[1/(E^2 - m^2)]*[1/(1- cos_(th))];
 id [1/E]*E = 1;
 
 b [1/(E^2 - m^2)],[1/(1- cos_(th))],alph,[1/E];
-*print;
+print;
 .sort;
 
 * massless limit
@@ -337,7 +342,7 @@ id [1/(E^2 - m^2)] = [1/E]^2;
 id [1/E]*E = 1;
 
 Bracket [1/(E^2 - m^2)],[1/(1- cos_(th))],alph,[1/E];
-*print;
+print;
 .sort;
 
 * bring all in 1/(1- cos_(th))
@@ -369,7 +374,7 @@ id hpdum = sig;
 id e^2*[1/(2*pi)] =  2*alph;
 
 Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int;
-*print;
+print;
 .sort;
 
 id [s-2*m^2] = s;
@@ -378,7 +383,7 @@ id m = 0;
 id [s+t] = s+t;
 
 Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,[1/Sqrt(s)];
-*print;
+print;
 .sort;
 
 id alph^2*[1/s] = [alph^2/s];
@@ -418,7 +423,7 @@ id hpdum = sig;
 id e^2*[1/(2*pi)] = 2*alph;
 
 Bracket [1/t],[1/s],hpINT,hpFLUX,hpDELT,Vl,T,alph,int,[1/Sqrt(s)];
-*print;
+print;
 .sort;
 
 id [s+t] = s+t;
@@ -433,7 +438,7 @@ id [1/t] = -1/2*[1/(E^2 - m^2)]*[1/(1- cos_(th))];
 id [1/E]*E =1;
 
 Bracket [1/(E^2 - m^2)],[1/(1- cos_(th))],alph,[1/E];
-*print;
+print;
 .sort;
 
 * non rel limit
@@ -452,7 +457,7 @@ endrepeat;
 id [1/(1- cos_(th))] = 1/2*[1/sin_(th/2)]^2;
 
 Bracket [1/(E^2 - m^2)],[1/(1- cos_(th))],[1/sin_(th/2)],alph,[1/m],[1/v];
-*print;
+print;
 .sort;
 
 * we now isolate the leading term in powers of 1/v

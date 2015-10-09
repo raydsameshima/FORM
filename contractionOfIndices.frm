@@ -8,8 +8,12 @@
 
 Vector u;
 Index i=0;
+
+Off statistics;
+
 * no contraction over index i
 Local P = u(i) * u(i);
+
 Print;
 .sort
 

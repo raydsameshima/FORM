@@ -2,6 +2,8 @@
 
 Dimension 3;
 Indices i,j,k,p,q,r;
+Off statistics;
+
 Local f0 = e_(i,j,k) * e_(p,q,r);
 Local f1 = e_(i,j,k) * e_(p,q,k);
 Local f2 = e_(i,j,k) * e_(p,j,k);

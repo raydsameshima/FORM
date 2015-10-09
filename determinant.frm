@@ -6,6 +6,9 @@ Indices i,j,k;
 Local det = e_(i,j) * e_(1,2) * M(1,i) * M(2,j);
 Local detOfN = e_(i,j,k) * e_(1,2,3) * N(1,i) * N(2,j) * N(3,k);
 contract;
+Print +s;
+.sort
+
 id M(1,1) = a;
 id M(1,2) = b;
 id M(2,1) = c;
