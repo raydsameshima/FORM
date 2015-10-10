@@ -19,6 +19,7 @@ CFunction R,ub,vb,u,v;
 Indices alpha, beta;
 * Dirac (or spinor) indices
 AutoDeclare Symbols r;
+* propagator corresponds to 1/q^2, i.e. the momentum transfer
 Symbols propagator;
 
 * as dummy indices
