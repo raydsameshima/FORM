@@ -1,5 +1,7 @@
 * commutator.frm
 
+Off statistics;
+
 Symbols hbar,m;
 * In general, Functions do not commute.
 Functions x,p,H;
@@ -23,8 +25,10 @@ Functions V, delV;
 Local [H,p] = H*p - p*H;
 
 id H = p^2/(2*m) + V;
+Print;
+.sort
 
 id p*V = V*p + hbar*i_ *delV; 
 
-Print [H,p];
+Print;
 .end
