@@ -46,7 +46,12 @@ Print +s;
 
 * Peskin & Schroeder eMass to zero limit
 id eMass =0; 
-* id muMass =0;
+Bracket e,s;
+Print +s;
+.sort
+
+* Peskin & Schroeder eq.(5.70)
+id muMass =0;
 Bracket e,s;
 Print +s;
 .end
