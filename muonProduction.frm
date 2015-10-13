@@ -103,20 +103,39 @@ Bracket propagator;
 Print [M^2] +s;
 .sort
 
-* id p.pp  = 1/2*[s] - eMass^2;
-* id k.kp  = 1/2*[s] - muMass^2;
-* id k.p   = 1/2*([t] - eMass^2 - muMass^2);
-* id kp.pp = 1/2*([t] - eMass^2 - muMass^2);
-* id kp.p  = 1/2*([u] - eMass^2 - muMass^2);
-* id k.pp  = 1/2*([u] - eMass^2 - muMass^2);
-*
-* id propagator = [e^2]*[1/s]^2;
-* id [s]*[1/s] = 1;
+id p.pp  = 1/2*[s] - eMass^2;
+id k.kp  = 1/2*[s] - muMass^2;
+id k.p   = 1/2*([t] - eMass^2 - muMass^2);
+id kp.pp = 1/2*([t] - eMass^2 - muMass^2);
+id kp.p  = 1/2*([u] - eMass^2 - muMass^2);
+id k.pp  = 1/2*([u] - eMass^2 - muMass^2);
 
 Bracket propagator;
-* Bracket [e^2],[1/s];
+.sort
 
+id propagator = [e^2]*[1/s];
+Bracket [e^2],[1/s];
 
+* id [s]*[1/s] = 1;
+
+#message two terms are the same as eq.(5.70)
+Print [M^2] +s;
+.sort
+
+********************************************
+Symbol ECM;
+Symbols [cos(theta)], [p^2];
+Symbols [sqrt(E-muMass^2)],[sqrt(E-eMass^2)];
+* (5,72)
+id [s] = ECM^2;
+id [1/s] = 1/ECM^2;
+id [t] = eMass^2+muMass^2 -2*(ECM^2 - [sqrt(E-muMass^2)]*[sqrt(E-eMass^2)]*[cos(theta)]);
+id [u] = eMass^2+muMass^2 -2*(ECM^2 + [sqrt(E-muMass^2)]*[sqrt(E-eMass^2)]*[cos(theta)]);
+
+Bracket [e^2],[cos(theta)];
+Print [M^2] +s;
+
+********************************************
 * id eMass = 0;
 * id muMass = 0;
 * Bracket [e^2],[1/s];

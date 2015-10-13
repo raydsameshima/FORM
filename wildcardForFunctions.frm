@@ -20,4 +20,10 @@ Print expr2;
 Local expr3 = f(x+y) + f(x,y);
 id f?(x?) = z;
 Print expr3;
+.sort
+
+argument;
+  id y = z;
+endargument;
+Print expr3;
 .end
