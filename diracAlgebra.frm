@@ -15,7 +15,8 @@ Local [g2*g1] = g2*g1;
 repeat;
   id g0*g0 = 1;
   id g?*g? = -1;
-  id disorder g? * h? = -h*g;
+  id disorder h? * g? = -g*h;
+*   id disorder g? * h? = -h*g;
 endrepeat;
 * Above implementation is the same as
 *   id g2*g1 = -g1*g2;

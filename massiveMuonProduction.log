@@ -1,4 +1,4 @@
-FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 13 19:24:11 2015
+FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 13 19:30:46 2015
     * muon production tree level
     * Ray D. Sameshima
     *
@@ -16,7 +16,7 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 13 19:24:11 2015
     Vectors p1,p2,k1,k2;
     Symbols s,t,u,e;
     Symbols eMass,muMass;
-    Indices mu,nu,rho,sigma;
+    Indices mu,nu;
     
     Local [M^2] = 1/4 * 
     * electron lines, 1 is a label for electrons

@@ -15,7 +15,7 @@ Off statistics;
 Vectors p1,p2,k1,k2;
 Symbols s,t,u,e;
 Symbols eMass,muMass;
-Indices mu,nu,rho,sigma;
+Indices mu,nu;
 
 Local [M^2] = 1/4 * 
 * electron lines, 1 is a label for electrons
