@@ -1,13 +1,24 @@
 * muon.frm
+* http://www.nikhef.nl/~t68/course/short.pdf
+*
 *	Program for working out the matrix element squared for the
 *	reaction e-e+ -> mu-mu+ in QED.
+* 
+*  \ e^-(p1)       / mu^-(k1)
+*   \             /
+*    \j1         /
+*     *~~~~~~~~~*
+*    /         j2\
+*   /             \
+*  / e^+(p2)       \ mu^+(k2)
+*
 *
 * #include amplitude.h
 #include amplitude.frm
 
-Local	Amp = VB(i1,pp,me)*g(i1,i2,j1)*U(i2,pe,me)*
+Local	Amp = VB(i1,p2,me)*g(i1,i2,j1)*U(i2,p1,me)*
 		        phprop(j1,j2,q)*
-		        UB(i3,pmm,mm)*g(i3,i4,j2)*V(i4,pmp,mm);
+		        UB(i3,k1,mmu)*g(i3,i4,j2)*V(i4,k2,mmu);
 
 #call squareamplitude(Amp,M)
 .sort
@@ -15,30 +26,13 @@ Local	Amp = VB(i1,pp,me)*g(i1,i2,j1)*U(i2,pe,me)*
 Symbols	s,t,u;
 
 id	prop(q.q) = 1/s;
-id	pe.pp = s/2-me^2;
-id	pmm.pmp = s/2-mm^2;
-id	pe.pmm = me^2/2+mm^2/2-t/2;
-id	pp.pmp = me^2/2+mm^2/2-t/2;
-id	pe.pmp = me^2/2+mm^2/2-u/2;
-id	pp.pmm = me^2/2+mm^2/2-u/2;
-id	u = 2*me^2+2*mm^2-s-t;
+id	p1.p2 = s/2-me^2;
+id	k1.k2 = s/2-mmu^2;
+id	p1.k1 = me^2/2+mmu^2/2-t/2;
+id	p2.k2 = me^2/2+mmu^2/2-t/2;
+id	p1.k2 = me^2/2+mmu^2/2-u/2;
+id	p2.k1 = me^2/2+mmu^2/2-u/2;
+id	u = 2*me^2+2*mmu^2-s-t;
 
 Print +s;
-*Print +f;
-*.sort
-*
-*Print +f;
-*.sort
-* 
-* Symbols	s2,t2,si,si2,me2,mm2,me4,mm4;
-*
-* id	s^2 = s2;
-* id	1/s^2 = si2;
-* id	1/s = si;
-* id	t^2 = t2;
-* id	me^2 = me2;
-* id	mm^2 = mm2;
-* id	me2^2 = me4;
-* id	mm2^2 = mm4;
-* Print +f;
 .end
