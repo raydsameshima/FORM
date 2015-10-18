@@ -1,14 +1,14 @@
-* muon production tree level Ray D. Sameshima
-* 
-* 
+* muon production tree level
+* Ray D. Sameshima
+*
 *  \ e^-(p_1)      / mu^-(k_1)
 *   \             /
 *    \           /
-*     *~~~~~~~~~*
+*     *^^^^^^^^^*
 *    / s=p_1+p2  \
 *   /             \
 *  / e^+(p_2)      \ mu^+(k_2)
-*
+* 
 
 Off statistics;
 
@@ -42,16 +42,16 @@ id p2.k1 = (u - eMass^2 -muMass^2)/2;
 
 Bracket e,s;
 Print +s;
-.sort
-
+* .sort
+* 
 * Peskin & Schroeder eMass to zero limit
-id eMass =0; 
-Bracket e,s;
-Print +s;
-.sort
-
+* id eMass =0; 
+* Bracket e,s;
+* Print +s;
+* .sort
+* 
 * Peskin & Schroeder eq.(5.70)
-id muMass =0;
-Bracket e,s;
-Print +s;
+* id muMass =0;
+* Bracket e,s;
+* Print +s;
 .end
