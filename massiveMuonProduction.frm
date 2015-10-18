@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * muon production tree level
 * Ray D. Sameshima
 *
@@ -10,19 +9,6 @@
 *   /             \
 *  / e^+(p_2)      \ mu^+(k_2)
 * 
-=======
-* muon production tree level Ray D. Sameshima
-* 
-* 
-*  \ e^-(p_1)      / mu^-(k_1)
-*   \             /
-*    \           /
-*     *~~~~~~~~~*
-*    / s=p_1+p2  \
-*   /             \
-*  / e^+(p_2)      \ mu^+(k_2)
-*
->>>>>>> e5266ea272608a745b3e8eeeb767962ea856078c
 
 Off statistics;
 
