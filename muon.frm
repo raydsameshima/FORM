@@ -12,9 +12,9 @@
 *   /             \
 *  / e^+(p2)       \ mu^+(k2)
 *
-*
-#include amplitude.h
-* #include amplitude.frm
+* #include amplitude.h
+
+#include amplitude.frm
 
 Local	Amp = VB(i1,p2,me)*g(i1,i2,j1)*U(i2,p1,me)*
 		        phprop(j1,j2,q)*
