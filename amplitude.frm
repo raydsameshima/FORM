@@ -1,4 +1,5 @@
 * amplitude.frm
+* Peskin & Schroeder notation, see Appendix A.
 * http://www.nikhef.nl/~t68/course/short.pdf
 
 * i's are spinor indices
@@ -9,11 +10,9 @@ AutoDeclare Symbols m;
 AutoDeclare Vectors p,k;
 Vectors q;
 * Vectors q,pe,pp,pa,pb,p1,...,p10;
-* spinors, gamma matrices
+* spinors, gamma matrices, and polarization
 CFunctions  UB,U,VB,V,g,e;
-* CFunctions  UB,U,VB,V,g,gstring,e;
 CFunctions  fprop,phprop,prop;
-* CFunctions  fprop,phprop,gprop,prop;
 
 #procedure squareamplitude(Amp,Mat)
 .sort
@@ -42,7 +41,7 @@ Skip; NSkip `Amp';
 #enddo
 .sort
 
-*   Just for a check we print the highest i and j indices
+* Just for a check we print the highest i and j indices
 #message highest i is i`$imax', highest j is j`$jmax';
 
 * Now construct the conjugate
@@ -50,41 +49,43 @@ Skip;
 Local `Amp'C = `Amp';
 id  i_ = -i_;
 
-*   Make a new set of dummy indices above $imax and $jmax.
+* Make a new set of dummy indices above $imax and $jmax.
 * I haven't seen <> notation, but this should clarify the pair of replacement.
 Multiply replace_(<i1,i{`$imax'+1}>,...,<i`$imax',i{2*`$imax'}>);
 Multiply replace_(<j1,j{`$jmax'+1}>,...,<j`$jmax',j{2*`$jmax'}>);
 
-*   Exchange rows and columns, i.e. transpose
-id  g(i1?,i2?,j?) = g(i2,i1,j);
-id  fprop(i1?,i2?,?a) = fprop(i2,i1,?a);
-id  phprop(j1?,j2?,p?) = phprop(j2,j1,p);
+* Exchange rows and columns, i.e. transpose
+id g(i1?,i2?,j?)      = g(i2,i1,j);
+id fprop(i1?,i2?,?a)  = fprop(i2,i1,?a);
+id phprop(j1?,j2?,p?) = phprop(j2,j1,p);
 
-*   and exchange U and UB, V and VBAR
+* and exchange U and UB, V and VBAR
 Multiply replace_(UB,U,U,UB,VB,V,V,VB);
 
-*   gamma5 gets a minus sign. Hence k6 <--> k7
+* gamma5 gets a minus sign. Hence k6 <--> k7
 Multiply replace_(k6,k7,k7,k6);
-id  g(?a,k5) = -g(?a,k5);
+id g(?a,k5) = -g(?a,k5);
 .sort
 * the end of the conjugation
 
-*   Now multiply Amp and AmpC to get the matrix element squared.
+* Now multiply Amp and AmpC to get the matrix element squared.
 Skip;
 * Drop(for efficiency): ... eliminates all expressions from the system
-* We won't use Amp,AmpC anymore.
+* We won't use (manipulate) Amp,AmpC anymore.
 Drop,`Amp',`Amp'C;
-Local   `Mat' = `Amp'*`Amp'C;
 
-*   Spin sums, 1st terms are slashed p and 2nd terms are delta?
-id  U(i1?,p?,m?)*UB(i2?,p?,m?) =  g(i1,i2,p)+g(i1,i2)*m;
-* id  V(i1?,p?,m?)*VB(i2?,p?,m?) = -g(i1,i2,p)+g(i1,i2)*m;
-id  V(i1?,p?,m?)*VB(i2?,p?,m?) = g(i1,i2,p)-g(i1,i2)*m;
-* for external photons
-id  e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
+Local `Mat' = `Amp'*`Amp'C;
+
+* Spin sums, 1st terms are slashed p and 2nd terms are delta?
+* (A.22)
+id U(i1?,p?,m?)*UB(i2?,p?,m?) = g(i1,i2,p) + g(i1,i2)*m;
+id V(i1?,p?,m?)*VB(i2?,p?,m?) = g(i1,i2,p) - g(i1,i2)*m;
+* for external photons (A.26)
+id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
 
 *   Propagators
-id  fprop(i1?,i2?,p?,m?) = (g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
+id  fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
+* id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
 id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
 
 *   String the gamma matrices together in traces.
