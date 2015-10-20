@@ -1,18 +1,22 @@
-* amplitude.frm
+* qcdAmplitude.frm
+* Ray D. Sameshima
+* rewrite amplitude.frm for qcd (su(N=3) gauge theory)
 * Peskin & Schroeder notation, see Appendix A.
 * http://www.nikhef.nl/~t68/course/short.pdf
 
 * i's are spinor indices
 * j's are Lorentz indices
-AutoDeclare Indices i,j;
-* masses, e.g. me(mass of electrons),mmu(mass of muons) 
+* c's are colour indices
+AutoDeclare Indices i,j,c;
 AutoDeclare Symbols m;
 AutoDeclare Vectors p,k;
 Vectors q;
-* Vectors q,pe,pp,pa,pb,p1,...,p10;
 * spinors, gamma matrices, and polarization
-CFunctions  UB,U,VB,V,g,e;
-CFunctions  fprop,phprop,prop;
+CFunctions  UB,U,VB,V, g, e;
+* colour carrying fields
+CFunctions  UBC,UC,VBC,VC;
+*   U(i2,p1,me)* UC(c) =  U(spinorindex, momentum, mass)*UC(colourindex) 
+CFunctions gprop,fprop,phprop,prop;
 
 #procedure squareamplitude(Amp,Mat)
 .sort
