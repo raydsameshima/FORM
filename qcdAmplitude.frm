@@ -4,18 +4,18 @@
 * Peskin & Schroeder notation, see Appendix A.
 * http://www.nikhef.nl/~t68/course/short.pdf
 
-* i's are spinor indices
-* j's are Lorentz indices
-* c's are colour indices
-AutoDeclare Indices i,j,c;
+Symbol N;
+
+* i's are spinor indices, j's are Lorentz indices
+* c's are colour indices, d's are the label for su(N) generators
+AutoDeclare Indices i,j,c,d;
 AutoDeclare Symbols m;
 AutoDeclare Vectors p,k;
 Vectors q;
-* spinors, gamma matrices, and polarization
-CFunctions  UB,U,VB,V, g, e;
-* colour carrying fields
-CFunctions  UBC,UC,VBC,VC;
-*   U(i2,p1,me)* UC(c) =  U(spinorindex, momentum, mass)*UC(colourindex) 
+* spinors, gamma matrices, polarization vector, and Gell-Mann matrices
+CFunctions  UB,U,VB,V, g, e, T;
+* U(i2,p1,m,c) =  U(spinorindex, momentum, mass, colourindex) 
+* gprop(j1,j2,q,d1,d2) = phprop(j1,j2,q) * d_(d1,d2) 
 CFunctions gprop,fprop,phprop,prop;
 
 #procedure squareamplitude(Amp,Mat)
@@ -28,10 +28,11 @@ Skip; NSkip `Amp';
 #$imax = 0;
 #do i = 1,40
 * naively assume 40 or less spinor indices
-  if ( match(VB(i`i',?a)) || match(V(i`i',?a))
+  if ( match(VB(i'i',?a)) || match(V(i`i',?a))
      || match(UB(i`i',?a)) || match(U(i`i',?a))
      || match(g(i`i',?a)) || match(g(i?,i`i',?a))
-     || match(fprop(i`i',?a)) || match(fprop(i?,i`i',?a)) );
+     || match(fprop(i`i',?a)) || match(fprop(i?,i`i',?a)) 
+     );
      $imax = `i';
   endif;
 #enddo
@@ -39,8 +40,30 @@ Skip; NSkip `Amp';
 #do j = 1,20
 * naively assume 20 or less Lorentz indices
   if ( match(g(?a,j`j')) || match(phprop(j`j',?a)) 
-     || match(phprop(j?,j`j',?a)) );
-      $jmax = `j';
+     || match(phprop(j?,j`j',?a)) 
+     || match(gprop(j?,j'j',?a))
+     );
+     $jmax = `j';
+  endif;
+#enddo
+#$cmax = 0;
+#do c = 1,40
+* naively assume 40 or less colour indices
+  if ( match(VB(?a,c'c')) || match(V(?a,c'c'))
+     || match(UB(?a,c'c')) || match(U(?a,c'c'))
+     || match(T(c'c',?a)) || match(T(c?,c'c',?a))
+     );
+     $cmax = 'c';
+  endif;
+#enddo
+#$dmax = 0;
+#do d = 1,20;
+* naively assume 20 or less generators(for su(3), N = 8)
+  if( match(T(?a,d'd')
+    || match(gprop(?a,d'd',d?))
+    || match(gprop(?a,d'd'))
+    );
+    $dmax = 'd';
   endif;
 #enddo
 .sort
@@ -60,8 +83,10 @@ Multiply replace_(<j1,j{`$jmax'+1}>,...,<j`$jmax',j{2*`$jmax'}>);
 
 * Exchange rows and columns, i.e. transpose
 id g(i1?,i2?,j?)      = g(i2,i1,j);
+id T(c1?,c2?,d?)      = T(c2,c1,d);
 id fprop(i1?,i2?,?a)  = fprop(i2,i1,?a);
-id phprop(j1?,j2?,p?) = phprop(j2,j1,p);
+id phprop(j1?,j2?,q?) = phprop(j2,j1,q);
+id gprop(j1?,j2?,q?,d1?,d2?) = gprop(j2,j1,q,d2,d1);
 
 * and exchange U and UB, V and VBAR
 Multiply replace_(UB,U,U,UB,VB,V,V,VB);
@@ -82,15 +107,17 @@ Local `Mat' = `Amp'*`Amp'C;
 
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
 * (A.22)
-id U(i1?,p?,m?)*UB(i2?,p?,m?) = g(i1,i2,p) + g(i1,i2)*m;
-id V(i1?,p?,m?)*VB(i2?,p?,m?) = g(i1,i2,p) - g(i1,i2)*m;
+id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * d_(c1,c2);
+id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * d_(c1,c2);
 * for external photons (A.26)
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
 
 *   Propagators
-id  fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
+id fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
 * id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
-id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
+id phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
+id gprop(j1?,j2,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * d_(d1,d2);
+* id gprop(j1?,j2,q?,d1?,d2?) = phprop(j1,j2,q) * d_(d1,d2);
 
 *   String the gamma matrices together in traces.
 repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
@@ -112,4 +139,9 @@ Skip; NSkip `Mat';
 #do i = 1,10
   Trace4,`i';
 #enddo
+
+* qcd trace by hand
+repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) = 1/2 * (d_(c1,c4)*d_(c2,c3) - 1/N * d_(c1,c2)*d_(c3,c4));
+.sort
+
 #endprocedure
