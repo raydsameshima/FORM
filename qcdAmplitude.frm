@@ -15,8 +15,11 @@ Vectors q;
 * spinors, gamma matrices, polarization vector, and Gell-Mann matrices
 CFunctions  UB,U,VB,V, g, e, T;
 * U(i2,p1,m,c) =  U(spinorindex, momentum, mass, colourindex) 
-* gprop(j1,j2,q,d1,d2) = phprop(j1,j2,q) * d_(d1,d2) 
+* gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 CFunctions gprop,fprop,phprop,prop;
+
+* for contractions of indices c's and d's
+CFunction cdelta, ddelta;
 
 #procedure squareamplitude(Amp,Mat)
 .sort
@@ -28,7 +31,7 @@ Skip; NSkip `Amp';
 #$imax = 0;
 #do i = 1,40
 * naively assume 40 or less spinor indices
-  if ( match(VB(i'i',?a)) || match(V(i`i',?a))
+  if (  match(VB(i'i',?a)) || match(V(i`i',?a))
      || match(UB(i`i',?a)) || match(U(i`i',?a))
      || match(g(i`i',?a)) || match(g(i?,i`i',?a))
      || match(fprop(i`i',?a)) || match(fprop(i?,i`i',?a)) 
@@ -39,37 +42,42 @@ Skip; NSkip `Amp';
 #$jmax = 0;
 #do j = 1,20
 * naively assume 20 or less Lorentz indices
-  if ( match(g(?a,j`j')) || match(phprop(j`j',?a)) 
+  if (  match(g(?a,j`j')) || match(phprop(j`j',?a)) 
      || match(phprop(j?,j`j',?a)) 
+     || match(gprop(j'j',?a))
      || match(gprop(j?,j'j',?a))
      );
      $jmax = `j';
   endif;
 #enddo
+
 #$cmax = 0;
 #do c = 1,40
 * naively assume 40 or less colour indices
-  if ( match(VB(?a,c'c')) || match(V(?a,c'c'))
+  if (  match(VB(?a,c'c')) || match(V(?a,c'c'))
      || match(UB(?a,c'c')) || match(U(?a,c'c'))
-     || match(T(c'c',?a)) || match(T(c?,c'c',?a))
+     || match(T(c'c',?a))  || match(T(c?,c'c',?a))
      );
      $cmax = 'c';
   endif;
 #enddo
+
 #$dmax = 0;
 #do d = 1,20;
 * naively assume 20 or less generators(for su(3), N = 8)
-  if( match(T(?a,d'd')
+  if( match(T(?a,d'd'))
     || match(gprop(?a,d'd',d?))
     || match(gprop(?a,d'd'))
     );
     $dmax = 'd';
   endif;
 #enddo
+
 .sort
 
 * Just for a check we print the highest i and j indices
 #message highest i is i`$imax', highest j is j`$jmax';
+#message highest c is c`$cmax', highest d is d`$dmax';
 
 * Now construct the conjugate
 Skip;
@@ -107,8 +115,8 @@ Local `Mat' = `Amp'*`Amp'C;
 
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
 * (A.22)
-id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * d_(c1,c2);
-id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * d_(c1,c2);
+id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * cdelta(c1,c2);
+id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2);
 * for external photons (A.26)
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
 
@@ -116,7 +124,7 @@ id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
 id fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
 * id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
 id phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
-id gprop(j1?,j2,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * d_(d1,d2);
+id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 * id gprop(j1?,j2,q?,d1?,d2?) = phprop(j1,j2,q) * d_(d1,d2);
 
 *   String the gamma matrices together in traces.
@@ -127,7 +135,7 @@ Skip; NSkip `Mat';
 
 *   Now put the traces one by one in terms of the built in gammas
 #do i = 1,10
-  id,once,g(i1?,i1?,?a) = g_(`i',?a);
+  id, once, g(i1?,i1?,?a) = g_(`i',?a);
 * g7_ = 1-g5_, g6_ = 1+g5_
   id  g_(`i',k7) = g7_(`i');
   id  g_(`i',k6) = g6_(`i');
@@ -141,7 +149,11 @@ Skip; NSkip `Mat';
 #enddo
 
 * qcd trace by hand
-repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) = 1/2 * (d_(c1,c4)*d_(c2,c3) - 1/N * d_(c1,c2)*d_(c3,c4));
+repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) = 1/2 * (cdelta(c1,c4)*cdelta(c2,c3) - 1/N * cdelta(c1,c2)*cdelta(c3,c4));
+id cdelta(c1?,c2?)*cdelta(c2?,c3?) = cdelta(c1,c3);
+id cdelta(c1?,c2?)*cdelta(c2?,c1?) = N;
+id ddelta(d1?,d2?) = N^2-1;
+id cdelta(c1?,c1?) = N; 
 .sort
 
 #endprocedure

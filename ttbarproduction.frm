@@ -7,7 +7,7 @@
 *   \                /
 *    \g(j1)*T(c1)   /
 *     *^^^^^^^^^^^^*
-*    /              \ g(j2)*T(c2)
+*    /  gprop       \ g(j2)*T(c2)
 *   /                \
 *  / qbar(p2)         \ tbar(k2)
 *
@@ -16,7 +16,8 @@
 *         gprop(j1,j2,q,d1,d2)*
 *	        UB(i3,k1,mt=0,c3)*g(i3,i4,j2)*T(c3,c4,d2)*V(i4,k2,0,c4);
 * where c's are the colour indices, 
-* and d's are the label of generators(orientations in the group space) from 1 to N^2-1
+* and d's are the label of generators(orientations in the group space) 
+* from 1 to N^2-1.
 
 #include qcdAmplitude.frm
 
