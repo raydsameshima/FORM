@@ -1,5 +1,6 @@
 * ttbarproduction.frm
-*
+* Ray D. Sameshima
+* 
 *	Program for working out the matrix element squared for the
 *	reaction q,qbar -> t,tbar in QCD.
 * 
@@ -41,7 +42,11 @@ id	p2.k1 = mq^2/2+mt^2/2-u/2;
 id	u = 2*mq^2+2*mt^2-s-t;
 
 id mq = 0;
-id mt = 0;
+* id mt = 0;
 
+Bracket [N^2-1];
 Print +s;
+
+#message Need to compare with the known result, see the following link:
+#message http://arxiv.org/pdf/0806.2301.pdf
 .end

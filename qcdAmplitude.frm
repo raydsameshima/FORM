@@ -5,6 +5,7 @@
 * http://www.nikhef.nl/~t68/course/short.pdf
 
 Symbol N;
+Symbols [N^2-1];
 
 * i's are spinor indices, j's are Lorentz indices
 * c's are colour indices, d's are the label for su(N) generators
@@ -90,6 +91,8 @@ id  i_ = -i_;
 * I haven't seen <> notation, but this should clarify the pair of replacement.
 Multiply replace_(<i1,i{`$imax'+1}>,...,<i`$imax',i{2*`$imax'}>);
 Multiply replace_(<j1,j{`$jmax'+1}>,...,<j`$jmax',j{2*`$jmax'}>);
+Multiply replace_(<c1,c{`$cmax'+1}>,...,<c`$cmax',c{2*`$cmax'}>);
+Multiply replace_(<d1,d{`$dmax'+1}>,...,<d`$dmax',d{2*`$dmax'}>);
 
 * Exchange rows and columns, i.e. takeing the transposes.
 id g(i1?,i2?,j?)      = g(i2,i1,j);
@@ -148,13 +151,45 @@ Skip; NSkip `Mat';
   Trace4,`i';
 #enddo
 
+Bracket T;
+Print +s;
+* Print[];
+.sort
+* .end
+
 * qcd trace by hand
 * eq.(3.25) of QCD practice
+* ddelta
+id T(c1?, c2?, d1?)* ddelta(d1?,d2?) = T(c1,c2,d2);
+id T(c1?, c2?, d1?)* ddelta(d2?,d1?) = T(c1,c2,d2);
 repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) = 1/2 * (cdelta(c1,c4)*cdelta(c2,c3) - 1/N * cdelta(c1,c2)*cdelta(c3,c4));
 repeat id cdelta(c1?,c2?)*cdelta(c2?,c3?) = cdelta(c1,c3);
+repeat id cdelta(c1?,c2?)*cdelta(c3?,c2?) = cdelta(c1,c3);
 repeat id ddelta(d1?,d2?)*ddelta(d2?,d3?) = ddelta(d1,d3);
-id ddelta(d1?,d1?) = N^2-1;
+repeat id ddelta(d1?,d2?)*ddelta(d3?,d2?) = ddelta(d1,d3);
 id cdelta(c1?,c1?) = N; 
+
+* Bracket T,N, ddelta,cdelta;
+* Print;
+* .sort
+** .end
+id ddelta(d1?,d1?) = N^2-1;
+
+id N^2 = [N^2-1] + 1;
+
+Bracket [N^2-1];
+Print +s;
+* Print[];
 .sort
+* .end
+
+* id ddelta(d1?,d2?) = 0;
+* id cdelta(c1?,c2?) = 0;
+* .sort
+
+* Bracket N;
+* Print[];
+* .sort
+* .end
 
 #endprocedure
