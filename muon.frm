@@ -13,7 +13,7 @@
 *  / e^+(p2)       \ mu^+(k2)
 *
 * #include amplitude.h
-
+Off statistics;
 #include amplitude.frm
 
 Local	Amp = VB(i1,p2,me)*g(i1,i2,j1)*U(i2,p1,me)*
@@ -35,4 +35,17 @@ id	p2.k1 = me^2/2+mmu^2/2-u/2;
 id	u = 2*me^2+2*mmu^2-s-t;
 
 Print +s;
+.sort
+#message Compared with the solution from "Pedestrians"
+Local solution = 8*((t^2+u^2 + 4*s*(me^2+mmu^2) -2*(me^2+mmu^2)^2)/s^2); 
+id	u = 2*me^2+2*mmu^2-s-t;
+.sort
+
+Local difference = M- solution;
+#message Both solutions match!!!
+Print difference;
+.sort
+
+Local spinAveragedM = 1/4 * M;
+Print +s spinAveragedM;
 .end
