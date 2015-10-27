@@ -8,16 +8,20 @@ Symbol N;
 
 * i's are spinor indices, j's are Lorentz indices
 * c's are colour indices, d's are the label for su(N) generators
+* So, the generator for su(N) has indices like T(c1,c2,d1).
 AutoDeclare Indices i,j,c,d;
+* masses
 AutoDeclare Symbols m;
+* momemtums
 AutoDeclare Vectors p,k;
+* momentum transfer (dummy)
 Vectors q;
-* spinors, gamma matrices, polarization vector, and Gell-Mann matrices
+* spinors, gamma matrices(g), polarization vector for photons(e), 
+* and Gell-Mann matrices(T)
 CFunctions  UB,U,VB,V, g, e, T;
 * U(i2,p1,m,c) =  U(spinorindex, momentum, mass, colourindex) 
 * gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 CFunctions gprop,fprop,phprop,prop;
-
 * for contractions of indices c's and d's
 CFunction cdelta, ddelta;
 
@@ -50,7 +54,6 @@ Skip; NSkip `Amp';
      $jmax = `j';
   endif;
 #enddo
-
 #$cmax = 0;
 #do c = 1,40
 * naively assume 40 or less colour indices
@@ -61,7 +64,6 @@ Skip; NSkip `Amp';
      $cmax = 'c';
   endif;
 #enddo
-
 #$dmax = 0;
 #do d = 1,20;
 * naively assume 20 or less generators(for su(3), N = 8)
@@ -89,7 +91,7 @@ id  i_ = -i_;
 Multiply replace_(<i1,i{`$imax'+1}>,...,<i`$imax',i{2*`$imax'}>);
 Multiply replace_(<j1,j{`$jmax'+1}>,...,<j`$jmax',j{2*`$jmax'}>);
 
-* Exchange rows and columns, i.e. transpose
+* Exchange rows and columns, i.e. takeing the transposes.
 id g(i1?,i2?,j?)      = g(i2,i1,j);
 id T(c1?,c2?,d?)      = T(c2,c1,d);
 id fprop(i1?,i2?,?a)  = fprop(i2,i1,?a);
@@ -103,29 +105,27 @@ Multiply replace_(UB,U,U,UB,VB,V,V,VB);
 Multiply replace_(k6,k7,k7,k6);
 id g(?a,k5) = -g(?a,k5);
 .sort
-* the end of the conjugation
+* The end of the conjugations.
 
 * Now multiply Amp and AmpC to get the matrix element squared.
 Skip;
 * Drop(for efficiency): ... eliminates all expressions from the system
-* We won't use (manipulate) Amp,AmpC anymore.
+* we won't use (manipulate) Amp,AmpC anymore.
 Drop,`Amp',`Amp'C;
 
 Local `Mat' = `Amp'*`Amp'C;
 
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
-* (A.22)
+* (A.22) of Peskin & Schroeder
 id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * cdelta(c1,c2);
 id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2);
 * for external photons (A.26)
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
 
-*   Propagators
+* Propagators
 id fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
-* id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
 id phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
 id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
-* id gprop(j1?,j2,q?,d1?,d2?) = phprop(j1,j2,q) * d_(d1,d2);
 
 *   String the gamma matrices together in traces.
 repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
@@ -143,16 +143,17 @@ Skip; NSkip `Mat';
 #enddo
 .sort
 
-*   Finally take the traces
+* Finally take the traces, naively assuming less than 10 fermions.
 #do i = 1,10
   Trace4,`i';
 #enddo
 
 * qcd trace by hand
+* eq.(3.25) of QCD practice
 repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) = 1/2 * (cdelta(c1,c4)*cdelta(c2,c3) - 1/N * cdelta(c1,c2)*cdelta(c3,c4));
-id cdelta(c1?,c2?)*cdelta(c2?,c3?) = cdelta(c1,c3);
-id cdelta(c1?,c2?)*cdelta(c2?,c1?) = N;
-id ddelta(d1?,d2?) = N^2-1;
+repeat id cdelta(c1?,c2?)*cdelta(c2?,c3?) = cdelta(c1,c3);
+repeat id ddelta(d1?,d2?)*ddelta(d2?,d3?) = ddelta(d1,d3);
+id ddelta(d1?,d1?) = N^2-1;
 id cdelta(c1?,c1?) = N; 
 .sort
 
