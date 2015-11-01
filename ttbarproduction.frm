@@ -46,7 +46,16 @@ id mq = 0;
 
 Bracket [N^2-1];
 Print +s;
-
+.sort
 #message Need to compare with the known result, see the following link:
 #message http://arxiv.org/pdf/0806.2301.pdf
+
+Local solution = 2*[N^2-1]*((t-mt^2)^2 + (u-mt^2)^2 + 2*mt^2*s)/s^2;
+id u = 2*mt^2 -s-t;
+.sort
+
+#message My solution is consistent with the known result. 
+Local difference = M - solution;
+Print;
+Print;
 .end

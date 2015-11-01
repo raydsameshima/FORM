@@ -1,4 +1,4 @@
-FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 27 17:56:22 2015
+FORM 4.1 (May 11 2015) 64-bits                   Run: Sun Nov  1 15:56:50 2015
     * ttbarproduction.frm
     * Ray D. Sameshima
     * 
@@ -270,7 +270,7 @@ Time =       0.01 sec    Generated terms =          8
           );
 
 
-Time =       0.02 sec    Generated terms =         25
+Time =       0.01 sec    Generated terms =         25
                M         Terms in output =          5
                          Bytes used      =        380
 
@@ -286,7 +286,7 @@ Time =       0.02 sec    Generated terms =         25
 
     .sort
 
-Time =       0.02 sec    Generated terms =          5
+Time =       0.01 sec    Generated terms =          5
                M         Terms in output =          5
                          Bytes used      =        408
     
@@ -306,14 +306,9 @@ Time =       0.02 sec    Generated terms =          5
     
     Bracket [N^2-1];
     Print +s;
-    
-    #message Need to compare with the known result, see the following link:
-~~~Need to compare with the known result, see the following link:
-    #message http://arxiv.org/pdf/0806.2301.pdf
-~~~http://arxiv.org/pdf/0806.2301.pdf
-    .end
+    .sort
 
-Time =       0.02 sec    Generated terms =         18
+Time =       0.01 sec    Generated terms =         18
                M         Terms in output =          5
                          Bytes used      =        212
 
@@ -327,4 +322,50 @@ Time =       0.02 sec    Generated terms =         18
           + 4*mt^4*s^-2
           );
 
-  0.02 sec out of 0.04 sec
+    #message Need to compare with the known result, see the following link:
+~~~Need to compare with the known result, see the following link:
+    #message http://arxiv.org/pdf/0806.2301.pdf
+~~~http://arxiv.org/pdf/0806.2301.pdf
+    
+    Local solution = 2*[N^2-1]*((t-mt^2)^2 + (u-mt^2)^2 + 2*mt^2*s)/s^2;
+    id u = 2*mt^2 -s-t;
+    .sort
+
+Time =       0.01 sec    Generated terms =          5
+               M         Terms in output =          5
+                         Bytes used      =        220
+
+Time =       0.01 sec    Generated terms =         14
+        solution         Terms in output =          5
+                         Bytes used      =        220
+    
+    #message My solution is consistent with the known result. 
+~~~My solution is consistent with the known result. 
+    Local difference = M - solution;
+    Print;
+    Print;
+    .end
+
+Time =       0.01 sec    Generated terms =          5
+               M         Terms in output =          5
+                         Bytes used      =        220
+
+Time =       0.01 sec    Generated terms =          5
+        solution         Terms in output =          5
+                         Bytes used      =        220
+
+Time =       0.01 sec    Generated terms =         10
+      difference         Terms in output =          0
+                         Bytes used      =          4
+
+   M =
+      4*[N^2-1]*s^-2*t^2 + 4*[N^2-1]*s^-1*t + 2*[N^2-1] - 8*[N^2-1]*mt^2*s^-2*
+      t + 4*[N^2-1]*mt^4*s^-2;
+
+   solution =
+      4*[N^2-1]*s^-2*t^2 + 4*[N^2-1]*s^-1*t + 2*[N^2-1] - 8*[N^2-1]*mt^2*s^-2*
+      t + 4*[N^2-1]*mt^4*s^-2;
+
+   difference = 0;
+
+  0.01 sec out of 0.01 sec
