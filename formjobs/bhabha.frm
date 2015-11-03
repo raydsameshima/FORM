@@ -1,20 +1,22 @@
 #-
-*
+* bhabha.frm
 *	The matrix element for the reaction e-e+ -> e-e+ in QED
 *	Note the - sign between the diagrams.
 *
 #include amplitude.h
-*
-L	Amp = VB(i1,pp,me)*g(i1,i2,j1)*U(i2,pe,me)
-		 *phprop(j1,j2,q)
-		 *UB(i3,pmm,me)*g(i3,i4,j2)*V(i4,pmp,me)
-		- UB(i1,pmm,me)*g(i1,i2,j1)*U(i2,pe,me)
-		 *phprop(j1,j2,qq)
-		 *VB(i3,pp,me)*g(i3,i4,j2)*V(i4,pmp,me)
-		;
+
+Local	Amp = VB(i1,pp,me)*g(i1,i2,j1)*U(i2,pe,me)
+		        *phprop(j1,j2,q)
+		        *UB(i3,pmm,me)*g(i3,i4,j2)*V(i4,pmp,me)
+		        - UB(i1,pmm,me)*g(i1,i2,j1)*U(i2,pe,me)
+		        *phprop(j1,j2,qq)
+		        *VB(i3,pp,me)*g(i3,i4,j2)*V(i4,pmp,me)
+		        ;
+
 #call squareamplitude(Amp,M)
 .sort
-S	s,t,u;
+
+Symbols	s,t,u;
 id	prop(q.q) = 1/s;
 id	prop(qq.qq) = 1/t;
 id	pe.pp = s/2-me^2;

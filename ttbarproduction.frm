@@ -57,5 +57,4 @@ id u = 2*mt^2 -s-t;
 #message My solution is consistent with the known result. 
 Local difference = M - solution;
 Print;
-Print;
 .end

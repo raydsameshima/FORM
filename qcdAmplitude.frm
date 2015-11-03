@@ -4,8 +4,7 @@
 * Peskin & Schroeder notation, see Appendix A.
 * http://www.nikhef.nl/~t68/course/short.pdf
 
-Symbol N;
-Symbols [N^2-1];
+Symbol N, [N^2-1];
 
 * i's are spinor indices, j's are Lorentz indices
 * c's are colour indices, d's are the label for su(N) generators
