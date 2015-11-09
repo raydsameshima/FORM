@@ -16,9 +16,9 @@
 Off statistics;
 #include amplitude.frm
 
-Local	Amp = VB(i1,p2,me)*g(i1,i2,j1)*U(i2,p1,me)*
+Local	Amp = VB(i1,p2,me)*(-i_*g(i1,i2,j1))*U(i2,p1,me)*
 		        phprop(j1,j2,q)*
-		        UB(i3,k1,mmu)*g(i3,i4,j2)*V(i4,k2,mmu);
+		        UB(i3,k1,mmu)*(-i_*g(i3,i4,j2))*V(i4,k2,mmu);
 
 #call squareamplitude(Amp,M)
 .sort

@@ -84,9 +84,9 @@ id V(i1?,p?,m?)*VB(i2?,p?,m?) = g(i1,i2,p) - g(i1,i2)*m;
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
 
 *   Propagators
-id  fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
+id  fprop(i1?,i2?,p?,m?) = (g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
 * This should be eta(j1,j2) but the lorentz indices are only used for contraction of gamma matrices, and that's ok. 
-id  phprop(j1?,j2?,q?) = d_(j1,j2)*prop(q.q);
+id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
 
 * String the gamma matrices together in traces.
 repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);

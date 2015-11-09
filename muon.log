@@ -1,4 +1,4 @@
-FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 27 11:13:39 2015
+FORM 4.1 (May 11 2015) 64-bits                   Run: Mon Nov  9 11:39:44 2015
     * muon.frm
     * http://www.nikhef.nl/~t68/course/short.pdf
     *
@@ -102,35 +102,36 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 27 11:13:39 2015
     id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
     
     *   Propagators
-    id  fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
-    * id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
+    id  fprop(i1?,i2?,p?,m?) = (g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
+    * This should be eta(j1,j2) but the lorentz indices are only used for contractio
+    n of gamma matrices, and that's ok. 
     id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
     
-    *   String the gamma matrices together in traces.
+    * String the gamma matrices together in traces.
     repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
     .sort
     
     Skip; NSkip `Mat';
     
-    *   Now put the traces one by one in terms of the built in gammas
+    * Now put the traces one by one in terms of the built in gammas
     #do i = 1,10
       id,once,g(i1?,i1?,?a) = g_(`i',?a);
     * g7_ = 1-g5_, g6_ = 1+g5_
-      id  g_(`i',k7) = g7_(`i');
-      id  g_(`i',k6) = g6_(`i');
-      id  g_(`i',k5) = g5_(`i');
+      id g_(`i',k7) = g7_(`i');
+      id g_(`i',k6) = g6_(`i');
+      id g_(`i',k5) = g5_(`i');
     #enddo
     .sort
     
-    *   Finally take the traces
+    * Finally take the traces
     #do i = 1,10
       Trace4,`i';
     #enddo
     #endprocedure
     
-    Local	Amp = VB(i1,p2,me)*g(i1,i2,j1)*U(i2,p1,me)*
+    Local	Amp = VB(i1,p2,me)*(-i_*g(i1,i2,j1))*U(i2,p1,me)*
     		        phprop(j1,j2,q)*
-    		        UB(i3,k1,mmu)*g(i3,i4,j2)*V(i4,k2,mmu);
+    		        UB(i3,k1,mmu)*(-i_*g(i3,i4,j2))*V(i4,k2,mmu);
     
     #call squareamplitude(Amp,M)
 ~~~highest i is i4, highest j is j2
@@ -191,4 +192,4 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 27 11:13:39 2015
        + 4*me^4*s^-2
       ;
 
-  0.00 sec out of 0.01 sec
+  0.00 sec out of 0.00 sec
