@@ -83,28 +83,28 @@ id V(i1?,p?,m?)*VB(i2?,p?,m?) = g(i1,i2,p) - g(i1,i2)*m;
 * for external photons (A.26)
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
 
-*   Propagators
-id  fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
-* id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
-id  phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
+* Propagators
+id fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
+* id  phprop(j1?,j2?,q?) = -i_*d_(j1,j2)*prop(q.q);
+id phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
 
-*   String the gamma matrices together in traces.
+* String the gamma matrices together in traces.
 repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
 .sort
 
 Skip; NSkip `Mat';
 
-*   Now put the traces one by one in terms of the built in gammas
+* Now put the traces one by one in terms of the built in gammas
 #do i = 1,10
   id,once,g(i1?,i1?,?a) = g_(`i',?a);
 * g7_ = 1-g5_, g6_ = 1+g5_
-  id  g_(`i',k7) = g7_(`i');
-  id  g_(`i',k6) = g6_(`i');
-  id  g_(`i',k5) = g5_(`i');
+  id g_(`i',k7) = g7_(`i');
+  id g_(`i',k6) = g6_(`i');
+  id g_(`i',k5) = g5_(`i');
 #enddo
 .sort
 
-*   Finally take the traces
+* Finally take the traces
 #do i = 1,10
   Trace4,`i';
 #enddo
