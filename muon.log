@@ -1,4 +1,4 @@
-FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 20 10:23:08 2015
+FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 27 11:13:39 2015
     * muon.frm
     * http://www.nikhef.nl/~t68/course/short.pdf
     *
@@ -14,7 +14,7 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 20 10:23:08 2015
     *  / e^+(p2)       \ mu^+(k2)
     *
     * #include amplitude.h
-    
+    Off statistics;
     #include amplitude.frm
     * amplitude.frm
     * Peskin & Schroeder notation, see Appendix A.
@@ -133,32 +133,8 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Oct 20 10:23:08 2015
     		        UB(i3,k1,mmu)*g(i3,i4,j2)*V(i4,k2,mmu);
     
     #call squareamplitude(Amp,M)
-
-Time =       0.00 sec    Generated terms =          1
-             Amp         Terms in output =          1
-                         Bytes used      =        272
-
-Time =       0.00 sec    Generated terms =          1
-             Amp         Terms in output =          1
-                         Bytes used      =        272
 ~~~highest i is i4, highest j is j2
-
-Time =       0.00 sec    Generated terms =          1
-            AmpC         Terms in output =          1
-                         Bytes used      =        272
-
-Time =       0.00 sec    Generated terms =         16
-               M         Terms in output =         16
-                         Bytes used      =       3404
-
-Time =       0.00 sec    Generated terms =         16
-               M         Terms in output =         16
-                         Bytes used      =       2844
     .sort
-
-Time =       0.00 sec    Generated terms =          8
-               M         Terms in output =          5
-                         Bytes used      =        352
     
     Symbols	s,t,u;
     
@@ -172,11 +148,7 @@ Time =       0.00 sec    Generated terms =          8
     id	u = 2*me^2+2*mmu^2-s-t;
     
     Print +s;
-    .end
-
-Time =       0.00 sec    Generated terms =         44
-               M         Terms in output =          8
-                         Bytes used      =        304
+    .sort
 
    M =
        + 8
@@ -189,4 +161,34 @@ Time =       0.00 sec    Generated terms =         44
        + 16*me^4*s^-2
       ;
 
-  0.01 sec out of 0.01 sec
+    #message Compared with the solution from "Pedestrians"
+~~~Compared with the solution from "Pedestrians"
+    Local solution = 8*((t^2+u^2 + 4*s*(me^2+mmu^2) -2*(me^2+mmu^2)^2)/s^2); 
+    id	u = 2*me^2+2*mmu^2-s-t;
+    .sort
+    
+    Local difference = M- solution;
+    #message Both solutions match!!!
+~~~Both solutions match!!!
+    Print difference;
+    .sort
+
+   difference = 0;
+
+    
+    Local spinAveragedM = 1/4 * M;
+    Print +s spinAveragedM;
+    .end
+
+   spinAveragedM =
+       + 2
+       + 4*s^-2*t^2
+       + 4*s^-1*t
+       - 8*mmu^2*s^-2*t
+       + 4*mmu^4*s^-2
+       - 8*me^2*s^-2*t
+       + 8*me^2*mmu^2*s^-2
+       + 4*me^4*s^-2
+      ;
+
+  0.00 sec out of 0.01 sec

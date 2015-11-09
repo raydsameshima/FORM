@@ -1,6 +1,7 @@
-* qcdAmplitude.frm
+* standardAmplitude.frm
 * Ray D. Sameshima
-* rewrite amplitude.frm for qcd (su(N=3) gauge theory)
+* rewrite amplitude.frm and qcdAmplitude.frm 
+*
 * Peskin & Schroeder notation, see Appendix A.
 * http://www.nikhef.nl/~t68/course/short.pdf
 
@@ -16,9 +17,9 @@ AutoDeclare Symbols m;
 AutoDeclare Vectors p,k;
 * momentum transfer (dummy)
 Vectors q;
-* spinors, gamma matrices(g), polarization vector for photons(e), 
-* and Gell-Mann matrices(T)
-CFunctions  UB,U,VB,V, g, e, T;
+* spinors, gamma matrices(g), polarization vector for W, 
+* and Gell-Mann matrices(T), polarization for photon
+CFunctions  UB,U,VB,V, g, eW, T,e;
 * U(i2,p1,m,c) =  U(spinorindex, momentum, mass, colourindex) 
 * gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 CFunctions gprop,fprop,phprop,prop;
@@ -50,6 +51,7 @@ Skip; NSkip `Amp';
      || match(phprop(j?,j`j',?a)) 
      || match(gprop(j'j',?a))
      || match(gprop(j?,j'j',?a))
+     || match(eW(j?,?a))
      );
      $jmax = `j';
   endif;
