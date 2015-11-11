@@ -11,15 +11,17 @@ Symbol N, [N^2-1];
 * c's are colour indices, d's are the label for su(N) generators
 * So, the generator for su(N) has indices like T(c1,c2,d1).
 AutoDeclare Indices i,j,c,d;
+*for gamma matrices
+AutoDeclare Index k;
 * masses
 AutoDeclare Symbols m;
 * momemtums
-AutoDeclare Vectors p,k;
+AutoDeclare Vectors p;
 * momentum transfer (dummy)
-Vectors q;
-* spinors, gamma matrices(g), polarization vector for W, 
+AutoDeclare Vectors q;
+* spinors, gamma matrices(g), 
 * and Gell-Mann matrices(T), polarization for photon
-CFunctions  UB,U,VB,V, g, eW, T,e;
+CFunctions  UB,U,VB,V, g,T,e;
 * U(i2,p1,m,c) =  U(spinorindex, momentum, mass, colourindex) 
 * gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 CFunctions gprop,fprop,phprop,prop;
@@ -46,12 +48,13 @@ Skip; NSkip `Amp';
 #enddo
 #$jmax = 0;
 #do j = 1,20
+*#do j = 1,20
 * naively assume 20 or less Lorentz indices
   if (  match(g(?a,j`j')) || match(phprop(j`j',?a)) 
      || match(phprop(j?,j`j',?a)) 
      || match(gprop(j'j',?a))
      || match(gprop(j?,j'j',?a))
-     || match(eW(j?,?a))
+     || match(e(j?,?a))
      );
      $jmax = `j';
   endif;
@@ -171,15 +174,15 @@ repeat id ddelta(d1?,d2?)*ddelta(d3?,d2?) = ddelta(d1,d3);
 id cdelta(c1?,c1?) = N; 
 
 * Bracket T,N, ddelta,cdelta;
-* Print;
-* .sort
-** .end
+Print;
+.sort
+* .end
 id ddelta(d1?,d1?) = N^2-1;
 
 id N^2 = [N^2-1] + 1;
 
 Bracket [N^2-1];
-Print +s;
+* Print +s;
 * Print[];
 .sort
 * .end
