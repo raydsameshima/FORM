@@ -35,7 +35,7 @@ argument;
   id mq = 0;
 endargument;
 
-* id q1 = p5 - p2;
+id p5 = p1 + p2;
 *argument;
 *  id q1 = p5 - p2;
 *endargument;
