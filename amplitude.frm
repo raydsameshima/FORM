@@ -8,7 +8,7 @@ AutoDeclare Indices i,j;
 * masses, e.g. me(mass of electrons),mmu(mass of muons) 
 AutoDeclare Symbols m;
 AutoDeclare Vectors p,k;
-Vectors q;
+AutoDeclare Vectors q;
 * Vectors q,pe,pp,pa,pb,p1,...,p10;
 * spinors, gamma matrices, and polarization
 CFunctions  UB,U,VB,V,g,e;

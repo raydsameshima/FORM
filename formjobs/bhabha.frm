@@ -8,7 +8,8 @@
 Local	Amp = VB(i1,pp,me)*g(i1,i2,j1)*U(i2,pe,me)
 		        *phprop(j1,j2,q)
 		        *UB(i3,pmm,me)*g(i3,i4,j2)*V(i4,pmp,me)
-		        - UB(i1,pmm,me)*g(i1,i2,j1)*U(i2,pe,me)
+		        - 
+            UB(i1,pmm,me)*g(i1,i2,j1)*U(i2,pe,me)
 		        *phprop(j1,j2,qq)
 		        *VB(i3,pp,me)*g(i3,i4,j2)*V(i4,pmp,me)
 		        ;
