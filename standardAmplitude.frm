@@ -33,29 +33,29 @@ CFunction cdelta, ddelta;
 
 * We skip everything but Amp, i.e. only operate on Amp.
 * In Amp we look for the highest i(spinor) and j(Lorentz) indices
-Skip; NSkip `Amp';
+Skip; NSkip 'Amp';
 
 #$imax = 0;
 #do i = 1,40
 * naively assume 40 or less spinor indices
-  if (  match(VB(i'i',?a)) || match(V(i`i',?a))
-     || match(UB(i`i',?a)) || match(U(i`i',?a))
-     || match(g(i`i',?a)) || match(g(i?,i`i',?a))
-     || match(fprop(i`i',?a)) || match(fprop(i?,i`i',?a)) 
+  if (  match(VB(i'i',?a)) || match(V(i'i',?a))
+     || match(UB(i'i',?a)) || match(U(i'i',?a))
+     || match(g(i'i',?a)) || match(g(i?,i'i',?a))
+     || match(fprop(i'i',?a)) || match(fprop(i?,i'i',?a)) 
      );
-     $imax = `i';
+     $imax = 'i';
   endif;
 #enddo
 #$jmax = 0;
 #do j = 1,20
 * naively assume 20 or less Lorentz indices
-  if (  match(g(?a,j'j')) || match(phprop(j`j',?a)) 
-     || match(phprop(j?,j`j',?a)) 
+  if (  match(g(?a,j'j')) || match(phprop(j'j',?a)) 
+     || match(phprop(j?,j'j',?a)) 
      || match(gprop(j'j',?a))
      || match(gprop(j?,j'j',?a))
      || match(e(j'j',?a))
      );
-     $jmax = `j';
+     $jmax = 'j';
   endif;
 #enddo
 #$cmax = 0;
@@ -82,8 +82,8 @@ Skip; NSkip `Amp';
 .sort
 
 * Just for a check we print the highest i and j indices
-#message highest i is i`$imax', highest j is j`$jmax';
-#message highest c is c`$cmax', highest d is d`$dmax';
+#message highest i is i'$imax', highest j is j'$jmax';
+#message highest c is c'$cmax', highest d is d'$dmax';
 
 * for debugging
 *Print +s;
@@ -91,15 +91,15 @@ Skip; NSkip `Amp';
 
 * Now construct the conjugate
 Skip;
-Local `Amp'C = `Amp';
+Local 'Amp'C = 'Amp';
 id  i_ = -i_;
 
 * Make a new set of dummy indices above $imax and $jmax.
 * I haven't seen <> notation, but this should clarify the pair of replacement.
-Multiply replace_(<i1,i{`$imax'+1}>,...,<i`$imax',i{2*`$imax'}>);
-Multiply replace_(<j1,j{`$jmax'+1}>,...,<j`$jmax',j{2*`$jmax'}>);
-Multiply replace_(<c1,c{`$cmax'+1}>,...,<c`$cmax',c{2*`$cmax'}>);
-Multiply replace_(<d1,d{`$dmax'+1}>,...,<d`$dmax',d{2*`$dmax'}>);
+Multiply replace_(<i1,i{'$imax'+1}>,...,<i'$imax',i{2*'$imax'}>);
+Multiply replace_(<j1,j{'$jmax'+1}>,...,<j'$jmax',j{2*'$jmax'}>);
+Multiply replace_(<c1,c{'$cmax'+1}>,...,<c'$cmax',c{2*'$cmax'}>);
+Multiply replace_(<d1,d{'$dmax'+1}>,...,<d'$dmax',d{2*'$dmax'}>);
 
 * Exchange rows and columns, i.e. takeing the transposes.
 id g(i1?,i2?,j?)      = g(i2,i1,j);
@@ -121,9 +121,9 @@ id g(?a,k5) = -g(?a,k5);
 Skip;
 * Drop(for efficiency): ... eliminates all expressions from the system
 * we won't use (manipulate) Amp,AmpC anymore.
-Drop,`Amp',`Amp'C;
+Drop,'Amp','Amp'C;
 
-Local `Mat' = `Amp'*`Amp'C;
+Local 'Mat' = 'Amp'*'Amp'C;
 
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
 * (A.22) of Peskin & Schroeder
@@ -145,22 +145,21 @@ repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
 * Print +s;
 * .end
 
-
-Skip; NSkip `Mat';
+Skip; NSkip 'Mat';
 
 *   Now put the traces one by one in terms of the built in gammas
 #do i = 1,10
-  id, once, g(i1?,i1?,?a) = g_(`i',?a);
+  id, once, g(i1?,i1?,?a) = g_('i',?a);
 * g7_ = 1-g5_, g6_ = 1+g5_
-  id  g_(`i',k7) = g7_(`i');
-  id  g_(`i',k6) = g6_(`i');
-  id  g_(`i',k5) = g5_(`i');
+  id  g_('i',k7) = g7_('i');
+  id  g_('i',k6) = g6_('i');
+  id  g_('i',k5) = g5_('i');
 #enddo
 .sort
 
 * Finally take the traces, naively assuming less than 10 fermions.
 #do i = 1,10
-  Trace4,`i';
+  Trace4,'i';
 #enddo
 
 Bracket T;
@@ -171,7 +170,7 @@ Print +s;
 
 * qcd trace by hand
 * eq.(3.25) of QCD practice
-* ddelta
+* We didn't assume the symmetric property on ddelta.
 id T(c1?, c2?, d1?)* ddelta(d1?,d2?) = T(c1,c2,d2);
 id T(c1?, c2?, d1?)* ddelta(d2?,d1?) = T(c1,c2,d2);
 repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) = 1/2 * (cdelta(c1,c4)*cdelta(c2,c3) - 1/N * cdelta(c1,c2)*cdelta(c3,c4));
