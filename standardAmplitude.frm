@@ -48,13 +48,12 @@ Skip; NSkip `Amp';
 #enddo
 #$jmax = 0;
 #do j = 1,20
-*#do j = 1,20
 * naively assume 20 or less Lorentz indices
-  if (  match(g(?a,j`j')) || match(phprop(j`j',?a)) 
+  if (  match(g(?a,j'j')) || match(phprop(j`j',?a)) 
      || match(phprop(j?,j`j',?a)) 
      || match(gprop(j'j',?a))
      || match(gprop(j?,j'j',?a))
-     || match(e(j?,?a))
+     || match(e(j'j',?a))
      );
      $jmax = `j';
   endif;
@@ -87,8 +86,8 @@ Skip; NSkip `Amp';
 #message highest c is c`$cmax', highest d is d`$dmax';
 
 * for debugging
-Print +s;
-.end
+*Print +s;
+*.end
 
 * Now construct the conjugate
 Skip;
