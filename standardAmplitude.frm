@@ -83,6 +83,10 @@ Skip; NSkip `Amp';
 #message highest i is i`$imax', highest j is j`$jmax';
 #message highest c is c`$cmax', highest d is d`$dmax';
 
+* for debugging
+Print +s;
+.end
+
 * Now construct the conjugate
 Skip;
 Local `Amp'C = `Amp';
@@ -134,6 +138,11 @@ id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 *   String the gamma matrices together in traces.
 repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
 .sort
+
+* for debugging
+* Print +s;
+* .end
+
 
 Skip; NSkip `Mat';
 
