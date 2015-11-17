@@ -86,8 +86,8 @@ Skip; NSkip 'Amp';
 #message highest c is c'$cmax', highest d is d'$dmax';
 
 * for debugging
-*Print +s;
-*.end
+* Print +s;
+* .end
 
 * Now construct the conjugate
 Skip;
@@ -117,6 +117,11 @@ id g(?a,k5) = -g(?a,k5);
 .sort
 * The end of the conjugations.
 
+* for debugging
+Print +s;
+* .end
+.sort
+
 * Now multiply Amp and AmpC to get the matrix element squared.
 Skip;
 * Drop(for efficiency): ... eliminates all expressions from the system
@@ -125,12 +130,22 @@ Drop,'Amp','Amp'C;
 
 Local 'Mat' = 'Amp'*'Amp'C;
 
+* for debugging
+Print +s;
+.sort
+* .end
+
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
 * (A.22) of Peskin & Schroeder
 id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * cdelta(c1,c2);
 id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2);
 * for external photons (A.26)
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2);
+
+* for debugging
+Print +s;
+* .end
+.sort
 
 * Propagators
 id fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
@@ -142,10 +157,12 @@ repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
 .sort
 
 * for debugging
-* Print +s;
-* .end
+Print +s;
+.sort
 
 Skip; NSkip 'Mat';
+
+* How can I treat "non-diagonal" g's?
 
 *   Now put the traces one by one in terms of the built in gammas
 #do i = 1,10
@@ -156,6 +173,11 @@ Skip; NSkip 'Mat';
   id  g_('i',k5) = g5_('i');
 #enddo
 .sort
+
+* for debugging
+Print +s;
+.sort
+* .end
 
 * Finally take the traces, naively assuming less than 10 fermions.
 #do i = 1,10
@@ -178,6 +200,7 @@ repeat id cdelta(c1?,c2?)*cdelta(c2?,c3?) = cdelta(c1,c3);
 repeat id cdelta(c1?,c2?)*cdelta(c3?,c2?) = cdelta(c1,c3);
 repeat id ddelta(d1?,d2?)*ddelta(d2?,d3?) = ddelta(d1,d3);
 repeat id ddelta(d1?,d2?)*ddelta(d3?,d2?) = ddelta(d1,d3);
+
 id cdelta(c1?,c1?) = N; 
 
 * Bracket T,N, ddelta,cdelta;

@@ -25,12 +25,12 @@ Local Amp =
             fprop(i3,i4,q1,mq)* (g(i4,i5,j2)*T(c1,c2,d1)) *U(i5,p2,mq,c2)*
             gprop(j2,j3,q2,d1,d2)*
             UB(i6,p3,mt,c3)*g(i6,i7,j3)*T(c3,c4,d2)*V(i7,p4,mt,c4)
-            ;
-*            +
-*            VB(i1,p2,mq,c1)* (g(i1,i2,j1)*T(c1,c2,d1)) * fprop(i2,i3,q3,mq) *
-*            (i_/sqrt_(2) * (g(i3,i4,j2) *e(j2,p5)) * (1/2)*g(i4,i5,k7)) * U(i5, p1, mq, c2)*
-*            gprop(j1,j3,q4,d1,d2)*
-*            UB(i6,p3,mt,c3)*g(i6,i7,j3)*T(c3,c4,d2)*V(i7,p4,mt,c4);
+*            ;
+            +
+            VB(i1,p2,mq,c1)* (g(i1,i2,j1)*T(c1,c2,d1)) * fprop(i2,i3,q3,mq) *
+            (i_/sqrt_(2) * (g(i3,i4,j2) *e(j2,p5)) * (1/2)*g(i4,i5,k7)) * U(i5, p1, mq, c2)*
+            gprop(j1,j3,q4,d1,d2)*
+            UB(i6,p3,mt,c3)*g(i6,i7,j3)*T(c3,c4,d2)*V(i7,p4,mt,c4);
 
 #call squareamplitude(Amp,M)
 .sort
@@ -49,7 +49,6 @@ argument;
   id q3 = p1 - p5;
   id q4 = p3 + p4;
 endargument;
-
 
 id p1.p1 = mq^2;
 id p2.p2 = mq^2;
@@ -72,14 +71,12 @@ argument;
   id p4.p4 = mt^2;
 endargument;
 
-
 id mq = 0;
 * inside propagator
 argument;
   id mq = 0;
 endargument;
 
-Bracket [N^2-1];
-* Bracket [N^2-1],prop(q1.q1) prop(q2.q2);
+Bracket [N^2-1], N,g;
 Print +s;
 .end
