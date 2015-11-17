@@ -141,6 +141,7 @@ id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * cdelta(c1,c2
 id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2);
 * for external photons (A.26)
 * need to replace massive W boson, check the sign
+* see http://www.hep.lu.se/atlas/thesis/egede/thesis-node15.html
 * id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) - p(j1)* p(j2)/(mw^2);
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + p(j1)* p(j2)/(mw^2);
 
@@ -183,8 +184,7 @@ Print +s;
 
 * Finally take the traces, naively assuming less than 10 fermions.
 #do i = 1,10
-*   Tracen,'i';
-    Trace4,'i';
+  Trace4,'i';
 #enddo
 
 Bracket T;
