@@ -22,7 +22,7 @@
 * The index k7 of g(i2,i3,k7) is for 7th gamma matrix given by (1-g5).
 Local Amp = 
             VB(i1,p2,mq,c1)*(i_/sqrt_(2) *(g(i1,i2,j1) *e(j1,p5)) *(1/2)*g(i2,i3,k7))*
-            fprop(i3,i4,q1,mq)* (g(i4,i5,j2)*T(c1,c2,d1)) *U(i5,p2,mq,c2)*
+            fprop(i3,i4,q1,mq)* (g(i4,i5,j2)*T(c1,c2,d1)) *U(i5,p1,mq,c2)*
             gprop(j2,j3,q2,d1,d2)*
             UB(i6,p3,mt,c3)*g(i6,i7,j3)*T(c3,c4,d2)*V(i7,p4,mt,c4)
 *            ;
@@ -78,5 +78,14 @@ argument;
 endargument;
 
 Bracket [N^2-1], N,g;
+Print +s;
+.sort
+
+id p5 = p1+p2 - p3-p4;
+argument;
+  id p5 = p1+p2 - p3-p4;
+endargument;
+
+Bracket [N^2-1], prop, mw;
 Print +s;
 .end
