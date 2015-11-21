@@ -50,31 +50,25 @@ argument;
   id q4 = p3 + p4;
 endargument;
 
-id p1.p1 = mq^2;
-id p2.p2 = mq^2;
-argument;
-  id p1.p1 = mq^2;
-  id p2.p2 = mq^2;
-endargument;
+* id p1.p1 = mq^2;
+* id p2.p2 = mq^2;
+* argument;
+*   id p1.p1 = mq^2;
+*   id p2.p2 = mq^2;
+* endargument;
 
-argument;
-  argument;
-    id p1.p1 = mq^2;
-    id p2.p2 = mq^2;
-  endargument;
-endargument;
+* argument;
+*   argument;
+*     id p1.p1 = mq^2;
+*     id p2.p2 = mq^2;
+*   endargument;
+* endargument;
 
 id p3.p3 = mt^2;
 id p4.p4 = mt^2;
 argument;
   id p3.p3 = mt^2;
   id p4.p4 = mt^2;
-endargument;
-
-id mq = 0;
-* inside propagator
-argument;
-  id mq = 0;
 endargument;
 
 Bracket [N^2-1], N,g;
@@ -84,6 +78,21 @@ Print +s;
 id p5 = p1+p2 - p3-p4;
 argument;
   id p5 = p1+p2 - p3-p4;
+endargument;
+
+id p1.p1 = mq^2;
+id p2.p2 = mq^2;
+id p3.p3 = mw^2;
+argument;
+  id p1.p1 = mq^2;
+  id p2.p2 = mq^2;
+  id p3.p3 = mw^2;
+endargument;
+
+id mq = 0;
+* inside propagator
+argument;
+  id mq = 0;
 endargument;
 
 Bracket [N^2-1], prop, mw;
