@@ -1,7 +1,7 @@
 * consistency.frm
 
-* #include Wproduction.frm
-* #include qqttWtreelevel.frm
+* This file for rewriting the results toward the form which Maxima can handle.
+
 
 ******** declarations ********
 CFunction prop;
@@ -338,21 +338,22 @@ Local [qqttWtreelevel] =
           - 4*a^2
           );
 
-<<<<<<< HEAD
-
-=======
 * for my normalization
 id Pi = 1;
 id aem = 1;
 id Nc^-1 = 1;
 id sw^-1 = 1;
+.sort
+
+Function eta;
 
 * He used metric (-+++)
-id p1dp4 = -p1.p4;
-id p2dp3 = -p2.p3; 
-id p3dp4 = -p3.p4; 
-id p1dp3 = -p1.p3; 
-id p2dp4 = -p2.p4;
+id p1dp4 = -eta(p1,p4);
+id p2dp3 = -eta(p2,p3); 
+id p3dp4 = -eta(p3,p4); 
+id p1dp3 = -eta(p1,p3); 
+id p2dp4 = -eta(p2,p4);
+
 id a = -mt^2;
 id MW = mw;
 id MW^-1 = mw^-1;
@@ -362,7 +363,6 @@ id [Nc^2-1] = [N^2-1];
 Bracket prop, [N^2-1];
 * Bracket prop(2*mt^2 + 2*p3.p4) [];
 print +s;
-
 .sort
 
 * for my prop
@@ -378,6 +378,11 @@ Bracket prop, [N^2-1];
 print +s;
 * .end
 .sort
+
+*for debugging
+* Bracket eta, prop, [N^2-1];
+* print +s;
+* .end
 
 * my result
 Local M =
@@ -553,6 +558,15 @@ Local M =
           - 8*p2.p4*p1.p3
           - 8*p2.p4*p1.p4
           );
+
+id p1?.p2? = eta(p1,p2);
+argument;
+  id p1?.p2? = eta(p1,p2);
+endargument;
+*for debugging
+* Bracket eta, prop, [N^2-1];
+* print +s;
+* .end
 
 Bracket prop, [N^2-1];
 Print +s;
