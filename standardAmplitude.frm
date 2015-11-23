@@ -31,6 +31,8 @@ CFunction cdelta, ddelta;
 #procedure squareamplitude(Amp,Mat)
 .sort
 
+* Off statistics;
+
 * We skip everything but Amp, i.e. only operate on Amp.
 * In Amp we look for the highest i(spinor) and j(Lorentz) indices
 Skip; NSkip 'Amp';
@@ -118,9 +120,9 @@ id g(?a,k5) = -g(?a,k5);
 * The end of the conjugations.
 
 * for debugging
-Print +s;
+* Print +s;
 * .end
-.sort
+* .sort
 
 * Now multiply Amp and AmpC to get the matrix element squared.
 Skip;
@@ -131,8 +133,8 @@ Drop,'Amp','Amp'C;
 Local 'Mat' = 'Amp'*'Amp'C;
 
 * for debugging
-Print +s;
-.sort
+* Print +s;
+* .sort
 * .end
 
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
@@ -146,7 +148,7 @@ id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + p(j1)* p(j2)/(mw^2);
 
 * for debugging
-Print +s;
+* Print +s;
 * .end
 .sort
 
@@ -160,7 +162,7 @@ repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
 .sort
 
 * for debugging
-Print +s;
+* Print +s;
 .sort
 
 Skip; NSkip 'Mat';
@@ -178,8 +180,8 @@ Skip; NSkip 'Mat';
 .sort
 
 * for debugging
-Print +s;
-.sort
+* Print +s;
+* .sort
 * .end
 
 * Finally take the traces, naively assuming less than 10 fermions.
@@ -187,8 +189,8 @@ Print +s;
   Trace4,'i';
 #enddo
 
-Bracket T;
-Print +s;
+* Bracket T;
+* Print +s;
 * Print[];
 .sort
 * .end
@@ -207,8 +209,8 @@ repeat id ddelta(d1?,d2?)*ddelta(d3?,d2?) = ddelta(d1,d3);
 id cdelta(c1?,c1?) = N; 
 
 * Bracket T,N, ddelta,cdelta;
-Print;
-.sort
+*Print;
+*.sort
 * .end
 id ddelta(d1?,d1?) = N^2-1;
 
