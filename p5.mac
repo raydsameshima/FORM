@@ -33,14 +33,16 @@ p4:[201.68800066843056, -83.325744067637146, -58.807787027215262, -16.6815519111
 pInitial : p1+p2;
 pSemiFinal : p3+p4;
 p5: pInitial - pSemiFinal;
-Wmass^2 = p5[1]^2 - p5[2]^2 - p5[3]^2 - p5[4]^2;
-Wmass = float(sqrt(%));
 /*
+WmassSquared = p5[1]^2 - p5[2]^2 - p5[3]^2 - p5[4]^2;
+mw: float(sqrt(WmassSquared));
+
 Wmass = 80.41900000000007
-That is our unit is now [GeV/c^2]
+That is, our unit is now [GeV/c^2]
 */
 /*
 Lorentz inner product(Mikovsky)
 */
 eta(p,q):= p[1]*q[1] - sum(p[i]*q[i], i, 2, length(p));
-sqrt(eta(p5,p5));
+mw:sqrt(eta(p5,p5));
+mt:sqrt(eta(p3,p3));

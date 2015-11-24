@@ -1,7 +1,0 @@
-Tactics
-
-Rewrite the output of Professor Ferroglia's code using FORM, and compare it with my results.
-
-regular expression of vim, Maxima, or Haskell
-
-
