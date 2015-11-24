@@ -295,6 +295,9 @@ id sd(?a) = 1/(1-1);
 #endprocedure
 ********************************************************************************
 * 
+* Using this polarization sum, it should be so small number.
+* g [qqttWtreelevel] = hCOMPLEXCONJ*hTREE*( p5(mu3)*p5(mu4)/MW^2);
+*
 g [qqttWtreelevel] = hCOMPLEXCONJ*hTREE*(d_(mu3,mu4) + p5(mu3)*p5(mu4)/MW^2);
 
 id hTREE = -R(vb(1,p2),d97)*i_*gs/2*R(g_(1,mu1),d97,d94)*(-i_)*
@@ -630,5 +633,8 @@ print +s;
 *print[];
 .store;
 
+* for debugging
+* Bracket MW^(-1);
+* Print +s;
 .end
 
