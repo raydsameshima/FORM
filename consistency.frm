@@ -337,6 +337,222 @@ Local [qqttWtreelevel] =
           + 4*a*p2dp3
           - 4*a^2
           );
+Local [qqttWtreelevel0] =
+prop(p3 + p4)^2*prop( - p1 + p3 + p4)^2*MW^-2*Nc^-2*[Nc^2-1]*aem*
+      sw^-2*Pi * (
+          + 8*p1dp4*p2dp3*p3dp4^2
+          - 16*p1dp4^2*p2dp3*p3dp4
+          + 8*p1dp4^3*p2dp3
+          + 8*p1dp3*p2dp4*p3dp4^2
+          - 16*p1dp3*p1dp4*p2dp4*p3dp4
+          - 16*p1dp3*p1dp4*p2dp3*p3dp4
+          + 8*p1dp3*p1dp4^2*p2dp4
+          + 16*p1dp3*p1dp4^2*p2dp3
+          - 16*p1dp3^2*p2dp4*p3dp4
+          + 16*p1dp3^2*p1dp4*p2dp4
+          + 8*p1dp3^2*p1dp4*p2dp3
+          + 8*p1dp3^3*p2dp4
+          + 8*a*p3dp4^3
+          - 8*a*p2dp4*p3dp4^2
+          - 8*a*p2dp3*p3dp4^2
+          - 24*a*p1dp4*p3dp4^2
+          + 16*a*p1dp4*p2dp4*p3dp4
+          + 24*a*p1dp4^2*p3dp4
+          - 8*a*p1dp4^2*p2dp4
+          + 8*a*p1dp4^2*p2dp3
+          - 8*a*p1dp4^3
+          - 24*a*p1dp3*p3dp4^2
+          + 16*a*p1dp3*p2dp3*p3dp4
+          + 48*a*p1dp3*p1dp4*p3dp4
+          - 24*a*p1dp3*p1dp4^2
+          + 24*a*p1dp3^2*p3dp4
+          + 8*a*p1dp3^2*p2dp4
+          - 8*a*p1dp3^2*p2dp3
+          - 24*a*p1dp3^2*p1dp4
+          - 8*a*p1dp3^3
+          - 24*a^2*p3dp4^2
+          + 16*a^2*p2dp4*p3dp4
+          + 16*a^2*p2dp3*p3dp4
+          + 48*a^2*p1dp4*p3dp4
+          - 16*a^2*p1dp4*p2dp4
+          - 8*a^2*p1dp4*p2dp3
+          - 24*a^2*p1dp4^2
+          + 48*a^2*p1dp3*p3dp4
+          - 8*a^2*p1dp3*p2dp4
+          - 16*a^2*p1dp3*p2dp3
+          - 48*a^2*p1dp3*p1dp4
+          - 24*a^2*p1dp3^2
+          + 24*a^3*p3dp4
+          - 8*a^3*p2dp4
+          - 8*a^3*p2dp3
+          - 24*a^3*p1dp4
+          - 24*a^3*p1dp3
+          - 8*a^4
+          )
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)^2*Nc^-2*[Nc^2-1]*aem*sw^-2*Pi
+       * (
+          + 4*a*p3dp4^2
+          - 8*a*p1dp4*p3dp4
+          + 4*a*p1dp4^2
+          - 8*a*p1dp3*p3dp4
+          + 8*a*p1dp3*p1dp4
+          + 4*a*p1dp3^2
+          - 8*a^2*p3dp4
+          + 8*a^2*p1dp4
+          + 8*a^2*p1dp3
+          + 4*a^3
+          )
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)*prop( - p2 + p3 + p4)*MW^-2*
+      Nc^-2*[Nc^2-1]*aem*sw^-2*Pi * (
+          - 16*p1dp4*p2dp3*p3dp4^2
+          + 16*p1dp4*p2dp3*p2dp4*p3dp4
+          + 16*p1dp4*p2dp3^2*p3dp4
+          + 16*p1dp4^2*p2dp3*p3dp4
+          - 16*p1dp4^2*p2dp3*p2dp4
+          - 16*p1dp4^2*p2dp3^2
+          - 16*p1dp3*p2dp4*p3dp4^2
+          + 16*p1dp3*p2dp4^2*p3dp4
+          + 16*p1dp3*p2dp3*p2dp4*p3dp4
+          + 16*p1dp3*p1dp4*p2dp4*p3dp4
+          - 16*p1dp3*p1dp4*p2dp4^2
+          + 16*p1dp3*p1dp4*p2dp3*p3dp4
+          - 32*p1dp3*p1dp4*p2dp3*p2dp4
+          - 16*p1dp3*p1dp4*p2dp3^2
+          + 16*p1dp3^2*p2dp4*p3dp4
+          - 16*p1dp3^2*p2dp4^2
+          - 16*p1dp3^2*p2dp3*p2dp4
+          - 16*a*p3dp4^3
+          + 32*a*p2dp4*p3dp4^2
+          - 16*a*p2dp4^2*p3dp4
+          + 32*a*p2dp3*p3dp4^2
+          - 32*a*p2dp3*p2dp4*p3dp4
+          - 16*a*p2dp3^2*p3dp4
+          + 32*a*p1dp4*p3dp4^2
+          - 48*a*p1dp4*p2dp4*p3dp4
+          + 16*a*p1dp4*p2dp4^2
+          - 16*a*p1dp4*p2dp3*p3dp4
+          + 16*a*p1dp4*p2dp3*p2dp4
+          - 16*a*p1dp4^2*p3dp4
+          + 16*a*p1dp4^2*p2dp4
+          + 32*a*p1dp3*p3dp4^2
+          - 16*a*p1dp3*p2dp4*p3dp4
+          - 48*a*p1dp3*p2dp3*p3dp4
+          + 16*a*p1dp3*p2dp3*p2dp4
+          + 16*a*p1dp3*p2dp3^2
+          - 32*a*p1dp3*p1dp4*p3dp4
+          + 16*a*p1dp3*p1dp4*p2dp4
+          + 16*a*p1dp3*p1dp4*p2dp3
+          - 16*a*p1dp3^2*p3dp4
+          + 16*a*p1dp3^2*p2dp3
+          + 48*a^2*p3dp4^2
+          - 64*a^2*p2dp4*p3dp4
+          + 16*a^2*p2dp4^2
+          - 64*a^2*p2dp3*p3dp4
+          + 32*a^2*p2dp3*p2dp4
+          + 16*a^2*p2dp3^2
+          - 64*a^2*p1dp4*p3dp4
+          + 48*a^2*p1dp4*p2dp4
+          + 32*a^2*p1dp4*p2dp3
+          + 16*a^2*p1dp4^2
+          - 64*a^2*p1dp3*p3dp4
+          + 32*a^2*p1dp3*p2dp4
+          + 48*a^2*p1dp3*p2dp3
+          + 32*a^2*p1dp3*p1dp4
+          + 16*a^2*p1dp3^2
+          - 48*a^3*p3dp4
+          + 32*a^3*p2dp4
+          + 32*a^3*p2dp3
+          + 32*a^3*p1dp4
+          + 32*a^3*p1dp3
+          + 16*a^4
+          )
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)*prop( - p2 + p3 + p4)*Nc^-2*
+      [Nc^2-1]*aem*sw^-2*Pi * (
+          - 8*a*p3dp4^2
+          + 8*a*p2dp4*p3dp4
+          + 8*a*p2dp3*p3dp4
+          + 8*a*p1dp4*p3dp4
+          - 8*a*p1dp4*p2dp4
+          - 8*a*p1dp4*p2dp3
+          + 8*a*p1dp3*p3dp4
+          - 8*a*p1dp3*p2dp4
+          - 8*a*p1dp3*p2dp3
+          + 16*a^2*p3dp4
+          - 8*a^2*p2dp4
+          - 8*a^2*p2dp3
+          - 8*a^2*p1dp4
+          - 8*a^2*p1dp3
+          - 8*a^3
+          )
+
+       + prop(p3 + p4)^2*prop( - p2 + p3 + p4)^2*MW^-2*Nc^-2*[Nc^2-1]*aem*
+      sw^-2*Pi * (
+          + 8*p1dp4*p2dp3*p3dp4^2
+          - 16*p1dp4*p2dp3*p2dp4*p3dp4
+          + 8*p1dp4*p2dp3*p2dp4^2
+          - 16*p1dp4*p2dp3^2*p3dp4
+          + 16*p1dp4*p2dp3^2*p2dp4
+          + 8*p1dp4*p2dp3^3
+          + 8*p1dp3*p2dp4*p3dp4^2
+          - 16*p1dp3*p2dp4^2*p3dp4
+          + 8*p1dp3*p2dp4^3
+          - 16*p1dp3*p2dp3*p2dp4*p3dp4
+          + 16*p1dp3*p2dp3*p2dp4^2
+          + 8*p1dp3*p2dp3^2*p2dp4
+          + 8*a*p3dp4^3
+          - 24*a*p2dp4*p3dp4^2
+          + 24*a*p2dp4^2*p3dp4
+          - 8*a*p2dp4^3
+          - 24*a*p2dp3*p3dp4^2
+          + 48*a*p2dp3*p2dp4*p3dp4
+          - 24*a*p2dp3*p2dp4^2
+          + 24*a*p2dp3^2*p3dp4
+          - 24*a*p2dp3^2*p2dp4
+          - 8*a*p2dp3^3
+          - 8*a*p1dp4*p3dp4^2
+          + 16*a*p1dp4*p2dp4*p3dp4
+          - 8*a*p1dp4*p2dp4^2
+          + 8*a*p1dp4*p2dp3^2
+          - 8*a*p1dp3*p3dp4^2
+          + 8*a*p1dp3*p2dp4^2
+          + 16*a*p1dp3*p2dp3*p3dp4
+          - 8*a*p1dp3*p2dp3^2
+          - 24*a^2*p3dp4^2
+          + 48*a^2*p2dp4*p3dp4
+          - 24*a^2*p2dp4^2
+          + 48*a^2*p2dp3*p3dp4
+          - 48*a^2*p2dp3*p2dp4
+          - 24*a^2*p2dp3^2
+          + 16*a^2*p1dp4*p3dp4
+          - 16*a^2*p1dp4*p2dp4
+          - 8*a^2*p1dp4*p2dp3
+          + 16*a^2*p1dp3*p3dp4
+          - 8*a^2*p1dp3*p2dp4
+          - 16*a^2*p1dp3*p2dp3
+          + 24*a^3*p3dp4
+          - 24*a^3*p2dp4
+          - 24*a^3*p2dp3
+          - 8*a^3*p1dp4
+          - 8*a^3*p1dp3
+          - 8*a^4
+          )
+
+       + prop(p3 + p4)^2*prop( - p2 + p3 + p4)^2*Nc^-2*[Nc^2-1]*aem*sw^-2*Pi
+       * (
+          + 4*a*p3dp4^2
+          - 8*a*p2dp4*p3dp4
+          + 4*a*p2dp4^2
+          - 8*a*p2dp3*p3dp4
+          + 8*a*p2dp3*p2dp4
+          + 4*a*p2dp3^2
+          - 8*a^2*p3dp4
+          + 8*a^2*p2dp4
+          + 8*a^2*p2dp3
+          + 4*a^3
+          );
 
 * for my normalization
 id Pi = 1;
@@ -559,6 +775,122 @@ Local M =
           - 8*p2.p4*p1.p4
           );
 
+Local MM =
++ prop(2*mt^2 + 2*p3.p4)^2*prop(2*mt^2 - 2*p2.p3 - 2*p2.p4 + 2*p3.p4)^2
+      *mw^-2 * (
+          - 16*p2.p1*p2.p3*p2.p4*[N^2-1]*mt^2
+          + 16*p2.p1*p2.p3*p3.p4*[N^2-1]*mt^2
+          + 16*p2.p1*p2.p3*[N^2-1]*mt^4
+          - 8*p2.p1*p2.p3^2*[N^2-1]*mt^2
+          + 16*p2.p1*p2.p4*p3.p4*[N^2-1]*mt^2
+          + 16*p2.p1*p2.p4*[N^2-1]*mt^4
+          - 8*p2.p1*p2.p4^2*[N^2-1]*mt^2
+          - 16*p2.p1*p3.p4*[N^2-1]*mt^4
+          - 8*p2.p1*p3.p4^2*[N^2-1]*mt^2
+          - 8*p2.p1*[N^2-1]*mt^6
+          + 16*p2.p3*p2.p4*p1.p3*p3.p4*[N^2-1]
+          + 16*p2.p3*p2.p4*p1.p3*[N^2-1]*mt^2
+          + 16*p2.p3*p2.p4*p1.p4*p3.p4*[N^2-1]
+          + 16*p2.p3*p2.p4*p1.p4*[N^2-1]*mt^2
+          - 16*p2.p3*p2.p4^2*p1.p3*[N^2-1]
+          - 8*p2.p3*p2.p4^2*p1.p4*[N^2-1]
+          - 16*p2.p3*p1.p4*p3.p4*[N^2-1]*mt^2
+          - 8*p2.p3*p1.p4*p3.p4^2*[N^2-1]
+          - 8*p2.p3*p1.p4*[N^2-1]*mt^4
+          - 8*p2.p3^2*p2.p4*p1.p3*[N^2-1]
+          - 16*p2.p3^2*p2.p4*p1.p4*[N^2-1]
+          + 16*p2.p3^2*p1.p4*p3.p4*[N^2-1]
+          + 16*p2.p3^2*p1.p4*[N^2-1]*mt^2
+          - 8*p2.p3^3*p1.p4*[N^2-1]
+          - 16*p2.p4*p1.p3*p3.p4*[N^2-1]*mt^2
+          - 8*p2.p4*p1.p3*p3.p4^2*[N^2-1]
+          - 8*p2.p4*p1.p3*[N^2-1]*mt^4
+          + 16*p2.p4^2*p1.p3*p3.p4*[N^2-1]
+          + 16*p2.p4^2*p1.p3*[N^2-1]*mt^2
+          - 8*p2.p4^3*p1.p3*[N^2-1]
+          )
+
+       + prop(2*mt^2 + 2*p3.p4)^2*prop(2*mt^2 - 2*p2.p3 - 2*p2.p4 + 2*p3.p4)*
+      prop(2*mt^2 - 2*p1.p3 - 2*p1.p4 + 2*p3.p4)*mw^-2 * (
+          + 16*p2.p1*p2.p3*p1.p3*[N^2-1]*mt^2
+          + 16*p2.p1*p2.p3*p1.p4*[N^2-1]*mt^2
+          - 16*p2.p1*p2.p3*p3.p4*[N^2-1]*mt^2
+          - 16*p2.p1*p2.p3*[N^2-1]*mt^4
+          + 16*p2.p1*p2.p4*p1.p3*[N^2-1]*mt^2
+          + 16*p2.p1*p2.p4*p1.p4*[N^2-1]*mt^2
+          - 16*p2.p1*p2.p4*p3.p4*[N^2-1]*mt^2
+          - 16*p2.p1*p2.p4*[N^2-1]*mt^4
+          - 16*p2.p1*p1.p3*p3.p4*[N^2-1]*mt^2
+          - 16*p2.p1*p1.p3*[N^2-1]*mt^4
+          - 16*p2.p1*p1.p4*p3.p4*[N^2-1]*mt^2
+          - 16*p2.p1*p1.p4*[N^2-1]*mt^4
+          + 32*p2.p1*p3.p4*[N^2-1]*mt^4
+          + 16*p2.p1*p3.p4^2*[N^2-1]*mt^2
+          + 16*p2.p1*[N^2-1]*mt^6
+          + 32*p2.p3*p2.p4*p1.p3*p1.p4*[N^2-1]
+          - 16*p2.p3*p2.p4*p1.p3*p3.p4*[N^2-1]
+          - 16*p2.p3*p2.p4*p1.p3*[N^2-1]*mt^2
+          + 16*p2.p3*p2.p4*p1.p3^2*[N^2-1]
+          - 16*p2.p3*p2.p4*p1.p4*p3.p4*[N^2-1]
+          - 16*p2.p3*p2.p4*p1.p4*[N^2-1]*mt^2
+          + 16*p2.p3*p2.p4*p1.p4^2*[N^2-1]
+          - 16*p2.p3*p1.p3*p1.p4*p3.p4*[N^2-1]
+          - 16*p2.p3*p1.p3*p1.p4*[N^2-1]*mt^2
+          + 32*p2.p3*p1.p4*p3.p4*[N^2-1]*mt^2
+          + 16*p2.p3*p1.p4*p3.p4^2*[N^2-1]
+          + 16*p2.p3*p1.p4*[N^2-1]*mt^4
+          - 16*p2.p3*p1.p4^2*p3.p4*[N^2-1]
+          - 16*p2.p3*p1.p4^2*[N^2-1]*mt^2
+          + 16*p2.p3^2*p1.p3*p1.p4*[N^2-1]
+          - 16*p2.p3^2*p1.p4*p3.p4*[N^2-1]
+          - 16*p2.p3^2*p1.p4*[N^2-1]*mt^2
+          + 16*p2.p3^2*p1.p4^2*[N^2-1]
+          - 16*p2.p4*p1.p3*p1.p4*p3.p4*[N^2-1]
+          - 16*p2.p4*p1.p3*p1.p4*[N^2-1]*mt^2
+          + 32*p2.p4*p1.p3*p3.p4*[N^2-1]*mt^2
+          + 16*p2.p4*p1.p3*p3.p4^2*[N^2-1]
+          + 16*p2.p4*p1.p3*[N^2-1]*mt^4
+          - 16*p2.p4*p1.p3^2*p3.p4*[N^2-1]
+          - 16*p2.p4*p1.p3^2*[N^2-1]*mt^2
+          + 16*p2.p4^2*p1.p3*p1.p4*[N^2-1]
+          - 16*p2.p4^2*p1.p3*p3.p4*[N^2-1]
+          - 16*p2.p4^2*p1.p3*[N^2-1]*mt^2
+          + 16*p2.p4^2*p1.p3^2*[N^2-1]
+          )
+
+       + prop(2*mt^2 + 2*p3.p4)^2*prop(2*mt^2 - 2*p1.p3 - 2*p1.p4 + 2*p3.p4)^2
+      *mw^-2 * (
+          - 16*p2.p1*p1.p3*p1.p4*[N^2-1]*mt^2
+          + 16*p2.p1*p1.p3*p3.p4*[N^2-1]*mt^2
+          + 16*p2.p1*p1.p3*[N^2-1]*mt^4
+          - 8*p2.p1*p1.p3^2*[N^2-1]*mt^2
+          + 16*p2.p1*p1.p4*p3.p4*[N^2-1]*mt^2
+          + 16*p2.p1*p1.p4*[N^2-1]*mt^4
+          - 8*p2.p1*p1.p4^2*[N^2-1]*mt^2
+          - 16*p2.p1*p3.p4*[N^2-1]*mt^4
+          - 8*p2.p1*p3.p4^2*[N^2-1]*mt^2
+          - 8*p2.p1*[N^2-1]*mt^6
+          + 16*p2.p3*p1.p3*p1.p4*p3.p4*[N^2-1]
+          + 16*p2.p3*p1.p3*p1.p4*[N^2-1]*mt^2
+          - 16*p2.p3*p1.p3*p1.p4^2*[N^2-1]
+          - 8*p2.p3*p1.p3^2*p1.p4*[N^2-1]
+          - 16*p2.p3*p1.p4*p3.p4*[N^2-1]*mt^2
+          - 8*p2.p3*p1.p4*p3.p4^2*[N^2-1]
+          - 8*p2.p3*p1.p4*[N^2-1]*mt^4
+          + 16*p2.p3*p1.p4^2*p3.p4*[N^2-1]
+          + 16*p2.p3*p1.p4^2*[N^2-1]*mt^2
+          - 8*p2.p3*p1.p4^3*[N^2-1]
+          + 16*p2.p4*p1.p3*p1.p4*p3.p4*[N^2-1]
+          + 16*p2.p4*p1.p3*p1.p4*[N^2-1]*mt^2
+          - 8*p2.p4*p1.p3*p1.p4^2*[N^2-1]
+          - 16*p2.p4*p1.p3*p3.p4*[N^2-1]*mt^2
+          - 8*p2.p4*p1.p3*p3.p4^2*[N^2-1]
+          - 8*p2.p4*p1.p3*[N^2-1]*mt^4
+          - 16*p2.p4*p1.p3^2*p1.p4*[N^2-1]
+          + 16*p2.p4*p1.p3^2*p3.p4*[N^2-1]
+          + 16*p2.p4*p1.p3^2*[N^2-1]*mt^2
+          - 8*p2.p4*p1.p3^3*[N^2-1]
+          );
 id p1?.p2? = eta(p1,p2);
 argument;
   id p1?.p2? = eta(p1,p2);

@@ -86,13 +86,13 @@ endargument;
 
 id p1.p1 = mq^2;
 id p2.p2 = mq^2;
-id p3.p3 = mw^2;
-id p4.p4 = mw^2;
+id p3.p3 = mt^2;
+id p4.p4 = mt^2;
 argument;
   id p1.p1 = mq^2;
   id p2.p2 = mq^2;
-  id p3.p3 = mw^2;
-  id p4.p4 = mw^2;
+  id p3.p3 = mt^2;
+  id p4.p4 = mt^2;
 endargument;
 
 id mq = 0;
@@ -101,6 +101,8 @@ argument;
   id mq = 0;
 endargument;
 
-Bracket [N^2-1], prop, mw;
+Bracket prop, mw, mw^(-1);
+* Bracket [N^2-1], prop, mw;
+* Bracket [N^2-1], prop, mw;
 Print +s;
 .end
