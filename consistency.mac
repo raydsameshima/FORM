@@ -304,7 +304,7 @@ qqttWtreelevel(p1,p2,p3,p4,mt,mw,N)
           + 4*eta(p2,p4)*eta(p2,p4)*mt^2
           - 24*eta(p2,p4)*eta(p2,p4)*mt^4*mw^-2
           - 8*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)*mt^2*mw^-2
-          );
+          )$
 /* This is my result */
 M(p1,p2,p3,p4,mt,mw,N) 
 :=
@@ -456,8 +456,7 @@ M(p1,p2,p3,p4,mt,mw,N)
           - 8*eta(p4,p2)*eta(p4,p2)*eta(p1,p2)*mt^2*mw^-2
           + 8*eta(p4,p2)*eta(p1,p2)*mw^2
           + 16*eta(p4,p2)*eta(p1,p2)*mt^2
-          );
-
+          )$
 load("p5.mac");
 ev(qqttWtreelevel(p1,p2,p3,p4,mt,mw,N), numer); 
 ev(M(p1,p2,p3,p4,mt,mw,N), numer); 
