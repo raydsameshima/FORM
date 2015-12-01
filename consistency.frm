@@ -576,7 +576,8 @@ id p3dp4 = -eta(p3,p4);
 id p1dp3 = -eta(p1,p3); 
 id p2dp4 = -eta(p2,p4);
 
-id a = -mt^2;
+id a = mt^2;
+* id a = -mt^2;
 id MW = mw;
 id MW^-1 = mw^-1;
 
@@ -592,8 +593,10 @@ Vector q;
 id prop(q?) = prop(q.q);
 
 argument;
-  id p3.p3 = mt^2;
-  id p4.p4 = mt^2;
+  id p3.p3 = -mt^2;
+*   id p3.p3 = mt^2;
+*   id p4.p4 = mt^2;
+  id p4.p4 = -mt^2;
 endargument;
 
 Bracket prop, [N^2-1];

@@ -48,3 +48,12 @@ Lorentz inner product(Mikovsky)
 eta(p,q):= p[1]*q[1] - sum(p[i]*q[i], i, 2, length(p));
 mw:sqrt(eta(p5,p5));
 mt:sqrt(eta(p3,p3));
+/*
+For later uses, some numerical coefficients are given.
+aem is fine structure constant
+sw is weak mixing angle (cos of)
+*/
+aem:7.2973525664*10^(-3);
+mz:91.2;
+sw:sqrt(1-(mw^2/mz^2));
+
