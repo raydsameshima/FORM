@@ -1,0 +1,30 @@
+tasklist.txt
+
+==============================================
+convertor <= Professor Ferroglia's code
+qqttW
+
+| consistency.frm
+v
+
+Maxima readble form
+
+| "numerical evaluation"
+v consistency.mac
+
+
+ 0.2282444653585411*10^(-2);
+
+as standard value
+
+==============================================
+My result
+
+| convertor
+v
+
+Maxima readable form
+
+| numerical evaluation
+v
+
