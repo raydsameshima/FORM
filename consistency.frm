@@ -15,6 +15,7 @@ Symbols mt, mw, [N^2-1];
 ******** end of declarations ********
 
 * This is the output of qqttWtreelevel.frm written by Professor Ferroglia.
+* simply copy and paste
 Local [qqttWtreelevel] =
        + prop(p3 + p4)^2*prop( - p1 + p3 + p4)^2*MW^-2*Nc^-2*[Nc^2-1]*aem*
       sw^-2*Pi * (
@@ -337,6 +338,8 @@ Local [qqttWtreelevel] =
           + 4*a*p2dp3
           - 4*a^2
           );
+* This is corresponding to the term wchich proportional to mass-part of polarization sum of W.
+* Numerically, this should be zero.
 Local [qqttWtreelevel0] =
 prop(p3 + p4)^2*prop( - p1 + p3 + p4)^2*MW^-2*Nc^-2*[Nc^2-1]*aem*
       sw^-2*Pi * (
@@ -564,6 +567,9 @@ id sw^-1 = 1;
 Function eta;
 
 * He used metric (-+++)
+* Maxima uses 
+*   eta(p,q):= p[1]*q[1] - sum(p[i]*q[i], i, 2, length(p));
+* and this metric is (+---).
 id p1dp4 = -eta(p1,p4);
 id p2dp3 = -eta(p2,p3); 
 id p3dp4 = -eta(p3,p4); 
@@ -597,8 +603,9 @@ print +s;
 
 *for debugging
 * Bracket eta, prop, [N^2-1];
+* Bracket prop, [N^2-1];
 * print +s;
-* .end
+*.end
 
 * my result
 Local M =
@@ -903,10 +910,12 @@ endargument;
 Bracket prop, [N^2-1];
 Print +s;
 .end
-.sort
 
-Local diff = [qqttWtreelevel] - M;
-
-Bracket prop, [N^2-1];
-Print +s;
-.end
+* the followings are first trial to the analytic proof
+* .sort
+* 
+* Local diff = [qqttWtreelevel] - M;
+* 
+* Bracket prop, [N^2-1];
+* Print +s;
+* .end

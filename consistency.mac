@@ -817,7 +817,11 @@ MM(p1,p2,p3,p4,mt,mw,N)
           - 8*eta(p1,p2)*mt^6*mw^-2
           )$
 load("p5.mac");
+print(" this is the result of Professor Ferroglia, with all numerical constants to be 1 ");
 ev(qqttWtreelevel(p1,p2,p3,p4,mt,mw,N), numer); 
+print(" mass-related term of poralization sum, this should be so small ");
 ev(qqttWtreelevel0(p1,p2,p3,p4,mt,mw,N), numer); 
+print(" this is my result");
 ev(M(p1,p2,p3,p4,mt,mw,N), numer); 
+print(" mass-related term of poralization sum, this should be so small ");
 ev(MM(p1,p2,p3,p4,mt,mw,N), numer); 
