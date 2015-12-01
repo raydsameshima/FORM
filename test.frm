@@ -54,7 +54,13 @@ id p5 = p1 + p2;
 * id mq = 0;
 * id mt = 0;
 
+* massless quarks
+id p1.p1 = 0;
+id p2.p2 = 0;
+
 Bracket [N^2-1];
 * Bracket [N^2-1],prop(q1.q1) prop(q2.q2);
 Print +s;
+print "This is essentially Mandelstam s, and in cm system,"
+print "p1=(k,0,0,k), p2=(k,0,0,-k) and p1.p2 = 2*k^2 >= 0."
 .end
