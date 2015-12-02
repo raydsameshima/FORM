@@ -1,0 +1,545 @@
+FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Dec  1 22:10:42 2015
+    * WproductionRight.frm
+    * Ray D. Sameshima
+    *
+    *	Program for working out the matrix element squared for the
+    *	reaction q,qbar -> t,tbar in QCD.
+    *
+    *          \                    /       u(p1)\   / W^+(p5)        /
+    *           \ u(p1)            / t(p3)        \ /          t(p3) /
+    *            \                /                *                /
+    *             \g(j1)*T(c1)   /                  \fprop(dbar,q3)/
+    *              *^^^^^^^^^^^^*  g(j2)*T(c2)       *^^^^^^^^^^^^*
+    * fprop(u,q1) /   gprop(q2)  \                  / gprop(q4)    \
+    *            * j3             \                /                \tbar(p4)
+    *  dbar(p2) / \                \ tbar(p4)     /dbar(p2)          \
+    *          /   \ W^+(p5)        \            /                    \
+    *
+    
+    ********************************************************************************
+    *
+    ********************************************************************************
+    *
+    ********************************************************************************
+    *
+    
+    *             Now, I take only right diagram for debugging.
+    
+    ********************************************************************************
+    *
+    ********************************************************************************
+    *
+    ********************************************************************************
+    *
+    
+    #include standardAmplitude.frm
+    * standardAmplitude.frm
+    * Ray D. Sameshima
+    * rewrite amplitude.frm and qcdAmplitude.frm 
+    *
+    * Peskin & Schroeder notation, see Appendix A.
+    * http://www.nikhef.nl/~t68/course/short.pdf
+    
+    Symbol N, [N^2-1];
+    
+    * i's are spinor indices, j's are Lorentz indices
+    * c's are colour indices, d's are the label for su(N) generators
+    * So, the generator for su(N) has indices like T(c1,c2,d1).
+    AutoDeclare Indices i,j,c,d;
+    *for gamma matrices
+    AutoDeclare Index k;
+    * masses
+    AutoDeclare Symbols m;
+    * momemtums
+    AutoDeclare Vectors p;
+    * momentum transfer (dummy)
+    AutoDeclare Vectors q;
+    * spinors, gamma matrices(g), 
+    * and Gell-Mann matrices(T), polarization for photon
+    CFunctions  UB,U,VB,V, g,T,e;
+    * U(i2,p1,m,c) =  U(spinorindex, momentum, mass, colourindex) 
+    * gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
+    CFunctions gprop,fprop,phprop,prop;
+    * for contractions of indices c's and d's
+    CFunction cdelta, ddelta;
+    
+    #procedure squareamplitude(Amp,Mat)
+    .sort
+    
+    * Off statistics;
+    
+    * We skip everything but Amp, i.e. only operate on Amp.
+    * In Amp we look for the highest i(spinor) and j(Lorentz) indices
+    Skip; NSkip 'Amp';
+    
+    #$imax = 0;
+    #do i = 1,40
+    * naively assume 40 or less spinor indices
+      if (  match(VB(i'i',?a)) || match(V(i'i',?a))
+         || match(UB(i'i',?a)) || match(U(i'i',?a))
+         || match(g(i'i',?a)) || match(g(i?,i'i',?a))
+         || match(fprop(i'i',?a)) || match(fprop(i?,i'i',?a)) 
+         );
+         $imax = 'i';
+      endif;
+    #enddo
+    #$jmax = 0;
+    #do j = 1,20
+    * naively assume 20 or less Lorentz indices
+      if (  match(g(?a,j'j')) || match(phprop(j'j',?a)) 
+         || match(phprop(j?,j'j',?a)) 
+         || match(gprop(j'j',?a))
+         || match(gprop(j?,j'j',?a))
+         || match(e(j'j',?a))
+         );
+         $jmax = 'j';
+      endif;
+    #enddo
+    #$cmax = 0;
+    #do c = 1,40
+    * naively assume 40 or less colour indices
+      if (  match(VB(?a,c'c')) || match(V(?a,c'c'))
+         || match(UB(?a,c'c')) || match(U(?a,c'c'))
+         || match(T(c'c',?a))  || match(T(c?,c'c',?a))
+         );
+         $cmax = 'c';
+      endif;
+    #enddo
+    #$dmax = 0;
+    #do d = 1,20;
+    * naively assume 20 or less generators(for su(3), N = 8)
+      if( match(T(?a,d'd'))
+        || match(gprop(?a,d'd',d?))
+        || match(gprop(?a,d'd'))
+        );
+        $dmax = 'd';
+      endif;
+    #enddo
+    
+    .sort
+    
+    * Just for a check we print the highest i and j indices
+    #message highest i is i'$imax', highest j is j'$jmax';
+    #message highest c is c'$cmax', highest d is d'$dmax';
+    
+    * for debugging
+    * Print +s;
+    * .end
+    
+    * Now construct the conjugate
+    Skip;
+    Local 'Amp'C = 'Amp';
+    id  i_ = -i_;
+    
+    * Make a new set of dummy indices above $imax and $jmax.
+    * I haven't seen <> notation, but this should clarify the pair of replacement.
+    Multiply replace_(<i1,i{'$imax'+1}>,...,<i'$imax',i{2*'$imax'}>);
+    Multiply replace_(<j1,j{'$jmax'+1}>,...,<j'$jmax',j{2*'$jmax'}>);
+    Multiply replace_(<c1,c{'$cmax'+1}>,...,<c'$cmax',c{2*'$cmax'}>);
+    Multiply replace_(<d1,d{'$dmax'+1}>,...,<d'$dmax',d{2*'$dmax'}>);
+    
+    * Exchange rows and columns, i.e. takeing the transposes.
+    id g(i1?,i2?,j?)      = g(i2,i1,j);
+    id T(c1?,c2?,d?)      = T(c2,c1,d);
+    id fprop(i1?,i2?,?a)  = fprop(i2,i1,?a);
+    id phprop(j1?,j2?,q?) = phprop(j2,j1,q);
+    id gprop(j1?,j2?,q?,d1?,d2?) = gprop(j2,j1,q,d2,d1);
+    
+    * and exchange U and UB, V and VBAR
+    Multiply replace_(UB,U,U,UB,VB,V,V,VB);
+    
+    * gamma5 gets a minus sign. Hence k6 <--> k7
+    Multiply replace_(k6,k7,k7,k6);
+    id g(?a,k5) = -g(?a,k5);
+    .sort
+    * The end of the conjugations.
+    
+    * for debugging
+    * Print +s;
+    * .end
+    * .sort
+    
+    * Now multiply Amp and AmpC to get the matrix element squared.
+    Skip;
+    * Drop(for efficiency): ... eliminates all expressions from the system
+    * we won't use (manipulate) Amp,AmpC anymore.
+    Drop,'Amp','Amp'C;
+    
+    Local 'Mat' = 'Amp'*'Amp'C;
+    
+    * for debugging
+    * Print +s;
+    * .sort
+    * .end
+    
+    * Spin sums, 1st terms are slashed p and 2nd terms are delta?
+    * (A.22) of Peskin & Schroeder
+    id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * cdelta(c1,c2
+    );
+    id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2
+    );
+    * for external photons (A.26)
+    * need to replace massive W boson, check the sign
+    * see http://www.hep.lu.se/atlas/thesis/egede/thesis-node15.html
+    id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) - p(j1)* p(j2)/(mw^2);
+    * id e(j1?,p?)*e(j2?,p?) =  p(j1)* p(j2)/(mw^2);
+    * id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + p(j1)* p(j2)/(mw^2);
+    
+    * for debugging
+    * Print +s;
+    * .end
+    .sort
+    
+    * Propagators
+    id fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
+    id phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
+    id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
+    
+    *   String the gamma matrices together in traces.
+    repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
+    .sort
+    
+    * for debugging
+    * Print +s;
+    .sort
+    
+    Skip; NSkip 'Mat';
+    
+    * How can I treat "non-diagonal" g's?
+    
+    *   Now put the traces one by one in terms of the built in gammas
+    #do i = 1,10
+      id, once, g(i1?,i1?,?a) = g_('i',?a);
+    * g7_ = 1-g5_, g6_ = 1+g5_
+      id  g_('i',k7) = g7_('i');
+      id  g_('i',k6) = g6_('i');
+      id  g_('i',k5) = g5_('i');
+    #enddo
+    .sort
+    
+    * for debugging
+    * Print +s;
+    * .sort
+    * .end
+    
+    * Finally take the traces, naively assuming less than 10 fermions.
+    #do i = 1,10
+      Trace4,'i';
+    #enddo
+    
+    * Bracket T;
+    * Print +s;
+    * Print[];
+    .sort
+    * .end
+    
+    * qcd trace by hand
+    * eq.(3.25) of QCD practice
+    * We didn't assume the symmetric property on ddelta.
+    id T(c1?, c2?, d1?)* ddelta(d1?,d2?) = T(c1,c2,d2);
+    id T(c1?, c2?, d1?)* ddelta(d2?,d1?) = T(c1,c2,d2);
+    repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) = 1/2 * (cdelta(c1,c4)*cdelta(c2,c3) - 1
+    /N * cdelta(c1,c2)*cdelta(c3,c4));
+    repeat id cdelta(c1?,c2?)*cdelta(c2?,c3?) = cdelta(c1,c3);
+    repeat id cdelta(c1?,c2?)*cdelta(c3?,c2?) = cdelta(c1,c3);
+    repeat id ddelta(d1?,d2?)*ddelta(d2?,d3?) = ddelta(d1,d3);
+    repeat id ddelta(d1?,d2?)*ddelta(d3?,d2?) = ddelta(d1,d3);
+    
+    id cdelta(c1?,c1?) = N; 
+    
+    * Bracket T,N, ddelta,cdelta;
+    *Print;
+    *.sort
+    * .end
+    id ddelta(d1?,d1?) = N^2-1;
+    
+    id N^2 = [N^2-1] + 1;
+    
+    Bracket [N^2-1];
+    * Print +s;
+    * Print[];
+    .sort
+    * .end
+    
+    * id ddelta(d1?,d2?) = 0;
+    * id cdelta(c1?,c2?) = 0;
+    * .sort
+    
+    * Bracket N;
+    * Print[];
+    * .sort
+    * .end
+    
+    #endprocedure
+    * i's are spinor indices, j's are Lorentz indices
+    * c's are colour indices, d's are the label for su(N) generators
+    
+    * Take the spinor along the fermion line, (oppositely) !!
+    * q1(downward) is fprop(u), q2(right) is gprop
+    * q3(downward) is fprop(dbar), q4(right) is gprop 
+    * The index k7 of g(i2,i3,k7) is for 7th gamma matrix given by (1-g5).
+    Local Amp = 
+    *            VB(i1,p2,mq,c1)*(i_/sqrt_(2) *(g(i1,i2,j1) *e(j1,p5)) *(1/2)*g(i2,i
+    3,k7))*
+    *            fprop(i3,i4,q1,mq)* (g(i4,i5,j2)*T(c1,c2,d1)) *U(i5,p1,mq,c2)*
+    *            gprop(j2,j3,q2,d1,d2)*
+    *            UB(i6,p3,mt,c3)* (g(i6,i7,j3)*T(c3,c4,d2)) *V(i7,p4,mt,c4)
+                +
+                VB(i1,p2,mq,c1)* (g(i1,i2,j1)*T(c1,c2,d1)) *fprop(i2,i3,q3,mq)*
+                (i_/sqrt_(2) *(g(i3,i4,j2) *e(j2,p5)) *(1/2)*g(i4,i5,k7)) *U(i5,p1,m
+    q,c2)*
+                gprop(j1,j3,q4,d1,d2)*
+                UB(i6,p3,mt,c3)*g(i6,i7,j3)*T(c3,c4,d2)*V(i7,p4,mt,c4);
+    
+    #call squareamplitude(Amp,M)
+
+Time =       0.00 sec    Generated terms =          1
+             Amp         Terms in output =          1
+                         Bytes used      =        608
+
+Time =       0.00 sec    Generated terms =          1
+             Amp         Terms in output =          1
+                         Bytes used      =        608
+~~~highest i is i7, highest j is j3
+~~~highest c is c4, highest d is d2
+
+Time =       0.00 sec    Generated terms =          1
+            AmpC         Terms in output =          1
+                         Bytes used      =        608
+
+Time =       0.00 sec    Generated terms =         32
+               M         Terms in output =         32
+                         Bytes used      =      20824
+
+Time =       0.01 sec    Generated terms =        128
+               M         Terms in output =        128
+                         Bytes used      =      91784
+
+Time =       0.01 sec    Generated terms =        128
+               M         Terms in output =        128
+                         Bytes used      =      91784
+
+Time =       0.02 sec    Generated terms =         64
+               M         Terms in output =         64
+                         Bytes used      =      43268
+
+Time =       0.02 sec    Generated terms =         96
+               M         Terms in output =         33
+                         Bytes used      =       3032
+
+Time =       0.02 sec    Generated terms =        165
+               M         Terms in output =         33
+                         Bytes used      =       2748
+    .sort
+
+Time =       0.02 sec    Generated terms =         33
+               M         Terms in output =         33
+                         Bytes used      =       3016
+    
+    id 1/sqrt_(2)/sqrt_(2) = 1/2;
+    
+    * to eliminate intermediate q1 and q2
+    
+    id q1 = p5 - p2;
+    id q2 = p3 + p4;
+    id q3 = p1 - p5;
+    id q4 = p3 + p4;
+    argument;
+      id q1 = p5 - p2;
+      id q2 = p3 + p4;
+      id q3 = p1 - p5;
+      id q4 = p3 + p4;
+    endargument;
+    .sort
+
+Time =       0.03 sec    Generated terms =         84
+               M         Terms in output =         49
+                         Bytes used      =       4000
+    
+    id p3.p3 = mt^2;
+    id p4.p4 = mt^2;
+    argument;
+      id p3.p3 = mt^2;
+      id p4.p4 = mt^2;
+    endargument;
+    
+    * Bracket [N^2-1], N,g;
+    * Print +s;
+    * .sort
+    
+    id p5 = p1+p2 - p3-p4;
+    argument;
+      id p5 = p1+p2 - p3-p4;
+    endargument;
+    .sort
+
+Time =       0.05 sec    Generated terms =        952
+               M         Terms in output =        242
+                         Bytes used      =      16596
+    
+    id p1.p1 = mq^2;
+    id p2.p2 = mq^2;
+    id p3.p3 = mt^2;
+    id p4.p4 = mt^2;
+    argument;
+      id p1.p1 = mq^2;
+      id p2.p2 = mq^2;
+      id p3.p3 = mt^2;
+      id p4.p4 = mt^2;
+    endargument;
+    
+    id mq = 0;
+    * inside propagator
+    argument;
+      id mq = 0;
+    endargument;
+    
+    Bracket prop, mw, mw^(-1);
+WproductionLeft.frm Line 100 --> Illegal separator: prop,mw,mw^
+    Print +s;
+    .sort
+
+Time =       0.06 sec    Generated terms =         69
+               M         Terms in output =         47
+                         Bytes used      =       3572
+
+   M =
+
+       + prop(2*mt^2 + 2*p3.p4)^2*prop(2*mt^2 - 2*p2.p3 - 2*p2.p4 + 2*p3.p4)^2
+      *mw^-2 * (
+          + 16*p2.p1*p2.p3*p2.p4*[N^2-1]*mt^2
+          - 16*p2.p1*p2.p3*p3.p4*[N^2-1]*mt^2
+          - 16*p2.p1*p2.p3*[N^2-1]*mt^4
+          + 8*p2.p1*p2.p3^2*[N^2-1]*mt^2
+          - 16*p2.p1*p2.p4*p3.p4*[N^2-1]*mt^2
+          - 16*p2.p1*p2.p4*[N^2-1]*mt^4
+          + 8*p2.p1*p2.p4^2*[N^2-1]*mt^2
+          + 16*p2.p1*p3.p4*[N^2-1]*mt^4
+          + 8*p2.p1*p3.p4^2*[N^2-1]*mt^2
+          + 8*p2.p1*[N^2-1]*mt^6
+          - 16*p2.p3*p2.p4*p1.p3*p3.p4*[N^2-1]
+          - 16*p2.p3*p2.p4*p1.p3*[N^2-1]*mt^2
+          - 16*p2.p3*p2.p4*p1.p4*p3.p4*[N^2-1]
+          - 16*p2.p3*p2.p4*p1.p4*[N^2-1]*mt^2
+          + 16*p2.p3*p2.p4^2*p1.p3*[N^2-1]
+          + 8*p2.p3*p2.p4^2*p1.p4*[N^2-1]
+          + 16*p2.p3*p1.p4*p3.p4*[N^2-1]*mt^2
+          + 8*p2.p3*p1.p4*p3.p4^2*[N^2-1]
+          + 8*p2.p3*p1.p4*[N^2-1]*mt^4
+          + 8*p2.p3^2*p2.p4*p1.p3*[N^2-1]
+          + 16*p2.p3^2*p2.p4*p1.p4*[N^2-1]
+          - 16*p2.p3^2*p1.p4*p3.p4*[N^2-1]
+          - 16*p2.p3^2*p1.p4*[N^2-1]*mt^2
+          + 8*p2.p3^3*p1.p4*[N^2-1]
+          + 16*p2.p4*p1.p3*p3.p4*[N^2-1]*mt^2
+          + 8*p2.p4*p1.p3*p3.p4^2*[N^2-1]
+          + 8*p2.p4*p1.p3*[N^2-1]*mt^4
+          - 16*p2.p4^2*p1.p3*p3.p4*[N^2-1]
+          - 16*p2.p4^2*p1.p3*[N^2-1]*mt^2
+          + 8*p2.p4^3*p1.p3*[N^2-1]
+          )
+
+       + prop(2*mt^2 + 2*p3.p4)^2*prop(2*mt^2 - 2*p2.p3 - 2*p2.p4 + 2*p3.p4)^2
+       * (
+          - 16*p2.p1*p2.p3*p2.p4*[N^2-1]
+          + 8*p2.p1*p2.p3*p3.p4*[N^2-1]
+          + 8*p2.p1*p2.p3*[N^2-1]*mt^2
+          + 8*p2.p1*p2.p4*p3.p4*[N^2-1]
+          + 8*p2.p1*p2.p4*[N^2-1]*mt^2
+          + 8*p2.p1*p3.p4*[N^2-1]*mt^2
+          + 8*p2.p1*[N^2-1]*mt^4
+          + 8*p2.p3*p2.p4*p1.p3*[N^2-1]
+          + 8*p2.p3*p2.p4*p1.p4*[N^2-1]
+          - 8*p2.p3*p1.p3*p3.p4*[N^2-1]
+          - 16*p2.p3*p1.p3*[N^2-1]*mt^2
+          - 8*p2.p3*p1.p4*[N^2-1]*mt^2
+          - 8*p2.p3^2*p1.p4*[N^2-1]
+          - 8*p2.p4*p1.p3*[N^2-1]*mt^2
+          - 8*p2.p4*p1.p4*p3.p4*[N^2-1]
+          - 16*p2.p4*p1.p4*[N^2-1]*mt^2
+          - 8*p2.p4^2*p1.p3*[N^2-1]
+          );
+
+    
+    ********************************************************************************
+    *
+    
+    * Here I will implement the convertor toward Maxima readable form.
+    
+    ********************************************************************************
+    *
+    
+    Function eta;
+    
+    id p1?.p2? = eta(p1,p2);
+    argument;
+      id p1?.p2? = eta(p1,p2);
+    endargument;
+    
+    Bracket prop, mw;
+    Print +s;
+    
+    .end
+
+Time =       0.06 sec    Generated terms =         47
+               M         Terms in output =         47
+                         Bytes used      =       3672
+
+   M =
+
+       + prop(2*mt^2 + 2*eta(p4,p3))^2*prop(2*mt^2 - 2*eta(p3,p2) - 2*eta(p4,
+      p2) + 2*eta(p4,p3))^2*mw^-2 * (
+          + 8*eta(p1,p2)*[N^2-1]*mt^6
+          - 16*eta(p1,p2)*eta(p3,p2)*[N^2-1]*mt^4
+          + 8*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*[N^2-1]*mt^2
+          + 16*eta(p1,p2)*eta(p3,p2)*eta(p4,p2)*[N^2-1]*mt^2
+          - 16*eta(p1,p2)*eta(p3,p2)*eta(p4,p3)*[N^2-1]*mt^2
+          - 16*eta(p1,p2)*eta(p4,p2)*[N^2-1]*mt^4
+          + 8*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*[N^2-1]*mt^2
+          - 16*eta(p1,p2)*eta(p4,p2)*eta(p4,p3)*[N^2-1]*mt^2
+          + 16*eta(p1,p2)*eta(p4,p3)*[N^2-1]*mt^4
+          + 8*eta(p1,p2)*eta(p4,p3)*eta(p4,p3)*[N^2-1]*mt^2
+          + 8*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*[N^2-1]
+          + 8*eta(p3,p2)*eta(p3,p2)*eta(p4,p2)*eta(p3,p1)*[N^2-1]
+          + 16*eta(p3,p2)*eta(p3,p2)*eta(p4,p2)*eta(p4,p1)*[N^2-1]
+          - 16*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*[N^2-1]*mt^2
+          - 16*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p3)*[N^2-1]
+          - 16*eta(p3,p2)*eta(p4,p2)*eta(p3,p1)*[N^2-1]*mt^2
+          - 16*eta(p3,p2)*eta(p4,p2)*eta(p3,p1)*eta(p4,p3)*[N^2-1]
+          + 16*eta(p3,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*[N^2-1]
+          + 8*eta(p3,p2)*eta(p4,p2)*eta(p4,p2)*eta(p4,p1)*[N^2-1]
+          - 16*eta(p3,p2)*eta(p4,p2)*eta(p4,p1)*[N^2-1]*mt^2
+          - 16*eta(p3,p2)*eta(p4,p2)*eta(p4,p1)*eta(p4,p3)*[N^2-1]
+          + 8*eta(p3,p2)*eta(p4,p1)*[N^2-1]*mt^4
+          + 16*eta(p3,p2)*eta(p4,p1)*eta(p4,p3)*[N^2-1]*mt^2
+          + 8*eta(p3,p2)*eta(p4,p1)*eta(p4,p3)*eta(p4,p3)*[N^2-1]
+          + 8*eta(p4,p2)*eta(p3,p1)*[N^2-1]*mt^4
+          + 16*eta(p4,p2)*eta(p3,p1)*eta(p4,p3)*[N^2-1]*mt^2
+          + 8*eta(p4,p2)*eta(p3,p1)*eta(p4,p3)*eta(p4,p3)*[N^2-1]
+          - 16*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*[N^2-1]*mt^2
+          - 16*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p4,p3)*[N^2-1]
+          + 8*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*[N^2-1]
+          )
+
+       + prop(2*mt^2 + 2*eta(p4,p3))^2*prop(2*mt^2 - 2*eta(p3,p2) - 2*eta(p4,
+      p2) + 2*eta(p4,p3))^2 * (
+          + 8*eta(p1,p2)*[N^2-1]*mt^4
+          + 8*eta(p1,p2)*eta(p3,p2)*[N^2-1]*mt^2
+          - 16*eta(p1,p2)*eta(p3,p2)*eta(p4,p2)*[N^2-1]
+          + 8*eta(p1,p2)*eta(p3,p2)*eta(p4,p3)*[N^2-1]
+          + 8*eta(p1,p2)*eta(p4,p2)*[N^2-1]*mt^2
+          + 8*eta(p1,p2)*eta(p4,p2)*eta(p4,p3)*[N^2-1]
+          + 8*eta(p1,p2)*eta(p4,p3)*[N^2-1]*mt^2
+          - 8*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*[N^2-1]
+          - 16*eta(p3,p2)*eta(p3,p1)*[N^2-1]*mt^2
+          - 8*eta(p3,p2)*eta(p3,p1)*eta(p4,p3)*[N^2-1]
+          + 8*eta(p3,p2)*eta(p4,p2)*eta(p3,p1)*[N^2-1]
+          + 8*eta(p3,p2)*eta(p4,p2)*eta(p4,p1)*[N^2-1]
+          - 8*eta(p3,p2)*eta(p4,p1)*[N^2-1]*mt^2
+          - 8*eta(p4,p2)*eta(p3,p1)*[N^2-1]*mt^2
+          - 8*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*[N^2-1]
+          - 16*eta(p4,p2)*eta(p4,p1)*[N^2-1]*mt^2
+          - 8*eta(p4,p2)*eta(p4,p1)*eta(p4,p3)*[N^2-1]
+          );
+
+  0.06 sec out of 0.06 sec

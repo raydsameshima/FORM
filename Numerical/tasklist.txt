@@ -28,3 +28,16 @@ Maxima readable form
 | numerical evaluation
 v
 
+==============================================
+
+Each diagrams positive numerics, but with interference, they become negative...
+
+(%i116) ev(MRight(p1,p2,p3,p4,mt,mw,N),numer);
+                                                2
+(%o116)                 [1.279781154566045e-4 (N  - 1)]
+(%i117) ev(MLeft(p1,p2,p3,p4,mt,mw,N),numer);
+                                                2
+(%o117)                 [1.279781154566045e-4 (N  - 1)]
+(%i118) ev(M(p1,p2,p3,p4,mt,mw,N),numer);
+                                                 2
+(%o118)                [- 1.816454677379454e-4 (N  - 1)]
