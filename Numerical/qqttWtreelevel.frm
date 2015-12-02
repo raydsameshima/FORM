@@ -631,7 +631,53 @@ b MW,prop,propM,Nc,[Nc^2-1],aem,Pi,sw;
 
 print +s;
 *print[];
-.store;
+* .store;
+.sort
+
+*******************************************************
+* To rewrite Maxima-readable form
+*******************************************************
+
+Function eta;
+Symbols mt, mw, [N^2-1];
+Symbol [N^(-1)];
+
+* He used metric (-+++)
+* Maxima uses 
+*   eta(p,q):= p[1]*q[1] - sum(p[i]*q[i], i, 2, length(p));
+* and this metric is (+---).
+id p1dp4 = -eta(p1,p4);
+id p2dp3 = -eta(p2,p3); 
+id p3dp4 = -eta(p3,p4); 
+id p1dp3 = -eta(p1,p3); 
+id p2dp4 = -eta(p2,p4);
+
+id a = mt^2;
+id MW = mw;
+id MW^-1 = mw^-1;
+
+id [Nc^2-1] = [N^2-1];
+id Nc^-2 = [N^(-1)];
+
+.sort
+
+* for debug
+* Bracket prop, [N^2-1];
+* print +s;
+* .end
+
+* all terms are prop^4 and sign blind!
+Vector q;
+id prop(q?) = prop(q.q);
+
+argument;
+*  id p3.p3 = mt^2;
+*  id p4.p4 = mt^2;
+  id p1?.p2? = eta(p1,p2);
+endargument;
+
+Bracket prop, [N^2-1];
+print +s;
 
 * for debugging
 * Bracket MW^(-1);

@@ -1,23 +1,416 @@
-/*
-consistency.mac
-Ray D. Sameshima
+FORM 4.1 (May 11 2015) 64-bits                   Run: Tue Dec  1 23:35:26 2015
+    #-
+~~~tree level
 
-By using
-  consistency.frm
-both results can be handled with Maxima.
-E.g. 
-  p1.p2 -> eta(p1,p2)
+Time =       0.00 sec    Generated terms =          8
+[qqttWtreelevel]         Terms in output =          8
+                         Bytes used      =       8076
 
-p5.mac is for momentums and masses.
-This file also provides Lorentz inner products. 
+Time =       0.00 sec    Generated terms =          8
+[qqttWtreelevel]         Terms in output =          8
+                         Bytes used      =       8076
 
-*/
-prop(x) := 1/x;
-/*prop(2*mt^2 + 2*eta(p3,p4)), mt = sqrt(eta(p3,p3)), float;*/
-/* This is the result of professor Ferroglia*/
-qqttWtreelevel(p1,p2,p3,p4,mt,mw,N,aem,sw,Pi)
-:=
-+ prop( - eta(p3,p3) - 2*eta(p3,p4) - eta(p4,p4))^2*prop( - eta(p1,p1)
+Time =       0.00 sec    Generated terms =         32
+[qqttWtreelevel]         Terms in output =         32
+                         Bytes used      =      26444
+~~~COLOR STRUCTURE - BEGIN
+
+Time =       0.01 sec    Generated terms =         32
+[qqttWtreelevel]         Terms in output =         32
+                         Bytes used      =      18760
+
+Time =       0.02 sec    Generated terms =         64
+[qqttWtreelevel]         Terms in output =         64
+                         Bytes used      =      20364
+~~~COLOR STRUCTURE - END
+
+Time =       0.02 sec    Generated terms =         64
+[qqttWtreelevel]         Terms in output =         64
+                         Bytes used      =      22524
+~~~DIRAC TRACE -  BEGIN
+~~~CHECKING TRACE ORDERING
+
+Time =       0.03 sec    Generated terms =         64
+[qqttWtreelevel]         Terms in output =         64
+                         Bytes used      =      29300
+
+Time =       0.03 sec    Generated terms =         64
+[qqttWtreelevel]         Terms in output =         64
+                         Bytes used      =      25876
+
+Time =       0.04 sec    Generated terms =       1024
+[qqttWtreelevel]         Terms in output =       1024
+                         Bytes used      =     188228
+
+Time =       0.06 sec    Generated terms =       1024
+[qqttWtreelevel]         Terms in output =       1024
+                         Bytes used      =     101668
+~~~DIRAC TRACE - END
+
+Time =       0.08 sec    Generated terms =       1440
+[qqttWtreelevel]         Terms in output =        448
+                         Bytes used      =      24548
+
+Time =       0.08 sec    Generated terms =        448
+[qqttWtreelevel]         Terms in output =        448
+                         Bytes used      =      24288
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~tree level matrix element squared for q qbar -> t tbar W 
+~~~in agreement with openloops and GoSam
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Time =       0.28 sec    Generated terms =      21395
+[qqttWtreelevel]     213 Terms left      =        211
+                         Bytes used      =       8672
+
+Time =       0.48 sec    Generated terms =      42782
+[qqttWtreelevel]     408 Terms left      =        396
+                         Bytes used      =      17168
+
+Time =       0.52 sec    Generated terms =      47094
+[qqttWtreelevel]     448 Terms left      =        469
+                         Bytes used      =      20876
+
+Time =       0.52 sec    Generated terms =      47094
+[qqttWtreelevel]         Terms in output =        282
+                         Bytes used      =      11752
+
+   [qqttWtreelevel] =
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)^2*MW^-2*Nc^-2*[Nc^2-1]*aem*
+      sw^-2*Pi * (
+          + 8*p1dp4*p2dp3*p3dp4^2
+          - 16*p1dp4^2*p2dp3*p3dp4
+          + 8*p1dp4^3*p2dp3
+          + 8*p1dp3*p2dp4*p3dp4^2
+          - 16*p1dp3*p1dp4*p2dp4*p3dp4
+          - 16*p1dp3*p1dp4*p2dp3*p3dp4
+          + 8*p1dp3*p1dp4^2*p2dp4
+          + 16*p1dp3*p1dp4^2*p2dp3
+          - 16*p1dp3^2*p2dp4*p3dp4
+          + 16*p1dp3^2*p1dp4*p2dp4
+          + 8*p1dp3^2*p1dp4*p2dp3
+          + 8*p1dp3^3*p2dp4
+          + 8*a*p3dp4^3
+          - 8*a*p2dp4*p3dp4^2
+          - 8*a*p2dp3*p3dp4^2
+          - 24*a*p1dp4*p3dp4^2
+          + 16*a*p1dp4*p2dp4*p3dp4
+          + 24*a*p1dp4^2*p3dp4
+          - 8*a*p1dp4^2*p2dp4
+          + 8*a*p1dp4^2*p2dp3
+          - 8*a*p1dp4^3
+          - 24*a*p1dp3*p3dp4^2
+          + 16*a*p1dp3*p2dp3*p3dp4
+          + 48*a*p1dp3*p1dp4*p3dp4
+          - 24*a*p1dp3*p1dp4^2
+          + 24*a*p1dp3^2*p3dp4
+          + 8*a*p1dp3^2*p2dp4
+          - 8*a*p1dp3^2*p2dp3
+          - 24*a*p1dp3^2*p1dp4
+          - 8*a*p1dp3^3
+          - 24*a^2*p3dp4^2
+          + 16*a^2*p2dp4*p3dp4
+          + 16*a^2*p2dp3*p3dp4
+          + 48*a^2*p1dp4*p3dp4
+          - 16*a^2*p1dp4*p2dp4
+          - 8*a^2*p1dp4*p2dp3
+          - 24*a^2*p1dp4^2
+          + 48*a^2*p1dp3*p3dp4
+          - 8*a^2*p1dp3*p2dp4
+          - 16*a^2*p1dp3*p2dp3
+          - 48*a^2*p1dp3*p1dp4
+          - 24*a^2*p1dp3^2
+          + 24*a^3*p3dp4
+          - 8*a^3*p2dp4
+          - 8*a^3*p2dp3
+          - 24*a^3*p1dp4
+          - 24*a^3*p1dp3
+          - 8*a^4
+          )
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)^2*Nc^-2*[Nc^2-1]*aem*sw^-2*Pi
+       * (
+          - 8*p1dp4*p3dp4^2
+          + 8*p1dp4*p2dp3*p3dp4
+          + 8*p1dp4^2*p3dp4
+          - 8*p1dp4^2*p2dp3
+          - 8*p1dp3*p3dp4^2
+          + 8*p1dp3*p2dp4*p3dp4
+          + 32*p1dp3*p1dp4*p3dp4
+          - 8*p1dp3*p1dp4*p2dp4
+          - 8*p1dp3*p1dp4*p2dp3
+          - 16*p1dp3*p1dp4^2
+          + 8*p1dp3^2*p3dp4
+          - 8*p1dp3^2*p2dp4
+          - 16*p1dp3^2*p1dp4
+          + 12*a*p3dp4^2
+          - 8*a*p2dp4*p3dp4
+          - 8*a*p2dp3*p3dp4
+          + 8*a*p1dp4*p2dp4
+          - 4*a*p1dp4^2
+          + 8*a*p1dp3*p2dp3
+          - 24*a*p1dp3*p1dp4
+          - 4*a*p1dp3^2
+          - 24*a^2*p3dp4
+          + 8*a^2*p2dp4
+          + 8*a^2*p2dp3
+          + 8*a^2*p1dp4
+          + 8*a^2*p1dp3
+          + 12*a^3
+          )
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)^2*MW^2*Nc^-2*[Nc^2-1]*aem*sw^-2
+      *Pi * (
+          - 4*p1dp4*p3dp4
+          - 4*p1dp3*p3dp4
+          + 8*p1dp3*p1dp4
+          + 4*a*p3dp4
+          + 4*a*p1dp4
+          + 4*a*p1dp3
+          - 4*a^2
+          )
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)*prop( - p2 + p3 + p4)*MW^-2*
+      Nc^-2*[Nc^2-1]*aem*sw^-2*Pi * (
+          - 16*p1dp4*p2dp3*p3dp4^2
+          + 16*p1dp4*p2dp3*p2dp4*p3dp4
+          + 16*p1dp4*p2dp3^2*p3dp4
+          + 16*p1dp4^2*p2dp3*p3dp4
+          - 16*p1dp4^2*p2dp3*p2dp4
+          - 16*p1dp4^2*p2dp3^2
+          - 16*p1dp3*p2dp4*p3dp4^2
+          + 16*p1dp3*p2dp4^2*p3dp4
+          + 16*p1dp3*p2dp3*p2dp4*p3dp4
+          + 16*p1dp3*p1dp4*p2dp4*p3dp4
+          - 16*p1dp3*p1dp4*p2dp4^2
+          + 16*p1dp3*p1dp4*p2dp3*p3dp4
+          - 32*p1dp3*p1dp4*p2dp3*p2dp4
+          - 16*p1dp3*p1dp4*p2dp3^2
+          + 16*p1dp3^2*p2dp4*p3dp4
+          - 16*p1dp3^2*p2dp4^2
+          - 16*p1dp3^2*p2dp3*p2dp4
+          - 16*a*p3dp4^3
+          + 32*a*p2dp4*p3dp4^2
+          - 16*a*p2dp4^2*p3dp4
+          + 32*a*p2dp3*p3dp4^2
+          - 32*a*p2dp3*p2dp4*p3dp4
+          - 16*a*p2dp3^2*p3dp4
+          + 32*a*p1dp4*p3dp4^2
+          - 48*a*p1dp4*p2dp4*p3dp4
+          + 16*a*p1dp4*p2dp4^2
+          - 16*a*p1dp4*p2dp3*p3dp4
+          + 16*a*p1dp4*p2dp3*p2dp4
+          - 16*a*p1dp4^2*p3dp4
+          + 16*a*p1dp4^2*p2dp4
+          + 32*a*p1dp3*p3dp4^2
+          - 16*a*p1dp3*p2dp4*p3dp4
+          - 48*a*p1dp3*p2dp3*p3dp4
+          + 16*a*p1dp3*p2dp3*p2dp4
+          + 16*a*p1dp3*p2dp3^2
+          - 32*a*p1dp3*p1dp4*p3dp4
+          + 16*a*p1dp3*p1dp4*p2dp4
+          + 16*a*p1dp3*p1dp4*p2dp3
+          - 16*a*p1dp3^2*p3dp4
+          + 16*a*p1dp3^2*p2dp3
+          + 48*a^2*p3dp4^2
+          - 64*a^2*p2dp4*p3dp4
+          + 16*a^2*p2dp4^2
+          - 64*a^2*p2dp3*p3dp4
+          + 32*a^2*p2dp3*p2dp4
+          + 16*a^2*p2dp3^2
+          - 64*a^2*p1dp4*p3dp4
+          + 48*a^2*p1dp4*p2dp4
+          + 32*a^2*p1dp4*p2dp3
+          + 16*a^2*p1dp4^2
+          - 64*a^2*p1dp3*p3dp4
+          + 32*a^2*p1dp3*p2dp4
+          + 48*a^2*p1dp3*p2dp3
+          + 32*a^2*p1dp3*p1dp4
+          + 16*a^2*p1dp3^2
+          - 48*a^3*p3dp4
+          + 32*a^3*p2dp4
+          + 32*a^3*p2dp3
+          + 32*a^3*p1dp4
+          + 32*a^3*p1dp3
+          + 16*a^4
+          )
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)*prop( - p2 + p3 + p4)*Nc^-2*
+      [Nc^2-1]*aem*sw^-2*Pi * (
+          + 8*p2dp4*p3dp4^2
+          - 8*p2dp4^2*p3dp4
+          + 8*p2dp3*p3dp4^2
+          - 16*p2dp3*p2dp4*p3dp4
+          - 8*p2dp3^2*p3dp4
+          + 8*p1dp4*p3dp4^2
+          - 16*p1dp4*p2dp4*p3dp4
+          - 32*p1dp4*p2dp3*p3dp4
+          + 24*p1dp4*p2dp3*p2dp4
+          + 8*p1dp4*p2dp3^2
+          - 8*p1dp4^2*p3dp4
+          + 8*p1dp4^2*p2dp3
+          + 8*p1dp3*p3dp4^2
+          - 32*p1dp3*p2dp4*p3dp4
+          + 8*p1dp3*p2dp4^2
+          - 16*p1dp3*p2dp3*p3dp4
+          + 24*p1dp3*p2dp3*p2dp4
+          - 16*p1dp3*p1dp4*p3dp4
+          + 24*p1dp3*p1dp4*p2dp4
+          + 24*p1dp3*p1dp4*p2dp3
+          - 8*p1dp3^2*p3dp4
+          + 8*p1dp3^2*p2dp4
+          - 24*a*p3dp4^2
+          + 8*a*p2dp4*p3dp4
+          + 8*a*p2dp4^2
+          + 8*a*p2dp3*p3dp4
+          + 16*a*p2dp3*p2dp4
+          + 8*a*p2dp3^2
+          + 8*a*p1dp4*p3dp4
+          + 8*a*p1dp4*p2dp4
+          + 24*a*p1dp4*p2dp3
+          + 8*a*p1dp4^2
+          + 8*a*p1dp3*p3dp4
+          + 24*a*p1dp3*p2dp4
+          + 8*a*p1dp3*p2dp3
+          + 16*a*p1dp3*p1dp4
+          + 8*a*p1dp3^2
+          + 48*a^2*p3dp4
+          - 16*a^2*p2dp4
+          - 16*a^2*p2dp3
+          - 16*a^2*p1dp4
+          - 16*a^2*p1dp3
+          - 24*a^3
+          )
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)*prop( - p2 + p3 + p4)*MW^2*
+      Nc^-2*[Nc^2-1]*aem*sw^-2*Pi * (
+          - 8*p3dp4^2
+          + 12*p2dp4*p3dp4
+          + 12*p2dp3*p3dp4
+          + 12*p1dp4*p3dp4
+          - 8*p1dp4*p2dp3
+          + 12*p1dp3*p3dp4
+          - 8*p1dp3*p2dp4
+          + 8*a*p3dp4
+          - 12*a*p2dp4
+          - 12*a*p2dp3
+          - 12*a*p1dp4
+          - 12*a*p1dp3
+          )
+
+       + prop(p3 + p4)^2*prop( - p1 + p3 + p4)*prop( - p2 + p3 + p4)*MW^4*
+      Nc^-2*[Nc^2-1]*aem*sw^-2*Pi * (
+          - 4*p3dp4
+          + 4*a
+          )
+
+       + prop(p3 + p4)^2*prop( - p2 + p3 + p4)^2*MW^-2*Nc^-2*[Nc^2-1]*aem*
+      sw^-2*Pi * (
+          + 8*p1dp4*p2dp3*p3dp4^2
+          - 16*p1dp4*p2dp3*p2dp4*p3dp4
+          + 8*p1dp4*p2dp3*p2dp4^2
+          - 16*p1dp4*p2dp3^2*p3dp4
+          + 16*p1dp4*p2dp3^2*p2dp4
+          + 8*p1dp4*p2dp3^3
+          + 8*p1dp3*p2dp4*p3dp4^2
+          - 16*p1dp3*p2dp4^2*p3dp4
+          + 8*p1dp3*p2dp4^3
+          - 16*p1dp3*p2dp3*p2dp4*p3dp4
+          + 16*p1dp3*p2dp3*p2dp4^2
+          + 8*p1dp3*p2dp3^2*p2dp4
+          + 8*a*p3dp4^3
+          - 24*a*p2dp4*p3dp4^2
+          + 24*a*p2dp4^2*p3dp4
+          - 8*a*p2dp4^3
+          - 24*a*p2dp3*p3dp4^2
+          + 48*a*p2dp3*p2dp4*p3dp4
+          - 24*a*p2dp3*p2dp4^2
+          + 24*a*p2dp3^2*p3dp4
+          - 24*a*p2dp3^2*p2dp4
+          - 8*a*p2dp3^3
+          - 8*a*p1dp4*p3dp4^2
+          + 16*a*p1dp4*p2dp4*p3dp4
+          - 8*a*p1dp4*p2dp4^2
+          + 8*a*p1dp4*p2dp3^2
+          - 8*a*p1dp3*p3dp4^2
+          + 8*a*p1dp3*p2dp4^2
+          + 16*a*p1dp3*p2dp3*p3dp4
+          - 8*a*p1dp3*p2dp3^2
+          - 24*a^2*p3dp4^2
+          + 48*a^2*p2dp4*p3dp4
+          - 24*a^2*p2dp4^2
+          + 48*a^2*p2dp3*p3dp4
+          - 48*a^2*p2dp3*p2dp4
+          - 24*a^2*p2dp3^2
+          + 16*a^2*p1dp4*p3dp4
+          - 16*a^2*p1dp4*p2dp4
+          - 8*a^2*p1dp4*p2dp3
+          + 16*a^2*p1dp3*p3dp4
+          - 8*a^2*p1dp3*p2dp4
+          - 16*a^2*p1dp3*p2dp3
+          + 24*a^3*p3dp4
+          - 24*a^3*p2dp4
+          - 24*a^3*p2dp3
+          - 8*a^3*p1dp4
+          - 8*a^3*p1dp3
+          - 8*a^4
+          )
+
+       + prop(p3 + p4)^2*prop( - p2 + p3 + p4)^2*Nc^-2*[Nc^2-1]*aem*sw^-2*Pi
+       * (
+          - 8*p2dp4*p3dp4^2
+          + 8*p2dp4^2*p3dp4
+          - 8*p2dp3*p3dp4^2
+          + 32*p2dp3*p2dp4*p3dp4
+          - 16*p2dp3*p2dp4^2
+          + 8*p2dp3^2*p3dp4
+          - 16*p2dp3^2*p2dp4
+          + 8*p1dp4*p2dp3*p3dp4
+          - 8*p1dp4*p2dp3*p2dp4
+          - 8*p1dp4*p2dp3^2
+          + 8*p1dp3*p2dp4*p3dp4
+          - 8*p1dp3*p2dp4^2
+          - 8*p1dp3*p2dp3*p2dp4
+          + 12*a*p3dp4^2
+          - 4*a*p2dp4^2
+          - 24*a*p2dp3*p2dp4
+          - 4*a*p2dp3^2
+          - 8*a*p1dp4*p3dp4
+          + 8*a*p1dp4*p2dp4
+          - 8*a*p1dp3*p3dp4
+          + 8*a*p1dp3*p2dp3
+          - 24*a^2*p3dp4
+          + 8*a^2*p2dp4
+          + 8*a^2*p2dp3
+          + 8*a^2*p1dp4
+          + 8*a^2*p1dp3
+          + 12*a^3
+          )
+
+       + prop(p3 + p4)^2*prop( - p2 + p3 + p4)^2*MW^2*Nc^-2*[Nc^2-1]*aem*sw^-2
+      *Pi * (
+          - 4*p2dp4*p3dp4
+          - 4*p2dp3*p3dp4
+          + 8*p2dp3*p2dp4
+          + 4*a*p3dp4
+          + 4*a*p2dp4
+          + 4*a*p2dp3
+          - 4*a^2
+          );
+
+
+Time =       0.52 sec    Generated terms =        282
+[qqttWtreelevel]         Terms in output =        282
+                         Bytes used      =      63900
+
+Time =       0.54 sec    Generated terms =        282
+[qqttWtreelevel]         Terms in output =        282
+                         Bytes used      =      23992
+
+   [qqttWtreelevel] =
+
+       + prop( - eta(p3,p3) - 2*eta(p3,p4) - eta(p4,p4))^2*prop( - eta(p1,p1)
        + 2*eta(p1,p3) + 2*eta(p1,p4) - eta(p3,p3) - 2*eta(p3,p4) - eta(p4,p4))
       ^2*[N^2-1] * (
           - 4*aem*sw^-2*Pi*mt^4*mw^2*[N^(-1)]
@@ -413,10 +806,6 @@ qqttWtreelevel(p1,p2,p3,p4,mt,mw,N,aem,sw,Pi)
          [N^(-1)]
           - 8*eta(p3,p4)*eta(p3,p4)*eta(p3,p4)*aem*sw^-2*Pi*mt^2*mw^-2*
          [N^(-1)]
-          )$
-load("p5.mac");
-print(" The standard value biven by Professor Ferroglia is 0.2282444653585411*10^(-2) ")$
-/*
-ev(MM(p1,p2,p3,p4,mt,mw,N), numer); 
-*/
-ev(qqttWtreelevel(p1,p2,p3,p4,mt,mw,N,aem,sw,%pi),N=3, numer);
+          );
+
+  0.54 sec out of 0.56 sec
