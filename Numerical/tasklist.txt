@@ -1,6 +1,7 @@
 tasklist.txt
 
-==============================================
+============================================================================================
+
 convertor <= Professor Ferroglia's code
 qqttW
 
@@ -17,7 +18,22 @@ v consistency.mac
 
 as standard value
 
-==============================================
+with a slight debuggin of converter, (1/Nc -> 1/N^2), I got a nice result.
+He uses aem = 1:
+
+(%i10) load("consistency.mac");
+The standard value biven by Professor Ferroglia is 0.2282444653585411*10^(-2) 
+
+(%o10)                          consistency.mac
+(%i11) ev(qqttWtreelevel(p1,p2,p3,p4,mt,mw,N,aem,sw,%pi),N = 3,numer);
+(%o11)                      [1.663996886594144e-5]
+(%i12) 1.663996886594144e-5/(0.2282444653585411*10^(-2));
+(%o12)                       0.007290415055542445
+(%i13) %*(1/aem);
+(%o13)                        0.9990493112681031
+
+============================================================================================
+
 My result
 
 | convertor
@@ -28,7 +44,6 @@ Maxima readable form
 | numerical evaluation
 v
 
-==============================================
 
 Each diagrams positive numerics, but with interference, they become negative...
 
@@ -41,3 +56,5 @@ Each diagrams positive numerics, but with interference, they become negative...
 (%i118) ev(M(p1,p2,p3,p4,mt,mw,N),numer);
                                                  2
 (%o118)                [- 1.816454677379454e-4 (N  - 1)]
+
+
