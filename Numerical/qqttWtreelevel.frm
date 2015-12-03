@@ -657,7 +657,7 @@ id MW = mw;
 id MW^-1 = mw^-1;
 
 id [Nc^2-1] = [N^2-1];
-id Nc^-2 = [N^(-1)];
+id Nc^-1 = [N^(-1)];
 
 .sort
 
