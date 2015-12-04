@@ -96,6 +96,10 @@ Skip;
 Local 'Amp'C = 'Amp';
 id  i_ = -i_;
 
+* for debugging
+* Print +s;
+* .end
+
 * Make a new set of dummy indices above $imax and $jmax.
 * I haven't seen <> notation, but this should clarify the pair of replacement.
 Multiply replace_(<i1,i{'$imax'+1}>,...,<i'$imax',i{2*'$imax'}>);
@@ -103,12 +107,20 @@ Multiply replace_(<j1,j{'$jmax'+1}>,...,<j'$jmax',j{2*'$jmax'}>);
 Multiply replace_(<c1,c{'$cmax'+1}>,...,<c'$cmax',c{2*'$cmax'}>);
 Multiply replace_(<d1,d{'$dmax'+1}>,...,<d'$dmax',d{2*'$dmax'}>);
 
+* for debugging
+* Print +s;
+* .end
+
 * Exchange rows and columns, i.e. takeing the transposes.
 id g(i1?,i2?,j?)      = g(i2,i1,j);
 id T(c1?,c2?,d?)      = T(c2,c1,d);
 id fprop(i1?,i2?,?a)  = fprop(i2,i1,?a);
 id phprop(j1?,j2?,q?) = phprop(j2,j1,q);
 id gprop(j1?,j2?,q?,d1?,d2?) = gprop(j2,j1,q,d2,d1);
+
+* for debugging
+Print +s;
+.end
 
 * and exchange U and UB, V and VBAR
 Multiply replace_(UB,U,U,UB,VB,V,V,VB);

@@ -52,20 +52,6 @@ argument;
 endargument;
 .sort
 
-* id p1.p1 = mq^2;
-* id p2.p2 = mq^2;
-* argument;
-*   id p1.p1 = mq^2;
-*   id p2.p2 = mq^2;
-* endargument;
-
-* argument;
-*   argument;
-*     id p1.p1 = mq^2;
-*     id p2.p2 = mq^2;
-*   endargument;
-* endargument;
-
 id p3.p3 = mt^2;
 id p4.p4 = mt^2;
 argument;

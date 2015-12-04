@@ -36,23 +36,6 @@ argument;
 endargument;
 
 id p5 = p1 + p2;
-*argument;
-*  id q1 = p5 - p2;
-*endargument;
-
-* Symbols	s,t,u;
-* 
-* id	prop(q.q) = 1/s;
-* id	p1.p2 = s/2-mq^2;
-* id	k1.k2 = s/2-mt^2;
-* id	p1.k1 = mq^2/2+mt^2/2-t/2;
-* id	p2.k2 = mq^2/2+mt^2/2-t/2;
-* id	p1.k2 = mq^2/2+mt^2/2-u/2;
-* id	p2.k1 = mq^2/2+mt^2/2-u/2;
-* id	u = 2*mq^2+2*mt^2-s-t;
-*
-* id mq = 0;
-* id mt = 0;
 
 * massless quarks
 id p1.p1 = 0;
