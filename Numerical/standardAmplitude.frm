@@ -119,11 +119,15 @@ id phprop(j1?,j2?,q?) = phprop(j2,j1,q);
 id gprop(j1?,j2?,q?,d1?,d2?) = gprop(j2,j1,q,d2,d1);
 
 * for debugging
-Print +s;
-.end
+* Print +s;
+* .end
 
 * and exchange U and UB, V and VBAR
 Multiply replace_(UB,U,U,UB,VB,V,V,VB);
+
+* for debugging
+* Print +s;
+* .end
 
 * gamma5 gets a minus sign. Hence k6 <--> k7
 Multiply replace_(k6,k7,k7,k6);
@@ -132,9 +136,9 @@ id g(?a,k5) = -g(?a,k5);
 * The end of the conjugations.
 
 * for debugging
-* Print +s;
-* .end
-* .sort
+* In this place, we can see both Amp and AmpC.
+Print +s;
+.sort
 
 * Now multiply Amp and AmpC to get the matrix element squared.
 Skip;
@@ -145,9 +149,8 @@ Drop,'Amp','Amp'C;
 Local 'Mat' = 'Amp'*'Amp'C;
 
 * for debugging
-* Print +s;
-* .sort
-* .end
+Print +s;
+.sort
 
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
 * (A.22) of Peskin & Schroeder
@@ -161,8 +164,8 @@ id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) - p(j1)* p(j2)/(mw^2);
 * id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + p(j1)* p(j2)/(mw^2);
 
 * for debugging
-* Print +s;
-* .end
+Print +s;
+.end
 .sort
 
 * Propagators
