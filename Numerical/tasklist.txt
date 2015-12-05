@@ -58,3 +58,9 @@ Each diagrams positive numerics, but with interference, they become negative...
 (%o118)                [- 1.816454677379454e-4 (N  - 1)]
 
 
+12/5
+When I eliminate i_ in the propagators, 
+                                               2
+(%o29)                  [1.81645467737945e-4 (N  - 1)]
+
+positive value.
