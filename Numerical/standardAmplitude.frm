@@ -170,12 +170,13 @@ Print +s;
 .sort
 
 * Propagators
-id fprop(i1?,i2?,p?,m?) = (g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
-* id fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
-id phprop(j1?,j2?,q?) = d_(j1,j2)*prop(q.q);
-* id phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
-id gprop(j1?,j2?,q?,d1?,d2?) = d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
+* id fprop(i1?,i2?,p?,m?)      = i_*(g(i1,i2,p) + d_(i1,i2)*m)*prop(p.p-m^2);
+* id phprop(j1?,j2?,q?)        = -d_(j1,j2)*prop(q.q);
 * id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
+
+id fprop(i1?,i2?,p?,m?)      = (g(i1,i2,p) + d_(i1,i2)*m)*prop(p.p-m^2);
+id phprop(j1?,j2?,q?)        = -d_(j1,j2)*prop(q.q);
+id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 
 *   String the gamma matrices together in traces.
 repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
