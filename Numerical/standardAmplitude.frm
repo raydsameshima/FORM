@@ -157,20 +157,25 @@ Print +s;
 id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * cdelta(c1,c2);
 id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2);
 * for external photons (A.26)
+* id e(j1?,p?)*e(j2?,p?) =  p(j1)* p(j2)/(mw^2);
+*
 * need to replace massive W boson, check the sign
 * see http://www.hep.lu.se/atlas/thesis/egede/thesis-node15.html
-id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) - p(j1)* p(j2)/(mw^2);
-* id e(j1?,p?)*e(j2?,p?) =  p(j1)* p(j2)/(mw^2);
-* id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + p(j1)* p(j2)/(mw^2);
+* id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) - p(j1)* p(j2)/(mw^2);
+id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mw^2);
 
 * for debugging
 Print +s;
-.end
+* .end
 .sort
 
 * Propagators
-id fprop(i1?,i2?,p?,m?) = i_*(g(i1,i2,p)+g(i1,i2)*m)*prop(p.p-m^2);
-id phprop(j1?,j2?,q?) = -d_(j1,j2)*prop(q.q);
+* id fprop(i1?,i2?,p?,m?)      = i_*(g(i1,i2,p) + d_(i1,i2)*m)*prop(p.p-m^2);
+* id phprop(j1?,j2?,q?)        = -d_(j1,j2)*prop(q.q);
+* id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
+
+id fprop(i1?,i2?,p?,m?)      = (g(i1,i2,p) + d_(i1,i2)*m)*prop(p.p-m^2);
+id phprop(j1?,j2?,q?)        = -d_(j1,j2)*prop(q.q);
 id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 
 *   String the gamma matrices together in traces.
@@ -216,7 +221,9 @@ Skip; NSkip 'Mat';
 * We didn't assume the symmetric property on ddelta.
 id T(c1?, c2?, d1?)* ddelta(d1?,d2?) = T(c1,c2,d2);
 id T(c1?, c2?, d1?)* ddelta(d2?,d1?) = T(c1,c2,d2);
-repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) = 1/2 * (cdelta(c1,c4)*cdelta(c2,c3) - 1/N * cdelta(c1,c2)*cdelta(c3,c4));
+* QCD practice eq.(3.25)
+repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) 
+          = 1/2 * (cdelta(c1,c4)*cdelta(c2,c3) - (1/N) * cdelta(c1,c2)*cdelta(c3,c4));
 repeat id cdelta(c1?,c2?)*cdelta(c2?,c3?) = cdelta(c1,c3);
 repeat id cdelta(c1?,c2?)*cdelta(c3?,c2?) = cdelta(c1,c3);
 repeat id ddelta(d1?,d2?)*ddelta(d2?,d3?) = ddelta(d1,d3);
