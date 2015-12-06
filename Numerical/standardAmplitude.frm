@@ -174,6 +174,7 @@ Print +s;
 * id phprop(j1?,j2?,q?)        = -d_(j1,j2)*prop(q.q);
 * id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 
+* The factors are "relative" factor from (bosonic) propagator prop.
 id fprop(i1?,i2?,p?,m?)      = (g(i1,i2,p) + d_(i1,i2)*m)*prop(p.p-m^2);
 id phprop(j1?,j2?,q?)        = -d_(j1,j2)*prop(q.q);
 id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
