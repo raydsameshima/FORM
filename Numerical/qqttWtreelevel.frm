@@ -638,6 +638,11 @@ print +s;
 * To rewrite Maxima-readable form
 *******************************************************
 
+#message~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#message The following is Maxima-readable form
+#message eta(p,q) = +p1*p1 - p2*q2 - ...
+#message~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Function eta;
 Symbols mt, mw, [N^2-1];
 Symbol [N^(-1)];

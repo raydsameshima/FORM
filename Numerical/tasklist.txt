@@ -32,6 +32,21 @@ The standard value biven by Professor Ferroglia is 0.2282444653585411*10^(-2)
 (%i13) %*(1/aem);
 (%o13)                        0.9990493112681031
 
+Under in qqttWtreelevel.frm
+  298 * Using this polarization sum, it should be so small number.
+  299 * g [qqttWtreelevel] = hCOMPLEXCONJ*hTREE*( p5(mu3)*p5(mu4)/MW^2);
+  300 *
+  301 g [qqttWtreelevel] = hCOMPLEXCONJ*hTREE*(d_(mu3,mu4) + p5(mu3)*p5(mu4)/MW^2);
+
+(%o16) [(1.01643953670516e-20*Pi*(N^2-1))/N^2]
+(%i17) (%o12) ;
+
+(%o17) [(5.95874992029711e-6*Pi*(N^2-1))/N^2]
+(%i18) (%o8)/(%o12) ;
+
+(%o18) [1.705793245732453e-15]
+
+So the behavior is ok.
 ============================================================================================
 
 My result
