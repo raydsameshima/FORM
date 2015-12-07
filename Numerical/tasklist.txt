@@ -46,7 +46,8 @@ Under in qqttWtreelevel.frm
 
 (%o18) [1.705793245732453e-15]
 
-So the behavior is ok.
+So the behavior is ok, and done.
+
 ============================================================================================
 
 My result
@@ -87,3 +88,22 @@ Peskin & Scroeder
 prop   = i/(p^2 -m^2)
 fprop  = (gamma(p) + m) * i/(p^2 -m^2)
 phprop = -delta(mu, nu) * i/(q^2)
+
+in standardAmplitude.frm
+165 * the relative sign should be minus
+166 * id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mw^2);
+167 * for debugging, this is massless W
+168 id e(j1?,p?)*e(j2?,p?) = (p(j1)*p(j2))/(mw^2);
+
+This gives me a correct behavior
+
+(%o13) [-1.897353801849633e-19*(N^2-1)]
+(%i14) %o9;
+
+Compareing with my result
+
+(%o14) [1.816454677379452e-4*(N^2-1)]
+(%i15) %o13/%o9;
+
+(%o15) [-1.044536825211016e-15]
+

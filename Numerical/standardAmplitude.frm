@@ -162,7 +162,10 @@ id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2
 * need to replace massive W boson, check the sign
 * see http://www.hep.lu.se/atlas/thesis/egede/thesis-node15.html
 * id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) - p(j1)* p(j2)/(mw^2);
-id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mw^2);
+* the relative sign should be minus
+* id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mw^2);
+* for debugging, this is mass-related term
+id e(j1?,p?)*e(j2?,p?) = (p(j1)*p(j2))/(mw^2);
 
 * for debugging
 Print +s;
