@@ -420,3 +420,5 @@ print(" The standard value biven by Professor Ferroglia is 0.2282444653585411*10
 ev(MM(p1,p2,p3,p4,mt,mw,N), numer); 
 */
 ev(qqttWtreelevel(p1,p2,p3,p4,mt,mw,N,aem,sw,%pi),N=3, numer);
+print(" Let us compare with the standard value, note that Professor Ferroglia uses aem=1: ")$
+(1/aem)*ev(qqttWtreelevel(p1,p2,p3,p4,mt,mw,N,aem,sw,%pi),N=3, numer)/(0.2282444653585411*10^(-2));
