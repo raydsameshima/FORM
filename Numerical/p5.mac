@@ -54,6 +54,9 @@ aem is fine structure constant
 sw is weak mixing angle (cos of)
 */
 aem:7.2973525664*10^(-3);
+/*
 mz:91.2;
+*/
+mz:91.1876;
 sw:sqrt(1-(mw^2/mz^2));
 
