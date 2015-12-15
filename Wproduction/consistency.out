@@ -801,8 +801,8 @@ read and interpret file: /Users/rds/Desktop/FORM/Numerical/consistency.mac
                                        *[N^2-1])
 (%i6) load("p5.mac")
 (%o6)                               p5.mac
-(%i7) print(" The standard value biven by Professor Ferroglia is 0.2282444653585411*10^(-2) ")
- The standard value biven by Professor Ferroglia is 0.2282444653585411*10^(-2) 
+(%i7) print(" The standard value given by Professor Ferroglia is 0.2282444653585411*10^(-2) ")
+ The standard value given by Professor Ferroglia is 0.2282444653585411*10^(-2) 
                                                                                
 (%i8) ev(qqttWtreelevel(p1,p2,p3,p4,mt,mw,N,aem,sw,%pi),N = 3,numer)
 (%o8)                       [1.665580335050759e-5]
@@ -816,9 +816,8 @@ m=1:
 (%i11) ev(M(p1,p2,p3,p4,mt,mw,N),numer)
                                                2
 (%o11)                  [1.81645467737945e-4 (N  - 1)]
-(%i12) print(" Let us compare with the standard value with my result, the follwoing is \"renormalized\" my result")
- Let us compare with the standard value with my result, the follwoing is "reno\
-rmalized" my result 
+(%i12) print(" Let us compare with the standard value with my result, the following is \"renormalized\" my result")
+ Let us compare with the standard value with my result, the following is "renormalized" my result 
 (%i13) ev((M(p1,p2,p3,p4,mt,mw,N)*%pi)/(N^2*sw^2),N = 3,numer)
 (%o13)                      [0.002282444653585423]
 (%i14) ev((M(p1,p2,p3,p4,mt,mw,N)*%pi)/(N^2*sw^2),N = 3,numer)
