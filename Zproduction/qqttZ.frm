@@ -135,7 +135,7 @@ endargument;
 Bracket prop;
 * Bracket prop, mw, mw^(-1);
 Print +s;
-.end
+* .end
 .sort
 
 *********************************************************************************

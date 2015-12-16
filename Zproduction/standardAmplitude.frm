@@ -143,8 +143,8 @@ id g(?a,k5) = -g(?a,k5);
 
 * for debugging
 * In this place, we can see both Amp and AmpC.
-Print +s;
-.sort
+* Print +s;
+* .sort
 
 * Now multiply Amp and AmpC to get the matrix element squared.
 Skip;
@@ -155,8 +155,8 @@ Drop,'Amp','Amp'C;
 Local 'Mat' = 'Amp'*'Amp'C;
 
 * for debugging
-Print +s;
-.sort
+* Print +s;
+* .sort
 
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
 * (A.22) of Peskin & Schroeder
@@ -177,7 +177,7 @@ id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mz^2);
 
 * for debugging
-Print +s;
+* Print +s;
 * .end
 .sort
 
