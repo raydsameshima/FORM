@@ -231,7 +231,7 @@ id G(i1?,i1?,?a) = g(i1,i1,?a);
 .sort
 
 * for debugging
-Print +s;
+* Print +s;
 * .sort
 * .end
 

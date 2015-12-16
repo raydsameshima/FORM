@@ -134,7 +134,7 @@ endargument;
 
 Bracket prop;
 * Bracket prop, mw, mw^(-1);
-Print +s;
+* Print +s;
 * .end
 .sort
 
@@ -151,8 +151,9 @@ argument;
   id p1?.p2? = eta(p1,p2);
 endargument;
 
-Bracket prop, mw;
-* Bracket prop, mw, Qq, I3q;
-Print +s;
+.sort
 
+* Bracket prop,mz;
+Bracket prop, mw, [N^2-1],Qq, I3q, Qt,I3t;
+Print +s;
 .end
