@@ -8,7 +8,7 @@
 * http://www.nikhef.nl/~t68/course/short.pdf
 
 * for debugging
-Function G;
+* Function G;
 
 * added sin and cos of Weiberg(weak mixing) angle, weak-isospin and charge (using minor notation Qq=I3q+Y)
 Symbol N, [N^2-1], sw, cw, I3q, Qq, I3t, Qt;
@@ -204,7 +204,10 @@ repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
 
 Skip; NSkip 'Mat';
 
-* debugging
+* for debugging
+.sort
+Function G;
+
 id g(i1?,i1?,?a) = G(i1,i1,?a);
 id g(i1?,i2?,?a) = 1/(1-1);
 .sort
@@ -212,9 +215,9 @@ id g(i1?,i2?,?a) = 1/(1-1);
 id G(i1?,i1?,?a) = g(i1,i1,?a);
 .sort
 
-Bracket g;
-Print[]; 
-.sort
+* Bracket g;
+* Print[]; 
+* .sort
 
 *   Now put the traces one by one in terms of the built in gammas
 #do i = 1,10
