@@ -27,32 +27,6 @@
 *
 * t-propagators are massive
 *
-* From Professor Ferroglia's code:
-* emission of the Z from p1 (i.e. top right diagram)
-*
-* -R(vb(1,p2),d97)*i_*gs/2*
-* R(g_(1,mu1),d97,d94)*(-i_)*
-* R(g_(1,p1)-g_(1,p5),d94,d95)*i_*ge/2/cw*
-* R(g_(1,mu3)*(-2*sw^2*Qq*gi_(1) + I3q*(gi_(1)+g5_(1))),d95,d99)*
-* R(u(1,p1),d99)*C(ll(a1),i97,i99)*(dd(a1,a2)*d_(mu1,mu2))*prop(p3+p4)*
-* prop(p1-p5)*
-* R(ub(2,p4),d98)*i_*gs/2*R(g_(2,mu2),d98,d96)*R(v(2,p3),d96)*
-* C(ll(a2),i98,i96)
-*
-* emission of the Z from p4 (outgoing top at this stage)
-*
-* -R(vb(1,p2),d97)*i_*gs/2*
-* R(g_(1,mu1),d97,d99)*
-* R(u(1,p1),d99)*C(ll(a1),i97,i99)*(dd(a1,a2)*d_(mu1,mu2))*prop(p1+p2)*
-* propM(p4+p5)*R(ub(2,p4),d98)*
-* i_*ge/2/cw*R(g_(2,mu3)*(
-* -2*sw^2*Qt*gi_(2) + I3t*(gi_(2)+g5_(2))),d98,d94)*
-* ((-i_)*R(g_(2,p4)+g_(2,p5),d94,d95)+M*R(gi_(2),d94,d95) )*
-* i_*gs/2*R(g_(2,mu2),d95,d96)*R(v(2,p3),d96)*
-* C(ll(a2),i98,i96)
-
-
-
 #include standardAmplitude.frm
 * i's are spinor indices, j's are Lorentz indices
 * c's are colour indices, d's are the label for su(N) generators
@@ -160,8 +134,8 @@ endargument;
 
 Bracket prop;
 * Bracket prop, mw, mw^(-1);
-Print +s;
-.end
+* Print +s;
+* .end
 .sort
 
 *********************************************************************************
@@ -177,8 +151,9 @@ argument;
   id p1?.p2? = eta(p1,p2);
 endargument;
 
-Bracket prop, mw;
-* Bracket prop, mw, Qq, I3q;
-Print +s;
+.sort
 
+* Bracket prop,mz;
+Bracket prop, mw, [N^2-1],Qq, I3q, Qt,I3t;
+Print +s;
 .end
