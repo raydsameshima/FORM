@@ -2,8 +2,6 @@
 *
 * Ray D. Sameshima
 * 
-*	Program for working out the matrix element squared for the
-*	reaction q,qbar -> t,tbar in QCD.
 *
 *          \              t(p3) /       g(p1)\                    /
 *           \ g(p1)            *----          \            t(p3) /
