@@ -29,7 +29,10 @@ CFunctions  UB,U,VB,V, g,T,e;
 * gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 CFunctions gprop,fprop,phprop,prop;
 * for contractions of indices c's and d's
-CFunction cdelta, ddelta;
+CFunctions cdelta, ddelta;
+
+* structure constants of qcd (SU(3)) colour algebra:
+* CFunction structure;
 
 #procedure squareamplitude(Amp,Mat)
 .sort
@@ -159,22 +162,12 @@ Local 'Mat' = 'Amp'*'Amp'C;
 * (A.22) of Peskin & Schroeder
 id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * cdelta(c1,c2);
 id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2);
-* for external photons (A.26)
-* id e(j1?,p?)*e(j2?,p?) =  p(j1)* p(j2)/(mw^2);
-*
-* need to replace massive W boson, check the sign
-* see http://www.hep.lu.se/atlas/thesis/egede/thesis-node15.html
-* id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) - p(j1)* p(j2)/(mw^2);
-* the relative sign should be minus
-* id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mw^2);
-* for debugging, this is mass-related term
-* id e(j1?,p?)*e(j2?,p?) = (p(j1)*p(j2))/(mw^2);
+
 * This is for massive Z boson
 * id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mz^2);
 
 * This is for colour-less gauge boson.
 id e(j1?,p?,m?)*e(j2?,p?,m?) = -d_(j1,j2) + (p(j1)*p(j2))/(m^2);
-
 * This is for coloured(QCD) gauge boson.
 id e(j1?,p?,m?,c1?)*e(j2?,p?,m?,c2?) = (-d_(j1,j2) + (p(j1)*p(j2))/(m^2)) * cdelta(c1,c2);
 
