@@ -16,6 +16,9 @@
 * gluon vertices has structure constants f^{a,b,c}
 * 
 
+* structure constants of qcd (SU(3)) colour algebra:
+CFunction structure;
+
 #include standardAmplitude.frm
 * i's are spinor indices, j's are Lorentz indices
 * c's are colour indices, d's are the label for su(N) generators
@@ -25,16 +28,39 @@
 * q3(downward) is fprop(dbar), q4(right) is gprop 
 * The index k7 of g(i2,i3,k7) is for 7th gamma matrix given by (1-g5).
 Local Amp = 
-*            VB(i1,p2,mq,c1)*(i_/sqrt_(2) *(g(i1,i2,j1) *e(j1,p5)) *(1/2)*g(i2,i3,k7))*
-*            fprop(i3,i4,q1,mq)* (g(i4,i5,j2)*T(c1,c2,d1)) *U(i5,p1,mq,c2)*
-*            gprop(j2,j3,q2,d1,d2)*
-*            UB(i6,p3,mt,c3)* (g(i6,i7,j3)*T(c3,c4,d2)) *V(i7,p4,mt,c4)
+* I have to replace this line to tripel-gluon line.
+            e(j1,p1,mg,c1)*e(j2,p2,mg,c2)* 
+* This is the structure constant.
+            structure(d1,d2,d3)*
+* This is for test. ********************
+            e(j3,p1+p2,mg,c3)
+****************************************
+*
+*            gprop(j1,j2,p1+p2, d3,d4)*
+*            UB(i3,p3,mt,c3)*
+*            i_/cw *(g(i3,i4,j3) *e(j3,p5,mz)) *
+*            ((I3q/2)*g(i4,i5,k7) - Qq*sw^2*d_(i4,i5) )*
+*            fprop(i5,i6,q11 ,mt)*
+*            (g(i6,i7,j2)*T(c3,c4,d4))*
+*            V(i7,p4,mt,c4)
 *            +
-*            VB(i1,p2,mq,c1)* (g(i1,i2,j1)*T(c1,c2,d1)) *fprop(i2,i3,q3,mq)*
-*            (i_/sqrt_(2) *(g(i3,i4,j2) *e(j2,p5)) *(1/2)*g(i4,i5,k7)) *U(i5,p1,mq,c2)*
-*            gprop(j1,j3,q4,d1,d2)*
-*            UB(i6,p3,mt,c3)*g(i6,i7,j3)*T(c3,c4,d2)*V(i7,p4,mt,c4)
+*            e(j1,p1,mg,c1)*e(j2,p2,mg,c2)* 
+*            structure(d1,d2,d3)*
+*            gprop(j1,j2,p1+p2, d3,d4)*
+*            UB(i3,p3,mt,c3)*
+*            (g(i3,i4,j2)*T(c3,c4,d4))*
+*            fprop(i4,i5,q12,mt)*
+*            i_/cw *(g(i5,i6,j3) *e(j3,p5,mz)) *
+*            ((I3q/2)*g(i6,i7,k7) - Qq*sw^2*d_(i6,i7) )*
+*            V(i7,p4,mt,c4)
             ;
+
+* for structure constants
+* This is special for above terms, since I have assumed c5,c6,c7 are not used.
+id structure(d1?,d2?,d3?) = -2*i_* (T(c5,c6,d1)*T(c6,c7,d2)*T(c7,c5,d3) - T(c5,c6,d2)*T(c6,c7,d1)*T(c7,c5,d3));
+
+print +s;
+.sort
 
 #call squareamplitude(Amp,M)
 .sort
@@ -89,7 +115,8 @@ argument;
   id mq = 0;
 endargument;
 
-Bracket prop, mw, mw^(-1);
+Bracket prop;
+* Bracket prop, mw, mw^(-1);
 Print +s;
 .sort
 
