@@ -113,6 +113,7 @@ Multiply replace_(<j1,j{'$jmax'+1}>,...,<j'$jmax',j{2*'$jmax'}>);
 Multiply replace_(<c1,c{'$cmax'+1}>,...,<c'$cmax',c{2*'$cmax'}>);
 Multiply replace_(<d1,d{'$dmax'+1}>,...,<d'$dmax',d{2*'$dmax'}>);
 
+
 * for debugging
 * Print +s;
 * .end
@@ -244,6 +245,11 @@ id G(i1?,i1?,?a) = g(i1,i1,?a);
 * Print[];
 .sort
 * .end
+
+* for colour algebra
+* Using eq.(3.17) in the QCD practice and the following repeated id (TT = (1/2)*(d*d - d*d/N)), we can compute structure constants.
+id structure(d1?,d2?,d3?) = -2*i_* (T(c{2*'$cmax'+1},c{2*'$cmax'+2},d1)*T(c{2*'$cmax'+2},c{2*'$cmax'+3},d2)*T(c{2*'$cmax'+3},c{2*'$cmax'+1},d3) - T(c{2*'$cmax'+1},c{2*'$cmax'+2},d2)*T(c{2*'$cmax'+2},c{2*'$cmax'+3},d1)*T(c{2*'$cmax'+3},c{2*'$cmax'+1},d3));
+********************
 
 * qcd trace by hand
 * eq.(3.25) of QCD practice
