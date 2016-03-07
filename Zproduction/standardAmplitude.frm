@@ -2,8 +2,6 @@
 * Ray D. Sameshima
 * rewrite amplitude.frm and qcdAmplitude.frm 
 *
-* This code is checked through W-production code.
-*
 * Peskin & Schroeder notation, see Appendix A.
 * http://www.nikhef.nl/~t68/course/short.pdf
 
@@ -113,7 +111,6 @@ Multiply replace_(<j1,j{'$jmax'+1}>,...,<j'$jmax',j{2*'$jmax'}>);
 Multiply replace_(<c1,c{'$cmax'+1}>,...,<c'$cmax',c{2*'$cmax'}>);
 Multiply replace_(<d1,d{'$dmax'+1}>,...,<d'$dmax',d{2*'$dmax'}>);
 
-
 * for debugging
 * Print +s;
 * .end
@@ -156,7 +153,7 @@ Drop,'Amp','Amp'C;
 Local 'Mat' = 'Amp'*'Amp'C;
 
 * for debugging
-* Print +s;
+Print +s;
 * .sort
 
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
@@ -171,6 +168,8 @@ id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2
 id e(j1?,p?,m?)*e(j2?,p?,m?) = -d_(j1,j2) + (p(j1)*p(j2))/(m^2);
 * This is for coloured(QCD) gauge boson.
 id e(j1?,p?,m?,c1?)*e(j2?,p?,m?,c2?) = (-d_(j1,j2) + (p(j1)*p(j2))/(m^2)) * cdelta(c1,c2);
+* This is for external(!) gluons.
+id e(j1?,p?,m?,c1?,d1?)*e(j2?,p?,m?,c2?,d2?) = (-d_(j1,j2) + (p(j1)*p(j2))/(m^2)) * cdelta(c1,c2) * ddelta(d1,d2);
 
 * for debugging
 * Print +s;
@@ -248,7 +247,11 @@ id G(i1?,i1?,?a) = g(i1,i1,?a);
 
 * for colour algebra
 * Using eq.(3.17) in the QCD practice and the following repeated id (TT = (1/2)*(d*d - d*d/N)), we can compute structure constants.
-id structure(d1?,d2?,d3?) = -2*i_* (T(c{2*'$cmax'+1},c{2*'$cmax'+2},d1)*T(c{2*'$cmax'+2},c{2*'$cmax'+3},d2)*T(c{2*'$cmax'+3},c{2*'$cmax'+1},d3) - T(c{2*'$cmax'+1},c{2*'$cmax'+2},d2)*T(c{2*'$cmax'+2},c{2*'$cmax'+3},d1)*T(c{2*'$cmax'+3},c{2*'$cmax'+1},d3));
+* id structure(d1?,d2?,d3?) 
+*   = -2*i_* 
+*   (T(c{2*'$cmax'+1},c{2*'$cmax'+2},d1) * T(c{2*'$cmax'+2},c{2*'$cmax'+3},d2) * T(c{2*'$cmax'+3},c{2*'$cmax'+1},d3) 
+*   - T(c{2*'$cmax'+1},c{2*'$cmax'+2},d2) * T(c{2*'$cmax'+2},c{2*'$cmax'+3},d1) * T(c{2*'$cmax'+3},c{2*'$cmax'+1},d3)
+*   );
 ********************
 
 * qcd trace by hand
@@ -256,9 +259,15 @@ id structure(d1?,d2?,d3?) = -2*i_* (T(c{2*'$cmax'+1},c{2*'$cmax'+2},d1)*T(c{2*'$
 * We didn't assume the symmetric property on ddelta.
 id T(c1?, c2?, d1?)* ddelta(d1?,d2?) = T(c1,c2,d2);
 id T(c1?, c2?, d1?)* ddelta(d2?,d1?) = T(c1,c2,d2);
+id T(c1?, c2?, d1?)* cdelta(c1?,c3?) = T(c3,c2,d1);
+id T(c1?, c2?, d1?)* cdelta(c2?,c3?) = T(c1,c3,d1);
 * QCD practice eq.(3.25)
 repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) 
           = 1/2 * (cdelta(c1,c4)*cdelta(c2,c3) - (1/N) * cdelta(c1,c2)*cdelta(c3,c4));
+** QCD practice eq.(3.29)
+** repeat id T(c1?,c2?,d1?)*T(c2?,c4?,d1?) 
+**           = (N^2 -1)/(2*N) * cdelta(c1,c4);
+
 repeat id cdelta(c1?,c2?)*cdelta(c2?,c3?) = cdelta(c1,c3);
 repeat id cdelta(c1?,c2?)*cdelta(c3?,c2?) = cdelta(c1,c3);
 repeat id ddelta(d1?,d2?)*ddelta(d2?,d3?) = ddelta(d1,d3);
