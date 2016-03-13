@@ -2,13 +2,8 @@
 * Ray D. Sameshima
 * rewrite amplitude.frm and qcdAmplitude.frm 
 *
-* This code is checked through W-production code.
-*
 * Peskin & Schroeder notation, see Appendix A.
 * http://www.nikhef.nl/~t68/course/short.pdf
-
-* for debugging
-* Function G;
 
 * added sin and cos of Weiberg(weak mixing) angle, weak-isospin and charge (using minor notation Qq=I3q+Y)
 Symbol N, [N^2-1], sw, cw, I3q, Qq, I3t, Qt;
@@ -26,13 +21,16 @@ AutoDeclare Vectors p;
 * momentum transfer (dummy)
 AutoDeclare Vectors q;
 * spinors, gamma matrices(g), 
-* and Gell-Mann matrices(T), polarization for photon
+* and Gell-Mann matrices(T), polarization for photon(gauge boson)
 CFunctions  UB,U,VB,V, g,T,e;
 * U(i2,p1,m,c) =  U(spinorindex, momentum, mass, colourindex) 
 * gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
 CFunctions gprop,fprop,phprop,prop;
 * for contractions of indices c's and d's
-CFunction cdelta, ddelta;
+CFunctions cdelta, ddelta;
+
+* structure constants of qcd (SU(3)) colour algebra:
+* CFunction structure;
 
 #procedure squareamplitude(Amp,Mat)
 .sort
@@ -155,26 +153,23 @@ Drop,'Amp','Amp'C;
 Local 'Mat' = 'Amp'*'Amp'C;
 
 * for debugging
-* Print +s;
+Print +s;
 * .sort
 
 * Spin sums, 1st terms are slashed p and 2nd terms are delta?
 * (A.22) of Peskin & Schroeder
 id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * cdelta(c1,c2);
 id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2);
-* for external photons (A.26)
-* id e(j1?,p?)*e(j2?,p?) =  p(j1)* p(j2)/(mw^2);
-*
-* need to replace massive W boson, check the sign
-* see http://www.hep.lu.se/atlas/thesis/egede/thesis-node15.html
-* id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) - p(j1)* p(j2)/(mw^2);
-* the relative sign should be minus
-* id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mw^2);
-* for debugging, this is mass-related term
-* id e(j1?,p?)*e(j2?,p?) = (p(j1)*p(j2))/(mw^2);
 
 * This is for massive Z boson
-id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mz^2);
+* id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mz^2);
+
+* This is for colour-less gauge boson.
+id e(j1?,p?,m?)*e(j2?,p?,m?) = -d_(j1,j2) + (p(j1)*p(j2))/(m^2);
+* This is for coloured(QCD) gauge boson.
+id e(j1?,p?,m?,c1?)*e(j2?,p?,m?,c2?) = (-d_(j1,j2) + (p(j1)*p(j2))/(m^2)) * cdelta(c1,c2);
+* This is for external(!) gluons.
+id e(j1?,p?,m?,c1?,d1?)*e(j2?,p?,m?,c2?,d2?) = (-d_(j1,j2) + (p(j1)*p(j2))/(m^2)) * cdelta(c1,c2) * ddelta(d1,d2);
 
 * for debugging
 * Print +s;
@@ -204,20 +199,23 @@ repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
 
 Skip; NSkip 'Mat';
 
-* for debugging
+*************************************************************
+* for debugging, or just filtering
+* Rewrite my "trace" of g (Einstein's sum ruled) to big G, and if there still is nondiagonal elements, 1/0 make this program stop at here.
 .sort
 Function G;
-
 id g(i1?,i1?,?a) = G(i1,i1,?a);
 id g(i1?,i2?,?a) = 1/(1-1);
 .sort
 
+* When nothing hits at 1/0, recover to small g. 
 id G(i1?,i1?,?a) = g(i1,i1,?a);
 .sort
 
 * Bracket g;
 * Print[]; 
 * .sort
+*************************************************************
 
 *   Now put the traces one by one in terms of the built in gammas
 #do i = 1,10
@@ -236,6 +234,7 @@ id G(i1?,i1?,?a) = g(i1,i1,?a);
 * .end
 
 * Finally take the traces, naively assuming less than 10 fermions.
+* Here I replace my "trace" to bulid in trace by Trece4.
 #do i = 1,10
   Trace4,'i';
 #enddo
@@ -246,14 +245,29 @@ id G(i1?,i1?,?a) = g(i1,i1,?a);
 .sort
 * .end
 
+* for colour algebra
+* Using eq.(3.17) in the QCD practice and the following repeated id (TT = (1/2)*(d*d - d*d/N)), we can compute structure constants.
+* id structure(d1?,d2?,d3?) 
+*   = -2*i_* 
+*   (T(c{2*'$cmax'+1},c{2*'$cmax'+2},d1) * T(c{2*'$cmax'+2},c{2*'$cmax'+3},d2) * T(c{2*'$cmax'+3},c{2*'$cmax'+1},d3) 
+*   - T(c{2*'$cmax'+1},c{2*'$cmax'+2},d2) * T(c{2*'$cmax'+2},c{2*'$cmax'+3},d1) * T(c{2*'$cmax'+3},c{2*'$cmax'+1},d3)
+*   );
+********************
+
 * qcd trace by hand
 * eq.(3.25) of QCD practice
 * We didn't assume the symmetric property on ddelta.
 id T(c1?, c2?, d1?)* ddelta(d1?,d2?) = T(c1,c2,d2);
 id T(c1?, c2?, d1?)* ddelta(d2?,d1?) = T(c1,c2,d2);
+id T(c1?, c2?, d1?)* cdelta(c1?,c3?) = T(c3,c2,d1);
+id T(c1?, c2?, d1?)* cdelta(c2?,c3?) = T(c1,c3,d1);
 * QCD practice eq.(3.25)
 repeat id T(c1?,c2?,d1?)*T(c3?,c4?,d1?) 
           = 1/2 * (cdelta(c1,c4)*cdelta(c2,c3) - (1/N) * cdelta(c1,c2)*cdelta(c3,c4));
+** QCD practice eq.(3.29)
+** repeat id T(c1?,c2?,d1?)*T(c2?,c4?,d1?) 
+**           = (N^2 -1)/(2*N) * cdelta(c1,c4);
+
 repeat id cdelta(c1?,c2?)*cdelta(c2?,c3?) = cdelta(c1,c3);
 repeat id cdelta(c1?,c2?)*cdelta(c3?,c2?) = cdelta(c1,c3);
 repeat id ddelta(d1?,d2?)*ddelta(d2?,d3?) = ddelta(d1,d3);
