@@ -1,31 +1,9 @@
 /*
-The following are the momentums given by Professor Ferroglia:
+momentum.mac
+
+The following are the momentums given by Professor Ferroglia.
+This corresponds to qq -> ttW.
  
-p1 incoming quark
-p[1, 1] = 250.00000000000000;
-p[1, 2] = 0.00000000000000;
-p[1, 3] = 0.00000000000000;
-p[1, 4] = 250.00000000000000;
-
-incoming antiquark
-p[2, 1] = 250.00000000000000;
-p[2, 2] = 0.00000000000000;
-p[2, 3] = 0.00000000000000;
-p[2, 4] = -250.00000000000000;
-
-outgoing top quark
-p[3, 1] = 177.42516443798704;
-p[3, 2] = 28.070273946575000;
-p[3, 3] = -12.250542128523813 ;
-p[3, 4] = 23.311647603038381;
-
-outgoing antitop
-p[4, 1] = 201.68800066843056;
-p[4, 2] = -83.325744067637146;
-p[4, 3] = -58.807787027215262;
-p[4, 4] = -16.681551911172580;
-*/
-/*
 Let us find p5 and its mass.
 */
 p1:[250,0,0,250];
@@ -52,6 +30,12 @@ mt:sqrt(eta(p3,p3));
 For later uses, some numerical coefficients are given.
 aem is fine structure constant
 sw is weak mixing angle (sin of)
+
+aem -> 1 :: This is achieved by taking 1/aem.
+MW  -> 80.419
+sw  -> Sqrt[1 - 80.419^2/91.1876^2]
+Nc  -> 3,
+a   -> (173.2)^2
 */
 aem:7.2973525664*10^(-3);
 /*
@@ -59,4 +43,4 @@ mz:91.2;
 */
 mz:91.1876;
 sw:sqrt(1-(mw^2/mz^2));
-
+cw:(mw/mz);
