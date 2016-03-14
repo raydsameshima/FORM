@@ -8,24 +8,20 @@ Let us find p5 and its mass.
 */
 p1:[250,0,0,250];
 p2:[250,0,0,-250];
-p3:[177.42516443798704, 28.070273946575000, -12.250542128523813, 23.311647603038381];
-p4:[201.68800066843056, -83.325744067637146, -58.807787027215262, -16.681551911172580];
+p3:[176.93372604857203, 26.368868814661685, -11.508008041187844, 21.898673973331295];
+p4:[198.55132608017917, -78.275175311272307, -55.243309144491299, -15.670443929684193];
 pInitial : p1+p2;
 pSemiFinal : p3+p4;
-p5: pInitial - pSemiFinal;
+pZ: pInitial - pSemiFinal;
 /*
-WmassSquared = p5[1]^2 - p5[2]^2 - p5[3]^2 - p5[4]^2;
-mw: float(sqrt(WmassSquared));
-
-Wmass = 80.41900000000007
-That is, our unit is now [GeV/c^2]
 */
 /*
 Lorentz inner product(Mikovsky)
 */
 eta(p,q):= p[1]*q[1] - sum(p[i]*q[i], i, 2, length(p));
-mw:sqrt(eta(p5,p5));
+mz:sqrt(eta(pZ,pZ));
 mt:sqrt(eta(p3,p3));
+mw:80.419;
 /*
 For later uses, some numerical coefficients are given.
 aem is fine structure constant
@@ -33,14 +29,14 @@ sw is weak mixing angle (sin of)
 
 aem -> 1 :: This is achieved by taking 1/aem.
 MW  -> 80.419
+MZ  -> 91.1876
 sw  -> Sqrt[1 - 80.419^2/91.1876^2]
 Nc  -> 3,
 a   -> (173.2)^2
 */
 aem:7.2973525664*10^(-3);
 /*
-mz:91.2;
-*/
 mz:91.1876;
+*/
 sw:sqrt(1-(mw^2/mz^2));
 cw:(mw/mz);

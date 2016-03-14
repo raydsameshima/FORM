@@ -640,8 +640,6 @@ id p2.p3 = p2dp3;
 id p2.p4 = p2dp4;
 id p3.p4 = p3dp4;
 
-
-
 * if I set hA = -1 I get simply zero
 id hA = 1;
 
@@ -705,6 +703,8 @@ id Nc^-1 = [N^(-1)];
 
 Vector q;
 id prop(q?) = prop(q.q);
+* We treat top as a massive quark.
+id propM(q?) = prop(q.q - mt^2);
 
 argument;
   id p1?.p2? = eta(p1,p2);
@@ -712,7 +712,13 @@ endargument;
 
 .sort
 
-Bracket prop, [N^2-1];
+Bracket prop, [N^2-1], Pi, Qq,I3q,sw,cw,aem;
 print +s;
+.sort
+
+* For debugging, there is no such terms.
+id dd = 1/(1-1);
+id sd = 1/(1-1);
+id sf = 1/(1-1);
 
 .end
