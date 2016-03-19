@@ -1,11 +1,9 @@
 /*
 qqttZconsistency.mac
-
 */ 
 /*
-line 2976 <- my result 
+line 1930 <- my result 
 */
-prop(x) := 1/x;
 qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,qQ,I3q,aem,sw,cw,Pi)
 :=
        + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
@@ -1927,15 +1925,12 @@ qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,qQ,I3q,aem,sw,cw,Pi)
           - 64*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2*mz^-2*[N^(-1)]^2
           + 32*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)*mt^2*mz^-2*[N^(-1)]^2
           + 32*eta(p3,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*mz^-2*[N^(-1)]^2
-          );
+          )$
 /*
 my result 
-
 */
 M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi)
 :=
-
-
        + prop(2*mt^2 + 2*eta(p4,p3))^2*prop(2*mt^2 - 2*eta(p3,p2) - 2*eta(p4,
       p2) + 2*eta(p4,p3))^2*[N^2-1]*Qq^2 * (
           + 32*eta(p1,p2)*sw^4*cw^-2*mz^-2*mt^6
@@ -3758,6 +3753,19 @@ M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi)
           - 32*eta(p4,p2)*eta(p4,p1)*eta(p4,p1)*cw^-2*mz^-2*mt^2
           + 32*eta(p4,p2)*eta(p4,p1)*eta(p4,p3)*cw^-2*mz^-2*mt^2
           + 32*eta(p4,p2)*eta(p4,p1)*eta(p4,p3)*cw^-2
-          );
-
+          )$
+/*
+load("momentum.mac");
+*/
+batch("momentum.mac");
+prop(x) := 1/x;
+Pi: %pi;
+aem: 1;
+N: 3;
+print("Professor Ferroglia's result is 0.000972345");
+qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+print("Here is my \"bare\" result");
+M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+print("Here is my \"renormalized\" result");
+ev(M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat)*%pi/(N^2*sw^2), numer ;
 
