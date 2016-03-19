@@ -1,0 +1,23 @@
+3/19
+
+(%i275) print("Professor Ferroglia's result is 0.000972345")
+Professor Ferroglia's result is 0.000972345 
+(%o275)           Professor Ferroglia's result is 0.000972345
+(%i276) ev(qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi),
+           Qq = 2/3,I3q = 1/2,bfloat)
+(%o276)                     [9.388087823760915b-4]
+(%i277) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o277)                    Here is my "bare" result
+(%i278) ev(M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o278)                     [5.624800000910289b-4]
+(%i279) print("Here is my \"renormalized\" result")
+Here is my "renormalized" result 
+(%o279)                Here is my "renormalized" result
+(%i280) ev((ev(M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,
+               bfloat)
+            *%pi)
+            /(N^2*sw^2),numer)
+(%o280)                     [8.834719941985008b-4]
+(%o280)  /Users/rdsAir/Documents/FORM/Zproduction/qqttZconsistency.mac
+
