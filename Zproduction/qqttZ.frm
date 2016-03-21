@@ -35,7 +35,6 @@
 * The index k7 of g(i2,i3,k7) is for 7th gamma matrix given by (1-g5).
 Local Amp = 
             VB(i1,p2,mq,c1)*
-*            i_/cw *(g(i1,i2,j1) *e(j1,p5)) *
             i_/cw *(g(i1,i2,j1) *e(j1,p5,mz)) *
             ((I3q/2)*g(i2,i3,k7) - Qq*sw^2*d_(i2,i3) )*
             fprop(i3,i4,q1,mq)* (g(i4,i5,j2)*T(c1,c2,d1)) *U(i5,p1,mq,c2)*
@@ -44,7 +43,6 @@ Local Amp =
             +
 * This is corresponding to top right diagram:
             VB(i1,p2,mq,c1)* (g(i1,i2,j1)*T(c1,c2,d1)) *fprop(i2,i3,q3,mq)*
-*            i_/cw *(g(i3,i4,j2) *e(j2,p5)) *
             i_/cw *(g(i3,i4,j2) *e(j2,p5,mz)) *
             ((I3q/2)*g(i4,i5,k7) - Qq*sw^2*d_(i4,i5) ) *
             U(i5,p1,mq,c2)*
@@ -54,9 +52,7 @@ Local Amp =
             VB(i1,p2,mq,c1)* (g(i1,i2,j1)*T(c1,c2,d1)) * U(i2,p1,mq,c2)*
 * This also works, using momentum conservation explicitly.
             gprop(j1,j2,p1+p2, d1,d2)*
-*            gprop(j1,j2,q10, d1,d2)*
             UB(i3,p3,mt,c3)*
-*            i_/cw *(g(i3,i4,j3) *e(j3,p5)) *
             i_/cw *(g(i3,i4,j3) *e(j3,p5,mz)) *
             ((I3q/2)*g(i4,i5,k7) - Qq*sw^2*d_(i4,i5) )*
             fprop(i5,i6,q11 ,mt)*
@@ -68,7 +64,6 @@ Local Amp =
             UB(i3,p3,mt,c3)*
             (g(i3,i4,j2)*T(c3,c4,d2))*
             fprop(i4,i5,q12,mt)*
-*            i_/cw *(g(i5,i6,j3) *e(j3,p5)) *
             i_/cw *(g(i5,i6,j3) *e(j3,p5,mz)) *
             ((I3q/2)*g(i6,i7,k7) - Qq*sw^2*d_(i6,i7) )*
             V(i7,p4,mt,c4)
@@ -158,6 +153,7 @@ endargument;
 .sort
 
 * Bracket prop,mz;
-Bracket prop, mw, [N^2-1],Qq, I3q, Qt,I3t;
+* Bracket prop, mw, [N^2-1],Qq, I3q, Qt,I3t,cw,sw,mt,mz;
+Bracket prop, [N^2-1], Qq,I3q, Qt,I3t,cw,cw,mz,mw;
 Print +s;
 .end

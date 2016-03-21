@@ -712,7 +712,8 @@ endargument;
 
 .sort
 
-Bracket prop, [N^2-1], Pi, Qq,I3q,sw,cw,aem;
+*b MZ,prop,propM,[Nc^2-1],C,dd,sd,sf,Qq,Qt,I3q,I3t,sw,cw,aem,Pi,Nc;
+Bracket prop, [N^(-1)], [N^2-1], Pi, Qq,I3q,sw,cw,aem,mz,mw;
 print +s;
 .sort
 
