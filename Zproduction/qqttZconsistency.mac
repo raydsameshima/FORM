@@ -6,7 +6,7 @@ line 2142 <- my result
 */
 qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,qQ,I3q,aem,sw,cw,Pi)
 :=
-       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
++ prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
       p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
       p3))^2*[N^2-1]*cw^-2*sw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
           - 4*eta(p1,p2)*mt^6
@@ -2143,7 +2143,7 @@ my result
 */
 M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi)
 :=
-       + prop(2*mt^2 + 2*eta(p4,p3))^2*prop(2*mt^2 - 2*eta(p3,p2) - 2*eta(p4,
+ + prop(2*mt^2 + 2*eta(p4,p3))^2*prop(2*mt^2 - 2*eta(p3,p2) - 2*eta(p4,
       p2) + 2*eta(p4,p3))^2*[N^2-1]*cw^-2*Qq^2*mz^-2 * (
           + 32*eta(p1,p2)*sw^4*mt^6
           - 64*eta(p1,p2)*eta(p3,p2)*sw^4*mt^4
