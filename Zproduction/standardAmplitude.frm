@@ -1,10 +1,8 @@
 * standardAmplitude.frm
 * checked Wproduction.frm
-*
 * for qqttZ.frm
 *
 * Ray D. Sameshima
-* rewrite amplitude.frm and qcdAmplitude.frm 
 *
 * Peskin & Schroeder notation, see Appendix A.
 * http://www.nikhef.nl/~t68/course/short.pdf
@@ -93,7 +91,7 @@ Skip; NSkip 'Amp';
 
 * for debugging
 * Print +s;
-* .end
+*  .end
 
 * Now construct the conjugate
 Skip;
@@ -171,7 +169,7 @@ id e(j1?,p?,m?,c1?)*e(j2?,p?,m?,c2?) = (-d_(j1,j2) + (p(j1)*p(j2))/(m^2)) * cdel
 id e(j1?,p?,m?,c1?,d1?)*e(j2?,p?,m?,c2?,d2?) = (-d_(j1,j2) + (p(j1)*p(j2))/(m^2)) * cdelta(c1,c2) * ddelta(d1,d2);
 
 * for debugging
-Print +s;
+* Print +s;
 * .end
 .sort
 
