@@ -1,3 +1,127 @@
+4/18
+Recover the result of Professor Ferroglia's.
+However, the behavior of my code is not good.
+
+
+(%i4) print("1st phase point")
+1st phase point 
+(%o4)                           1st phase point
+(%i5) p1:[250,0,0,250]
+(%i6) p2:[250,0,0,-250]
+(%i7) p4:[176.933726048572,26.36886881466168,-11.50800804118784,
+          21.8986739733313]
+(%i8) p3:[198.5513260801792,-78.2751753112723,-55.2433091444913,
+          -15.67044392968419]
+(%i9) batch("momentum.mac")
+
+read and interpret file: /Users/rdsAir/Documents/FORM/Zproduction/momentum.mac
+(%i10) pInitial:p2+p1
+(%o10)                          [500, 0, 0, 0]
+(%i11) pSemiFinal:p4+p3
+(%o11) [375.4850521287512, - 51.90630649661063, - 66.75131718567914, 
+                                                             6.228230043647102]
+(%i12) pZ:pInitial-pSemiFinal
+(%o12) [124.5149478712488, 51.90630649661063, 66.75131718567914, 
+                                                           - 6.228230043647102]
+(%i13) eta(p,q):=p[1]*q[1]-sum(p[i]*q[i],i,2,length(p))
+(%o13)         eta(p, q) := p  q  - sum(p  q , i, 2, length(p))
+                             1  1        i  i
+(%i14) mz:sqrt(eta(pZ,pZ))
+(%o14)                         91.18759999999996
+(%i15) mt:sqrt(eta(p3,p3))
+(%o15)                               173.2
+(%i16) mw:80.419
+(%o16)                              80.419
+(%i17) sw:sqrt(1-mw^2/mz^2)
+(%o17)                        0.4714230687517944
+(%i18) cw:mw/mz
+(%o18)                        0.8819071891353653
+(%o19)       /Users/rdsAir/Documents/FORM/Zproduction/momentum.mac
+(%i20) prop(x):=1/x
+                                            1
+(%o20)                           prop(x) := -
+                                            x
+(%i21) [Pi,aem,N]:[%pi,1,3]
+(%o21)                            [%pi, 1, 3]
+(%i22) print("Professor Ferroglia's result is 0.000972345")
+Professor Ferroglia's result is 0.000972345 
+(%o22)            Professor Ferroglia's result is 0.000972345
+(%i23) ev(F1:qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi),
+          Qq = 2/3,I3q = 1/2,bfloat)
+(%o23)                      [9.723446476686515b-4]
+(%i24) print("The ratio F1/0.000972345, this shold be 1.0")
+The ratio F1/0.000972345, this shold be 1.0 
+(%o24)            The ratio F1/0.000972345, this shold be 1.0
+(%i25) ev(F1/9.72345e-4,numer)
+(%o25)                       [0.9999996376478014]
+(%i26) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o26)                     Here is my "bare" result
+(%i27) ev(R1:M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o27)                      [1.059190088227136b-3]
+(%i28) ev(F1/R1,numer)
+(%o28)                       [0.9180076914202951]
+(%i29) print("2nd phase point")
+2nd phase point 
+(%o29)                          2nd phase point
+(%i30) p1:[250,0,0,250]
+(%i31) p2:[250,0,0,-250]
+(%i32) p4:[180.7192318739766,-7.280567391472244,15.98422338668393,
+           48.50462565882704]
+(%i33) p3:[207.8686374010149,28.86068884908367,-39.07353950538468,
+           -104.1702911805095]
+(%i34) load("momentum.mac")
+(%o34)                           momentum.mac
+(%i35) print("Professor Ferroglia's result is 0.00137727")
+Professor Ferroglia's result is 0.00137727 
+(%o35)            Professor Ferroglia's result is 0.00137727
+(%i36) ev(F2:qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi),
+          Qq = 2/3,I3q = 1/2,bfloat)
+(%o36)                      [1.377272190050407b-3]
+(%i37) F2/0.00137727
+(%o37)                       [1.000001590138758b0]
+(%i38) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o38)                     Here is my "bare" result
+(%i39) ev(R2:M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o39)                      [4.813896519555649b-4]
+(%i40) print("The ratio F/R is")
+The ratio F/R is 
+(%o40)                         The ratio F/R is
+(%i41) ev(F2/R2,numer)
+(%o41)                        [2.861034059322773]
+(%i42) print("3rd phase point")
+3rd phase point 
+(%o42)                          3rd phase point
+(%i43) p1:[250,0,0,250]
+(%i44) p2:[250,0,0,-250]
+(%i45) p4:[180.2643865052055,-25.0727801665955,-42.15686997713789,
+           -9.54793436018438]
+(%i46) p3:[193.0403450294182,30.16014978366056,23.36601553515015,
+           -76.22814107739423]
+(%i47) load("momentum.mac")
+(%o47)                           momentum.mac
+(%i48) print("Professor Ferroglia's result is 0.0014709")
+Professor Ferroglia's result is 0.0014709 
+(%o48)             Professor Ferroglia's result is 0.0014709
+(%i49) ev(F3:qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi),
+          Qq = 2/3,I3q = 1/2,bfloat)
+(%o49)                      [1.470896042529974b-3]
+(%i50) F3/0.0014709
+(%o50)                      [9.999973094907704b-1]
+(%i51) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o51)                     Here is my "bare" result
+(%i52) ev(R3:M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o52)                      [3.273530456572871b-4]
+(%i53) print("The ratio F/R is")
+The ratio F/R is 
+(%o53)                         The ratio F/R is
+(%i54) ev(F3/R3,numer)
+(%o54)                        [4.493301840453584]
+
+
+
 3/19
 
 (%i275) print("Professor Ferroglia's result is 0.000972345")

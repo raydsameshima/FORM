@@ -296,6 +296,7 @@ id sd(?a) = 1/(1-1);
 ********************************************************************************
 * 
 g [qqttZtreelevel] = hCOMPLEXCONJ*hTREE*(d_(mu3,mu4) + p5(mu3)*p5(mu4)/MZ^2);
+* Global [qqttZtreelevel] = hCOMPLEXCONJ*hTREE*(d_(mu3,mu4) + p5(mu3)*p5(mu4)/MZ^2);
 
 id hTREE = 
 * emission of the Z from p1
@@ -331,6 +332,7 @@ i_*ge/2/cw*R(g_(2,mu3)*(-2*sw^2*Qt*gi_(2) + I3t*(gi_(2)+g5_(2))),d95,d96)*R(v(2,
 C(ll(a2),i98,i96);
 
 id hCOMPLEXCONJ =
+* emission of the Z from p1
 -R(ub(1,p1),dk)*i_*ge/2/cw*
 R(g_(1,mu4)*(-2*sw^2*Qq*gi_(1) + I3q*(gi_(1)+g5_(1))),dk,dk1)*
 (-i_)*R(g_(1,p1)-g_(1,p5),dk1,dk2)*
