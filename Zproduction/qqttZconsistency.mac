@@ -2143,7 +2143,7 @@ my result
 */
 M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi)
 :=
-+ prop(2*mt^2 + 2*eta(p4,p3))^2*prop(2*mt^2 - 2*eta(p3,p2) - 2*eta(p4,
+       + prop(2*mt^2 + 2*eta(p4,p3))^2*prop(2*mt^2 - 2*eta(p3,p2) - 2*eta(p4,
       p2) + 2*eta(p4,p3))^2*[N^2-1]*cw^-2*Qq^2*mz^-2 * (
           + 32*eta(p1,p2)*sw^4*mt^6
           - 64*eta(p1,p2)*eta(p3,p2)*sw^4*mt^4

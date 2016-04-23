@@ -1,4 +1,4 @@
-FORM 4.1 (May 11 2015) 64-bits                   Run: Mon Apr 11 14:58:03 2016
+FORM 4.1 (May 11 2015) 64-bits                   Run: Sat Apr 23 18:22:26 2016
     * qqttZ.frm
     *
     * Ray D. Sameshima
@@ -164,7 +164,7 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Mon Apr 11 14:58:03 2016
     
     * gamma5 gets a minus sign. Hence k6 <--> k7
     Multiply replace_(k6,k7,k7,k6);
-    id g(?a,k5) = -g(?a,k5);
+    * id g(?a,k5) = -g(?a,k5);
     .sort
     * The end of the conjugations.
     
@@ -321,19 +321,21 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Mon Apr 11 14:58:03 2016
     * Take the spinor along the fermion line, (oppositely) !!
     * The index k7 of g(i2,i3,k7) is for 7th gamma matrix given by (1-g5).
     Local Amp = 
+    * p2-emission
                 VB(i1,p2,mq,c1)* i_/cw *(g(i1,i2,j1) *e(j1,p5,mz)) *
                 ((I3q/2)*g(i2,i3,k7) - Qq*sw^2*d_(i2,i3) )*
                 fprop(i3,i4,q1,mq)* (g(i4,i5,j2)*T(c1,c2,d1)) *U(i5,p1,mq,c2)*
                 gprop(j2,j3,q2,d1,d2)*
                 UB(i6,p3,mt,c3)* (g(i6,i7,j3)*T(c3,c4,d2)) *V(i7,p4,mt,c4)
                 +
-    * This is corresponding to top right diagram:
+    * p1-emission
                 VB(i1,p2,mq,c1)* (g(i1,i2,j1)*T(c1,c2,d1)) *fprop(i2,i3,q3,mq)*
                 i_/cw *(g(i3,i4,j2) *e(j2,p5,mz)) *
                 ((I3q/2)*g(i4,i5,k7) - Qq*sw^2*d_(i4,i5) ) * U(i5,p1,mq,c2)*
                 gprop(j1,j3,q4,d1,d2)*
                 UB(i6,p3,mt,c3)*g(i6,i7,j3)*T(c3,c4,d2)*V(i7,p4,mt,c4)
                 +
+    * p3-emission
                 VB(i1,p2,mq,c1)* (g(i1,i2,j1)*T(c1,c2,d1)) * U(i2,p1,mq,c2)*
                 gprop(j1,j2,q5, d1,d2)* UB(i3,p3,mt,c3)*
                 i_/cw *(g(i3,i4,j3) *e(j3,p5,mz)) *
@@ -341,6 +343,7 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Mon Apr 11 14:58:03 2016
                 fprop(i5,i6,q6 ,mt)*
                 (g(i6,i7,j2)*T(c3,c4,d2))* V(i7,p4,mt,c4)
                 +
+    * p4-emission
                 VB(i1,p2,mq,c1)* (g(i1,i2,j1)*T(c1,c2,d1)) * U(i2,p1,mq,c2)*
                 gprop(j1,j2,q7, d1,d2)*
                 UB(i3,p3,mt,c3)*
@@ -829,7 +832,11 @@ Time =       0.07 sec    Generated terms =       2048
                M         Terms in output =       2048
                          Bytes used      =    1263256
 
-Time =       0.95 sec    Generated terms =       8192
+Time =       0.90 sec    Generated terms =       8192
+               M         Terms in output =       8192
+                         Bytes used      =    6027980
+
+Time =       0.96 sec    Generated terms =       8192
                M         Terms in output =       8192
                          Bytes used      =    6027980
 
@@ -837,40 +844,36 @@ Time =       1.01 sec    Generated terms =       8192
                M         Terms in output =       8192
                          Bytes used      =    6027980
 
-Time =       1.06 sec    Generated terms =       8192
+Time =       1.13 sec    Generated terms =       8192
                M         Terms in output =       8192
                          Bytes used      =    6027980
 
-Time =       1.19 sec    Generated terms =       8192
+Time =       1.24 sec    Generated terms =       8192
                M         Terms in output =       8192
                          Bytes used      =    6027980
 
-Time =       1.31 sec    Generated terms =       8192
-               M         Terms in output =       8192
-                         Bytes used      =    6027980
-
-Time =       1.62 sec    Generated terms =       7680
+Time =       1.57 sec    Generated terms =       7680
                M         Terms in output =       7168
                          Bytes used      =    4701760
 
-Time =       2.21 sec    Generated terms =      14114
+Time =       2.14 sec    Generated terms =      14114
                M    6261 Terms left      =       2977
                          Bytes used      =     228864
 
-Time =       2.27 sec    Generated terms =      15406
+Time =       2.19 sec    Generated terms =      15406
                M    7168 Terms left      =       3626
                          Bytes used      =     285128
 
-Time =       2.28 sec    Generated terms =      15406
+Time =       2.20 sec    Generated terms =      15406
                M         Terms in output =       3004
                          Bytes used      =     229380
 
-Time =       2.73 sec    Generated terms =      15020
+Time =       2.63 sec    Generated terms =      15020
                M         Terms in output =       3004
                          Bytes used      =     227584
     .sort
 
-Time =       2.74 sec    Generated terms =       3004
+Time =       2.64 sec    Generated terms =       3004
                M         Terms in output =       3004
                          Bytes used      =     251588
     
@@ -900,7 +903,7 @@ Time =       2.74 sec    Generated terms =       3004
     endargument;
     .sort
 
-Time =       3.02 sec    Generated terms =       8206
+Time =       2.91 sec    Generated terms =       8206
                M         Terms in output =       2448
                          Bytes used      =     194948
      
@@ -914,27 +917,27 @@ Time =       3.02 sec    Generated terms =       8206
     endargument;
     .sort
 
-Time =       3.56 sec    Generated terms =      11043
+Time =       3.42 sec    Generated terms =      11043
                M     551 Terms left      =       2581
                          Bytes used      =     201012
 
-Time =       4.10 sec    Generated terms =      22107
+Time =       3.94 sec    Generated terms =      22107
                M    1132 Terms left      =       5493
                          Bytes used      =     426516
 
-Time =       4.63 sec    Generated terms =      33159
+Time =       4.44 sec    Generated terms =      33159
                M    1794 Terms left      =       8019
                          Bytes used      =     623752
 
-Time =       5.17 sec    Generated terms =      44223
+Time =       4.96 sec    Generated terms =      44223
                M    2342 Terms left      =      11053
                          Bytes used      =     860368
 
-Time =       5.26 sec    Generated terms =      46248
+Time =       5.05 sec    Generated terms =      46248
                M    2448 Terms left      =      11688
                          Bytes used      =     911080
 
-Time =       5.29 sec    Generated terms =      46248
+Time =       5.08 sec    Generated terms =      46248
                M         Terms in output =      10424
                          Bytes used      =     802992
     
@@ -960,7 +963,7 @@ Time =       5.29 sec    Generated terms =      46248
     * .end
     .sort
 
-Time =       5.62 sec    Generated terms =       2988
+Time =       5.38 sec    Generated terms =       2988
                M         Terms in output =       1689
                          Bytes used      =     126304
     
@@ -981,7 +984,7 @@ Time =       5.62 sec    Generated terms =       2988
     
     .sort
 
-Time =       5.68 sec    Generated terms =       1689
+Time =       5.43 sec    Generated terms =       1689
                M         Terms in output =       1689
                          Bytes used      =     260764
     
@@ -991,7 +994,7 @@ Time =       5.68 sec    Generated terms =       1689
     Print +s;
     .end
 
-Time =       5.70 sec    Generated terms =       1689
+Time =       5.45 sec    Generated terms =       1689
                M         Terms in output =       1689
                          Bytes used      =     106884
 
@@ -2962,4 +2965,4 @@ Time =       5.70 sec    Generated terms =       1689
           + 32*eta(p4,p2)*eta(p4,p1)*eta(p4,p3)
           );
 
-  5.72 sec out of 5.99 sec
+  5.47 sec out of 5.74 sec
