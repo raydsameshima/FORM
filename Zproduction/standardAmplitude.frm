@@ -154,10 +154,10 @@ Local 'Mat' = 'Amp'*'Amp'C;
 Print +s;
 .sort
 
-* Spin sums, 1st terms are slashed p and 2nd terms are delta?
 * (A.22) of Peskin & Schroeder
 id U(i1?,p?,m?,c1?)*UB(i2?,p?,m?,c2?) = (g(i1,i2,p) + g(i1,i2)*m) * cdelta(c1,c2);
 id V(i1?,p?,m?,c1?)*VB(i2?,p?,m?,c2?) = (g(i1,i2,p) - g(i1,i2)*m) * cdelta(c1,c2);
+* (21,26) of Peskin & Schroeder
 * for W-boson
 * so, MUJIRUSHI e(j,p) is W-boson
 id e(j1?,p?)*e(j2?,p?) = -d_(j1,j2) + (p(j1)*p(j2))/(mw^2);
@@ -173,15 +173,11 @@ id e(j1?,p?,m?,c1?,d1?)*e(j2?,p?,m?,c2?,d2?) = (-d_(j1,j2) + (p(j1)*p(j2))/(m^2)
 * .end
 .sort
 
-* Propagators
-* id fprop(i1?,i2?,p?,m?)      = i_*(g(i1,i2,p) + d_(i1,i2)*m)*prop(p.p-m^2);
-* id phprop(j1?,j2?,q?)        = -d_(j1,j2)*prop(q.q);
-* id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
-
 * The factors are "relative" factor from (bosonic) propagator prop.
-id fprop(i1?,i2?,p?,m?)      = (g(i1,i2,p) + d_(i1,i2)*m)*prop(p.p-m^2);
-id phprop(j1?,j2?,q?)        = -d_(j1,j2)*prop(q.q);
-id gprop(j1?,j2?,q?,d1?,d2?) = -d_(j1,j2)*prop(q.q) * ddelta(d1,d2);
+* in mac file, we replace by prop(x) := 1/x;
+id fprop(i1?,i2?,p?,m?)      = i_*(g(i1,i2,p) + d_(i1,i2)*m)*prop(p.p-m^2);
+id phprop(j1?,j2?,q?)        = -i_*d_(j1,j2)*prop(q.q);
+id gprop(j1?,j2?,q?,d1?,d2?) = -i_*d_(j1,j2) * prop(q.q) * ddelta(d1,d2);
 
 *   String the gamma matrices together in traces.
 repeat id g(i1?,i2?,?a)*g(i2?,i3?,?b) = g(i1,i3,?a,?b);
