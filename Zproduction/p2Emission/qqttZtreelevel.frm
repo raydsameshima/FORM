@@ -301,12 +301,12 @@ g [qqttZtreelevel] = hCOMPLEXCONJ*hTREE*(d_(mu3,mu4) + p5(mu3)*p5(mu4)/MZ^2);
 
 id hTREE = 
 * emission of the Z from p1
-* -R(vb(1,p2),d97)*i_*gs/2*R(g_(1,mu1),d97,d94)*(-i_)*
-* R(g_(1,p1)-g_(1,p5),d94,d95)*i_*ge/2/cw*
-* R(g_(1,mu3)*(-2*sw^2*Qq*gi_(1) + I3q*(gi_(1)+g5_(1))),d95,d99)*
-* R(u(1,p1),d99)*C(ll(a1),i97,i99)*(dd(a1,a2)*d_(mu1,mu2))*prop(p3+p4)*
-* prop(p1-p5)*R(ub(2,p4),d98)*i_*gs/2*R(g_(2,mu2),d98,d96)*R(v(2,p3),d96)*
-* C(ll(a2),i98,i96)
+-R(vb(1,p2),d97)*i_*gs/2*R(g_(1,mu1),d97,d94)*(-i_)*
+R(g_(1,p1)-g_(1,p5),d94,d95)*i_*ge/2/cw*
+R(g_(1,mu3)*(-2*sw^2*Qq*gi_(1) + I3q*(gi_(1)+g5_(1))),d95,d99)*
+R(u(1,p1),d99)*C(ll(a1),i97,i99)*(dd(a1,a2)*d_(mu1,mu2))*prop(p3+p4)*
+prop(p1-p5)*R(ub(2,p4),d98)*i_*gs/2*R(g_(2,mu2),d98,d96)*R(v(2,p3),d96)*
+C(ll(a2),i98,i96)
 * emission of the Z from p2
 -R(vb(1,p2),d97)*i_*ge/2/cw*R(g_(1,mu3)*(
 -2*sw^2*Qq*gi_(1) + I3q*(gi_(1)+g5_(1))),d97,d94)*(i_)*
@@ -318,13 +318,13 @@ C(ll(a2),i98,i96)
 
 id hCOMPLEXCONJ =
 * emission of the Z from p1
-* -R(ub(1,p1),dk)*i_*ge/2/cw*
-* R(g_(1,mu4)*(-2*sw^2*Qq*gi_(1) + I3q*(gi_(1)+g5_(1))),dk,dk1)*
-* (-i_)*R(g_(1,p1)-g_(1,p5),dk1,dk2)*
-* prop(p1-p5)*i_*gs/2*R(g_(1,al),dk2,dl)*C(ll(a21),ik,il)*
-* R(v(1,p2),dl)*(dd(a21,a22)*d_(al,be)*prop(p1+p2-p5))*
-* R(vb(2,p3),dm)*i_*gs/2*
-* R(g_(2,be),dm,dn)*C(ll(a22),im,in)*R(u(2,p4),dn)
+-R(ub(1,p1),dk)*i_*ge/2/cw*
+R(g_(1,mu4)*(-2*sw^2*Qq*gi_(1) + I3q*(gi_(1)+g5_(1))),dk,dk1)*
+(-i_)*R(g_(1,p1)-g_(1,p5),dk1,dk2)*
+prop(p1-p5)*i_*gs/2*R(g_(1,al),dk2,dl)*C(ll(a21),ik,il)*
+R(v(1,p2),dl)*(dd(a21,a22)*d_(al,be)*prop(p1+p2-p5))*
+R(vb(2,p3),dm)*i_*gs/2*
+R(g_(2,be),dm,dn)*C(ll(a22),im,in)*R(u(2,p4),dn)
 *
 -R(ub(1,p1),dk)*i_*gs/2*R(g_(1,al),dk,dl1)*C(ll(a21),ik,il)*
 (i_)*R(g_(1,p2)-g_(1,p5),dl1,dl2)*prop(p2-p5)*i_*ge/2/cw*R(g_(1,mu4)*(

@@ -26,30 +26,29 @@
 * The index k7 of g(i2,i3,k7) is for 7th gamma matrix given by (1-g5).
 Local Amp = 
 * p2-emission
-  VB(i1,p2,mq,c1) * 
-  i_/cw * (g(i1,i2,j1) * e(j1,p5,mz)) *
-    ((I3q/2)*g(i2,i3,k7) - Qq*sw^2*d_(i2,i3) ) *
-  fprop(i3,i4,q1,mq) * 
-  (i_ * g(i4,i5,j2) * T(c1,c2,d1)) *
-  U(i5,p1,mq,c2) *
-  gprop(j2,j3,q2,d1,d2) *
-  UB(i6,p4,mt,c3) * 
-  (i_ * g(i6,i7,j3) * T(c3,c4,d2)) *
-  V(i7,p3,mt,c4)
-  ;
-*  +
+VB(i1,p2,mq,c1) * 
+i_/cw * (g(i1,i2,j1) * e(j1,p5,mz)) *
+  ((I3q/2)*g(i2,i3,k7) - Qq*sw^2*d_(i2,i3) ) *
+fprop(i3,i4,q1,mq) * 
+(i_ * g(i4,i5,j2) * T(c1,c2,d1)) *
+U(i5,p1,mq,c2) *
+gprop(j2,j3,q2,d1,d2) *
+UB(i6,p4,mt,c3) * 
+(i_ * g(i6,i7,j3) * T(c3,c4,d2)) *
+V(i7,p3,mt,c4)
++
 * p1-emission
-*  VB(i1,p2,mq,c1) * 
-*  (i_ * g(i1,i2,j1) * T(c1,c2,d1)) * 
-*  fprop(i2,i3,q3,mq) *
-*  i_/cw *(g(i3,i4,j2) * e(j2,p5,mz)) * 
-*    ((I3q/2) * g(i4,i5,k7) - Qq * sw^2 * d_(i4,i5) ) * 
-*  U(i5,p1,mq,c2) *
-*  gprop(j1,j3,q4,d1,d2) *
-*  UB(i6,p4,mt,c3) * 
-*  (i_ * g(i6,i7,j3) * T(c3,c4,d2)) * 
-*  V(i7,p3,mt,c4)
-*  ;
+VB(i1,p2,mq,c1) * 
+(i_ * g(i1,i2,j1) * T(c1,c2,d1)) * 
+fprop(i2,i3,q3,mq) *
+i_/cw *(g(i3,i4,j2) * e(j2,p5,mz)) * 
+  ((I3q/2) * g(i4,i5,k7) - Qq * sw^2 * d_(i4,i5) ) * 
+U(i5,p1,mq,c2) *
+gprop(j1,j3,q4,d1,d2) *
+UB(i6,p4,mt,c3) * 
+(i_ * g(i6,i7,j3) * T(c3,c4,d2)) * 
+V(i7,p3,mt,c4)
+;
 
 #call squareamplitude(Amp,M)
 .sort
