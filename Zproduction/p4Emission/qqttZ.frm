@@ -3,15 +3,15 @@
 *
 * Ray D. Sameshima
 * 
-*          \              t(p3) /Z(p5)  q(p1)\                    /
-*           \ q(p1)            *----          \            t(p3) /
+*          \              t(p4) /Z(p5)  q(p1)\                    /
+*           \ q(p1)            *----          \            t(p4) /
 *            \                /                \                /
 *             \g(j1)*T(c1)   / fprop(q6)        \   gprop(q7)  /
 *              *^^^^^^^^^^^^*  g(j2)*T(c2)       *^^^^^^^^^^^^*
 *             /   gprop(q5)  \                  /              \fprop(q8)
 *            /                \                /                *----
-*  qbar(p2) /                  \ tbar(p4)     /qbar(p2)          \ Z(p5)
-*          /                    \            /           tbar(p4) \
+*  qbar(p2) /                  \ tbar(p3)     /qbar(p2)          \ Z(p5)
+*          /                    \            /           tbar(p3) \
 *
 * t-propagators are massive
 *
@@ -22,7 +22,6 @@
 * Take the spinor along the fermion line, (oppositely) !!
 * The index k7 of g(i2,i3,k7) is for 7th gamma matrix given by (1-g5).
 Local Amp = 
-
 * p4-emission
 VB(i1,p2,mq,c1) * (i_ * g(i1,i2,j1) * T(c1,c2,d1)) * U(i2,p1,mq,c2) *
 gprop(j1,j2,q5, d1,d2) * 
