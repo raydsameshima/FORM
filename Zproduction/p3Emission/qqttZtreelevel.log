@@ -1,5 +1,4 @@
-FORM 4.1 (May 11 2015) 64-bits                   Run: Sat May  7 13:38:01 2016
-    * p3(p4) emmision channel
+FORM 4.1 (May 11 2015) 64-bits                   Run: Sun May  8 14:45:22 2016
     #-
 ~~~tree level
 ~~~COLOR STRUCTURE - BEGIN
@@ -297,4 +296,4 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Sat May  7 13:38:01 2016
           - 128/9*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
           );
 
-  0.25 sec out of 0.28 sec
+  0.25 sec out of 0.29 sec
