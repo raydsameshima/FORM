@@ -6,24 +6,24 @@
 *	reaction q,qbar -> t,tbar in QCD.
 *
 *          \                    /       q(p1)\   / Z(p5)          /
-*           \ q(p1)            / t(p3)        \ /          t(p3) /
+*           \ q(p1)            / t(p4)        \ /          t(p4) /
 *            \                /                *                /
 *             \g(j1)*T(c1)   /       fprop(u,q3)\              /
 *              *^^^^^^^^^^^^*  g(j2)*T(c2)       *^^^^^^^^^^^^*
 * fprop(d,q1) /   gprop(q2)  \                  / gprop(q4)    \
-*            * j3             \                /                \tbar(p4)
-*  qbar(p2) / \                \ tbar(p4)     /qbar(p2)          \
+*            * j3             \                /                \tbar(p3)
+*  qbar(p2) / \                \ tbar(p3)     /qbar(p2)          \
 *          /   \ Z(p5)          \            /                    \
 *
-*          \              t(p3) /Z(p5)  q(p1)\                    /
-*           \ q(p1)            *----          \            t(p3) /
+*          \              t(p4) /Z(p5)  q(p1)\                    /
+*           \ q(p1)            *----          \            t(p4) /
 *            \                /                \                /
 *             \g(j1)*T(c1)   / fprop(q6)        \   gprop(q7)  /
 *              *^^^^^^^^^^^^*  g(j2)*T(c2)       *^^^^^^^^^^^^*
 *             /   gprop(q5)  \                  /              \fprop(q8)
 *            /                \                /                *----
-*  qbar(p2) /                  \ tbar(p4)     /qbar(p2)          \ Z(p5)
-*          /                    \            /           tbar(p4) \
+*  qbar(p2) /                  \ tbar(p3)     /qbar(p2)          \ Z(p5)
+*          /                    \            /           tbar(p3) \
 *
 * t-propagators are massive
 *
@@ -91,7 +91,7 @@ id q4 = p3 + p4;
 id q5 = p1 + p2;
 id q6 = p4 + p5;
 id q7 = p1 + p2;
-id q8 = p3 + p5;
+id q8 = -p3 - p5;
 
 argument;
   id q1 = p2 - p5;
@@ -101,7 +101,7 @@ argument;
   id q5 = p1 + p2;
   id q6 = p4 + p5;
   id q7 = p1 + p2;
-  id q8 = p3 + p5;
+  id q8 = -p3 - p5;
 endargument;
 
 .sort

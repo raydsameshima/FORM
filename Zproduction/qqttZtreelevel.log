@@ -1,4 +1,4 @@
-FORM 4.1 (May 11 2015) 64-bits                   Run: Mon Mar 21 10:29:59 2016
+FORM 4.1 (May 11 2015) 64-bits                   Run: Sun May  8 16:29:05 2016
     #-
 ~~~tree level
 ~~~COLOR STRUCTURE - BEGIN
@@ -4138,4 +4138,4 @@ FORM 4.1 (May 11 2015) 64-bits                   Run: Mon Mar 21 10:29:59 2016
           - 32*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
           );
 
-  3.13 sec out of 3.18 sec
+  3.13 sec out of 3.20 sec
