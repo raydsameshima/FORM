@@ -4,12 +4,12 @@
 * Ray D. Sameshima
 *
 *    q(p1)\   / Z(p5)          /
-*          \ /          t(p3) /
+*          \ /          t(p4) /
 *           *                /
 * fprop(u,q3)\              /
 *             *^^^^^^^^^^^^*
 *            / gprop(q4)    \
-*           /                \tbar(p4)
+*           /                \tbar(p3)
 *          /qbar(p2)          \
 *         /                    \
 *

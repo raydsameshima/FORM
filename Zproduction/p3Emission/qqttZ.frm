@@ -59,15 +59,15 @@ Local Amp =
 *  V(i7,p3,mt,c4)
 *  +
 * p4-emission
-*  VB(i1,p2,mq,c1) * (i_ * g(i1,i2,j1) * T(c1,c2,d1)) * U(i2,p1,mq,c2) *
-*  gprop(j1,j2,q5, d1,d2) * 
-*  UB(i3,p4,mt,c3) *
-*  i_/cw *( g(i3,i4,j3) * e(j3,p5,mz)) *
-*    ((I3q/2) * g(i4,i5,k7) - Qq*sw^2*d_(i4,i5)) *
-*  fprop(i5,i6,q6 ,mt) *
-*  (i_ * g(i6,i7,j2) * T(c3,c4,d2)) * 
-*  V(i7,p3,mt,c4)
-*  +
+  VB(i1,p2,mq,c1) * (i_ * g(i1,i2,j1) * T(c1,c2,d1)) * U(i2,p1,mq,c2) *
+  gprop(j1,j2,q5, d1,d2) * 
+  UB(i3,p4,mt,c3) *
+  i_/cw *( g(i3,i4,j3) * e(j3,p5,mz)) *
+    ((I3q/2) * g(i4,i5,k7) - Qq*sw^2*d_(i4,i5)) *
+  fprop(i5,i6,q6 ,mt) *
+  (i_ * g(i6,i7,j2) * T(c3,c4,d2)) * 
+  V(i7,p3,mt,c4)
+  +
 * p3-emission
   VB(i1,p2,mq,c1)* (i_ * g(i1,i2,j1) * T(c1,c2,d1)) * U(i2,p1,mq,c2) *
   gprop(j1,j2,q7, d1,d2) *

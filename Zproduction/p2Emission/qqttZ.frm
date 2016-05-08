@@ -6,13 +6,13 @@
 *	reaction q,qbar -> t,tbar in QCD.
 *
 *          \                    /       q(p1)\   / Z(p5)          /
-*           \ q(p1)            / t(p3)        \ /          t(p3) /
+*           \ q(p1)            / t(p4)        \ /          t(p4) /
 *            \                /                *                /
 *             \g(j2)*T(c1)   /       fprop(u,q3)\              /
 *              *^^^^^^^^^^^^*  g(j3)*T(c2)       *^^^^^^^^^^^^*
 * fprop(d,q1) /   gprop(q2)  \                  / gprop(q4)    \
-*            * j1             \                /                \tbar(p4)
-*  qbar(p2) / \                \ tbar(p4)     /qbar(p2)          \
+*            * j1             \                /                \tbar(p3)
+*  qbar(p2) / \                \ tbar(p3)     /qbar(p2)          \
 *          /   \ Z(p5)          \            /                    \
 *
 *

@@ -314,14 +314,14 @@ id hTREE =
 * prop(p2-p5)*R(ub(2,p4),d98)*i_*gs/2*R(g_(2,mu2),d98,d96)*R(v(2,p3),d96)*
 * C(ll(a2),i98,i96)
 * emission of the Z from p4 (outgoing top at this stage)
-* -R(vb(1,p2),d97)*i_*gs/2*R(g_(1,mu1),d97,d99)*
-* R(u(1,p1),d99)*C(ll(a1),i97,i99)*(dd(a1,a2)*d_(mu1,mu2))*prop(p1+p2)*
-* propM(p4+p5)*R(ub(2,p4),d98)*
-* i_*ge/2/cw*R(g_(2,mu3)*(
-* -2*sw^2*Qt*gi_(2) + I3t*(gi_(2)+g5_(2))),d98,d94)*
-* ((-i_)*R(g_(2,p4)+g_(2,p5),d94,d95)+M*R(gi_(2),d94,d95) )*
-* i_*gs/2*R(g_(2,mu2),d95,d96)*R(v(2,p3),d96)*
-* C(ll(a2),i98,i96)
+-R(vb(1,p2),d97)*i_*gs/2*R(g_(1,mu1),d97,d99)*
+R(u(1,p1),d99)*C(ll(a1),i97,i99)*(dd(a1,a2)*d_(mu1,mu2))*prop(p1+p2)*
+propM(p4+p5)*R(ub(2,p4),d98)*
+i_*ge/2/cw*R(g_(2,mu3)*(
+-2*sw^2*Qt*gi_(2) + I3t*(gi_(2)+g5_(2))),d98,d94)*
+((-i_)*R(g_(2,p4)+g_(2,p5),d94,d95)+M*R(gi_(2),d94,d95) )*
+i_*gs/2*R(g_(2,mu2),d95,d96)*R(v(2,p3),d96)*
+C(ll(a2),i98,i96)
 * emission of the Z from p3 (outgoing antitop at this stage)
 -R(vb(1,p2),d97)*i_*gs/2*R(g_(1,mu1),d97,d99)*
 R(u(1,p1),d99)*C(ll(a1),i97,i99)*(dd(a1,a2)*d_(mu1,mu2))*prop(p1+p2)*
@@ -347,12 +347,12 @@ id hCOMPLEXCONJ =
 * (dd(a21,a22)*d_(al,be)*prop(p1+p2-p5))*R(vb(2,p3),dm)*i_*gs/2*R(g_(2,be),dm,dn)*
 * C(ll(a22),im,in)*R(u(2,p4),dn)
 * emission from top (p4)
-* -R(ub(1,p1),dk)*i_*gs/2*R(g_(1,al),dk,dl)*C(ll(a21),ik,il)*
-* R(v(1,p2),dl)*(dd(a21,a22)*d_(al,be)*prop(p1+p2))*R(vb(2,p3),dm)*i_*gs/2*
-* R(g_(2,be),dm,dk1)*C(ll(a22),im,in)*
-* ((-i_)*R(g_(2,p4)+g_(2,p5),dk1,dk2)+M*R(gi_(2),dk1,dk2) )*
-* i_*ge/2/cw*R(g_(2,mu4)*(-2*sw^2*Qt*gi_(2) + I3t*(gi_(2)+g5_(2))),dk2,dn)*
-* R(u(2,p4),dn)*propM(p4+p5)
+-R(ub(1,p1),dk)*i_*gs/2*R(g_(1,al),dk,dl)*C(ll(a21),ik,il)*
+R(v(1,p2),dl)*(dd(a21,a22)*d_(al,be)*prop(p1+p2))*R(vb(2,p3),dm)*i_*gs/2*
+R(g_(2,be),dm,dk1)*C(ll(a22),im,in)*
+((-i_)*R(g_(2,p4)+g_(2,p5),dk1,dk2)+M*R(gi_(2),dk1,dk2) )*
+i_*ge/2/cw*R(g_(2,mu4)*(-2*sw^2*Qt*gi_(2) + I3t*(gi_(2)+g5_(2))),dk2,dn)*
+R(u(2,p4),dn)*propM(p4+p5)
 * emission from antitop (p3)
 -R(ub(1,p1),dk)*i_*gs/2*R(g_(1,al),dk,dl)*C(ll(a21),ik,il)*
 R(v(1,p2),dl)*(dd(a21,a22)*d_(al,be)*prop(p1+p2))*R(vb(2,p3),dm)*
