@@ -84,7 +84,7 @@ Local Amp =
 
 id 1/sqrt_(2)/sqrt_(2) = 1/2;
 
-id q1 = p2 - p5;
+id q1 = p5 - p2;
 id q2 = p3 + p4;
 id q3 = p1 - p5;
 id q4 = p3 + p4;
@@ -94,7 +94,7 @@ id q7 = p1 + p2;
 id q8 = -p3 - p5;
 
 argument;
-  id q1 = p2 - p5;
+  id q1 = p5 - p2;
   id q2 = p3 + p4;
   id q3 = p1 - p5;
   id q4 = p3 + p4;
