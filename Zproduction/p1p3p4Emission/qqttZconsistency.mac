@@ -1,0 +1,2272 @@
+/*
+qqttZconsistency.mac
+*/ 
+/*
+line 2142 <- my result 
+*/
+qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,qQ,I3q,aem,sw,cw,Pi)
+:=
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))^2*[N^2-1]*cw^-2*sw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          - 4*eta(p1,p2)*mt^6
+          - 8*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 4*eta(p1,p3)*eta(p1,p2)*mt^4
+          - 4*eta(p1,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 4*eta(p1,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 4*eta(p1,p3)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 8*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 4*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)
+          + 4*eta(p1,p4)*eta(p1,p2)*mt^4
+          + 4*eta(p1,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 4*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*mt^2
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)
+          + 4*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)
+          + 4*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          + 4*eta(p2,p3)*eta(p1,p2)*mt^4
+          - 4*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 8*eta(p2,p3)*eta(p1,p3)*mt^4
+          + 16*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 8*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)*mt^2
+          + 8*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 8*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 8*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 4*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 8*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*mt^2
+          + 4*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 8*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*mt^2
+          + 4*eta(p2,p4)*eta(p1,p2)*mt^4
+          + 4*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 4*eta(p3,p4)*eta(p1,p2)*mt^4
+          - 4*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))^2*[N^2-1]*cw^-2*sw^-2*aem*Pi*[N^(-1)]^2 * (
+          + 4*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 4*eta(p1,p4)*eta(p1,p2)*mt^2
+          + 4*eta(p1,p4)*eta(p1,p3)*eta(p1,p2)
+          - 4*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          + 4*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 4*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 4*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 4*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 8*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          + 4*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 4*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 4*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))^2*[N^2-1]*cw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          - 32/3*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p3)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 64/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 32/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          + 64/3*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 64/3*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 64/3*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 64/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 32/3*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 32/3*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))^2*[N^2-1]*cw^-2*aem*Pi*[N^(-1)]^2 * (
+          + 64/3*eta(p1,p2)*mt^4
+          + 64/3*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p4)*eta(p1,p3)*eta(p1,p2)
+          + 32/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 128/3*eta(p2,p3)*eta(p1,p3)*mt^2
+          + 32/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 32/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 32/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          - 64/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          - 32/3*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 32/3*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 32/3*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))^2*[N^2-1]*cw^-2*sw^2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          + 128/9*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 256/9*eta(p1,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 128/9*eta(p1,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 128/9*eta(p1,p3)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 256/9*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 128/9*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)
+          + 128/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)
+          - 256/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)
+          + 128/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)
+          - 256/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          + 256/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)
+          + 128/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          - 256/9*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 256/9*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 256/9*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 256/9*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 128/9*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 128/9*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))^2*[N^2-1]*cw^-2*sw^2*aem*Pi*[N^(-1)]^2 * (
+          - 256/9*eta(p1,p2)*mt^4
+          - 256/9*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 128/9*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 128/9*eta(p1,p4)*eta(p1,p2)*mt^2
+          + 128/9*eta(p1,p4)*eta(p1,p3)*eta(p1,p2)
+          - 128/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          + 128/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          + 512/9*eta(p2,p3)*eta(p1,p3)*mt^2
+          - 128/9*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 128/9*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 128/9*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 256/9*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          + 128/9*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 128/9*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 128/9*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))*prop( - mt^2 + eta(p1,p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2
+      ) - 2*eta(p2,p4) + eta(p4,p4))*[N^2-1]*cw^-2*sw^-2*aem*Pi*mz^-2*
+      [N^(-1)]^2 * (
+          + 4*eta(p1,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 8*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 8*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 8*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 8*eta(p1,p3)*eta(p2,p4)*mt^4
+          - 16*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 8*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)
+          + 8*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+          + 8*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          - 8*eta(p1,p4)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 8*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 8*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 4*eta(p1,p4)*eta(p1,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 8*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          - 8*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          - 8*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 8*eta(p1,p4)*eta(p2,p3)*mt^4
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*mt^2
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*mt^2
+          - 8*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 8*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 8*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 4*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 8*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 4*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p3,p4)*eta(p1,p2)*mt^4
+          + 8*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 8*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 8*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 8*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))*prop( - mt^2 + eta(p1,p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2
+      ) - 2*eta(p2,p4) + eta(p4,p4))*[N^2-1]*cw^-2*sw^-2*aem*Pi*[N^(-1)]^2
+       * (
+          + 4*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 4*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 4*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 4*eta(p1,p4)*eta(p1,p2)*mt^2
+          - 4*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          + 4*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          - 4*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          + 4*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 4*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          - 4*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)
+          + 4*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 4*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 4*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 4*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          - 4*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          - 8*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 4*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          + 8*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))*prop( - mt^2 + eta(p1,p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2
+      ) - 2*eta(p2,p4) + eta(p4,p4))*[N^2-1]*cw^-2*aem*Pi*mz^-2*[N^(-1)]^2
+       * (
+          + 64/3*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 64/3*eta(p1,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 64/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 64/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 64/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)
+          - 64/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p4)*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p4)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          + 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          + 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 64/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 64/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 64/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 64/3*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))*prop( - mt^2 + eta(p1,p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2
+      ) - 2*eta(p2,p4) + eta(p4,p4))*[N^2-1]*cw^-2*aem*Pi*[N^(-1)]^2 * (
+          - 32/3*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 128/3*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 32/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p1,p2)*mt^2
+          + 32/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 32/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          + 32/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          + 32/3*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)
+          - 32/3*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 32/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 32/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          - 32/3*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 128/3*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 64/3*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          + 32/3*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          + 64/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          + 32/3*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))*prop( - mt^2 + eta(p1,p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2
+      ) - 2*eta(p2,p4) + eta(p4,p4))*[N^2-1]*cw^-2*sw^2*aem*Pi*mz^-2*
+      [N^(-1)]^2 * (
+          - 256/9*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 256/9*eta(p1,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 256/9*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 256/9*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 256/9*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 256/9*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)
+          + 256/9*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          + 256/9*eta(p1,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 256/9*eta(p1,p4)*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 256/9*eta(p1,p4)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 256/9*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 256/9*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          - 256/9*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          - 256/9*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 256/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 256/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)
+          + 256/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)
+          - 512/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 256/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          - 256/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          + 256/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 256/9*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 256/9*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 256/9*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 256/9*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 256/9*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,
+      p3))*prop( - mt^2 + eta(p1,p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2
+      ) - 2*eta(p2,p4) + eta(p4,p4))*[N^2-1]*cw^-2*sw^2*aem*Pi*[N^(-1)]^2 * (
+          + 128/9*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 128/9*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 512/9*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 128/9*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 128/9*eta(p1,p4)*eta(p1,p2)*mt^2
+          - 128/9*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          + 128/9*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          - 512/9*eta(p1,p4)*eta(p2,p3)*mt^2
+          - 128/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          + 128/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 128/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 256/9*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          - 128/9*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)
+          + 128/9*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 128/9*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 128/9*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 128/9*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 512/9*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 256/9*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          - 128/9*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          - 256/9*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 128/9*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          + 256/9*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,
+      p4))^2*[N^2-1]*cw^-2*sw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          - 4*eta(p1,p2)*mt^6
+          - 8*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 4*eta(p1,p3)*eta(p1,p2)*mt^4
+          + 4*eta(p1,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 4*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)
+          - 8*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          + 4*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+          + 4*eta(p1,p4)*eta(p1,p2)*mt^4
+          - 4*eta(p1,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 8*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 8*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 8*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 4*eta(p1,p4)*eta(p1,p4)*eta(p1,p2)*mt^2
+          + 4*eta(p1,p4)*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          + 4*eta(p1,p4)*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          - 8*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          + 8*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 8*eta(p1,p4)*eta(p1,p4)*eta(p2,p4)*mt^2
+          + 4*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 4*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          + 8*eta(p1,p4)*eta(p2,p4)*mt^4
+          + 16*eta(p1,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 8*eta(p1,p4)*eta(p2,p4)*eta(p2,p4)*mt^2
+          + 8*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)*mt^2
+          + 4*eta(p2,p3)*eta(p1,p2)*mt^4
+          + 4*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 4*eta(p2,p4)*eta(p1,p2)*mt^4
+          - 4*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 4*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 4*eta(p3,p4)*eta(p1,p2)*mt^4
+          - 4*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,
+      p4))^2*[N^2-1]*cw^-2*sw^-2*aem*Pi*[N^(-1)]^2 * (
+          + 4*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 4*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 4*eta(p1,p4)*eta(p1,p3)*eta(p1,p2)
+          - 4*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          + 4*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          - 4*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 4*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)
+          + 8*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+          + 4*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 4*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 4*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 4*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,
+      p4))^2*[N^2-1]*cw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          - 32/3*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)
+          + 64/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          - 32/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+          + 64/3*eta(p1,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p1,p4)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p4)*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          + 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 64/3*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 32/3*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,
+      p4))^2*[N^2-1]*cw^-2*aem*Pi*[N^(-1)]^2 * (
+          + 64/3*eta(p1,p2)*mt^4
+          + 64/3*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p1,p3)*eta(p1,p2)
+          + 32/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          + 32/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 128/3*eta(p1,p4)*eta(p2,p4)*mt^2
+          + 32/3*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+          - 32/3*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 32/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 32/3*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 32/3*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,
+      p4))^2*[N^2-1]*cw^-2*sw^2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          + 128/9*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 128/9*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)
+          - 256/9*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          + 128/9*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+          - 256/9*eta(p1,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 256/9*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 256/9*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 128/9*eta(p1,p4)*eta(p1,p4)*eta(p1,p2)*mt^2
+          + 128/9*eta(p1,p4)*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          + 128/9*eta(p1,p4)*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          - 256/9*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          + 256/9*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          + 128/9*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)
+          - 256/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 128/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          + 256/9*eta(p1,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 256/9*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 128/9*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))^2*prop( - mt^2 + eta(p1,
+      p1) + 2*eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,
+      p4))^2*[N^2-1]*cw^-2*sw^2*aem*Pi*[N^(-1)]^2 * (
+          - 256/9*eta(p1,p2)*mt^4
+          - 256/9*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 128/9*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 128/9*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 128/9*eta(p1,p4)*eta(p1,p3)*eta(p1,p2)
+          - 128/9*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          + 128/9*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          - 128/9*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          + 512/9*eta(p1,p4)*eta(p2,p4)*mt^2
+          - 128/9*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)
+          + 256/9*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+          + 128/9*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 128/9*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 128/9*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 128/9*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,p3))*
+      [N^2-1]*I3q*cw^-2*sw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          + 8*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 8*eta(p1,p4)*eta(p1,p2)*mt^4
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*mt^2
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          - 8*eta(p1,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 16*eta(p2,p3)*eta(p1,p2)*mt^4
+          - 8*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 16*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 24*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 16*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 8*eta(p2,p4)*eta(p1,p2)*mt^4
+          - 8*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 8*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 8*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,p3))*
+      [N^2-1]*I3q*cw^-2*sw^-2*aem*Pi*[N^(-1)]^2 * (
+          + 12*eta(p1,p2)*mt^4
+          - 4*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 4*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 24*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 24*eta(p2,p3)*eta(p1,p3)*mt^2
+          + 16*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 16*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 16*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          - 16*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          + 12*eta(p3,p4)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,p3))*
+      [N^2-1]*I3q*cw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          - 64/3*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 64/3*eta(p1,p3)*eta(p1,p2)*mt^4
+          + 64/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 64/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 128/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*mt^2
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          + 64/3*eta(p2,p3)*eta(p1,p2)*mt^4
+          + 64/3*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 64/3*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 64/3*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 64/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 64/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 64/3*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 64/3*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 64/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 64/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 64/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          + 64/3*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 64/3*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 64/3*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 64/3*eta(p3,p4)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 64/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,p3))*
+      [N^2-1]*I3q*cw^-2*aem*Pi*[N^(-1)]^2 * (
+          - 64/3*eta(p1,p2)*mt^4
+          - 32/3*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 32/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 32/3*eta(p1,p4)*eta(p1,p2)*mt^2
+          + 32/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 32/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          + 32/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          + 32/3*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)
+          - 32*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 128/3*eta(p2,p3)*eta(p1,p3)*mt^2
+          - 32*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 64/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 32/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 64/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          - 32*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 32/3*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          + 32/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 32/3*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,p3))*
+      [N^2-1]*Qq*cw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          - 16*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 16*eta(p1,p3)*eta(p1,p2)*mt^4
+          + 16*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 16*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 32*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 16*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*mt^2
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          + 16*eta(p2,p3)*eta(p1,p2)*mt^4
+          + 16*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 16*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 16*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 16*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 16*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 16*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 16*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 16*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 16*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 16*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 16*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          + 16*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 16*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 16*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 16*eta(p3,p4)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 16*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,p3))*
+      [N^2-1]*Qq*cw^-2*aem*Pi*[N^(-1)]^2 * (
+          - 16*eta(p1,p2)*mt^4
+          - 8*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 16*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 8*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 8*eta(p1,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          - 8*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          + 16*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          + 8*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)
+          - 24*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 32*eta(p2,p3)*eta(p1,p3)*mt^2
+          - 24*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 16*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 8*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 16*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          - 24*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 8*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          + 8*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 8*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,p3))*
+      [N^2-1]*Qq*cw^-2*sw^2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          + 128/3*eta(p1,p2)*eta(p1,p2)*mt^4
+          - 128/3*eta(p1,p3)*eta(p1,p2)*mt^4
+          - 128/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 128/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 256/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 128/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*mt^2
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          - 128/3*eta(p2,p3)*eta(p1,p2)*mt^4
+          - 128/3*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 128/3*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 128/3*eta(p2,p3)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 128/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 128/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 128/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 128/3*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 128/3*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 128/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 128/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 128/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 128/3*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 128/3*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 128/3*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 128/3*eta(p3,p4)*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 128/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p3) + eta(p2,p2) - 2*eta(p2,p3) + eta(p3,p3))*
+      [N^2-1]*Qq*cw^-2*sw^2*aem*Pi*[N^(-1)]^2 * (
+          + 128/3*eta(p1,p2)*mt^4
+          + 64/3*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 128/3*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 64/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p1,p2)*mt^2
+          - 64/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)
+          + 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)
+          - 128/3*eta(p1,p4)*eta(p2,p3)*mt^2
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          - 64/3*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)
+          + 64*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 256/3*eta(p2,p3)*eta(p1,p3)*mt^2
+          + 64*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 128/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 64/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          - 128/3*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          + 64*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 64/3*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          - 64/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          + 64/3*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,p4))*
+      [N^2-1]*I3q*cw^-2*sw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          - 8*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 8*eta(p1,p3)*eta(p1,p2)*mt^4
+          - 8*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 16*eta(p1,p4)*eta(p1,p2)*mt^4
+          + 16*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*mt^2
+          - 16*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 16*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          + 16*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 16*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 8*eta(p2,p3)*eta(p1,p2)*mt^4
+          + 8*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 8*eta(p2,p3)*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 8*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 8*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 8*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 8*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 8*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,p4))*
+      [N^2-1]*I3q*cw^-2*sw^-2*aem*Pi*[N^(-1)]^2 * (
+          - 4*eta(p1,p2)*mt^4
+          - 8*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 8*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 8*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 12*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 8*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 8*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 12*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          + 8*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          + 8*eta(p1,p4)*eta(p2,p4)*mt^2
+          - 12*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 8*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          + 8*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          + 8*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          + 8*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          - 8*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,p4))*
+      [N^2-1]*I3q*cw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          + 64/3*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 64/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 64/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+          - 64/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          + 64/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p1,p2)*mt^4
+          - 64/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 64/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          + 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+          + 64/3*eta(p1,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 64/3*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 64/3*eta(p1,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 64/3*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 64/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 64/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 64/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 64/3*eta(p2,p4)*eta(p1,p2)*mt^4
+          - 64/3*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 64/3*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 64/3*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 64/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 64/3*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,p4))*
+      [N^2-1]*I3q*cw^-2*aem*Pi*[N^(-1)]^2 * (
+          + 64/3*eta(p1,p2)*mt^4
+          + 32/3*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 32/3*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 32/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 64/3*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 32/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 32/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 64/3*eta(p1,p4)*eta(p2,p3)*mt^2
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          + 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 32/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          - 128/3*eta(p1,p4)*eta(p2,p4)*mt^2
+          - 64/3*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+          - 64/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 32*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 32*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 32/3*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          - 32/3*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          - 32/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          + 32/3*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          + 32/3*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,p4))*
+      [N^2-1]*Qq*cw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          + 16*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 16*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 16*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+          - 16*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          + 16*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p1,p2)*mt^4
+          - 16*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 16*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 16*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          + 16*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          + 32*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+          + 16*eta(p1,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 16*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 16*eta(p1,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 16*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 16*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 16*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 16*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 16*eta(p2,p4)*eta(p1,p2)*mt^4
+          - 16*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 16*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 16*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 16*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 16*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 16*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,p4))*
+      [N^2-1]*Qq*cw^-2*aem*Pi*[N^(-1)]^2 * (
+          + 16*eta(p1,p2)*mt^4
+          + 8*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 8*eta(p1,p3)*eta(p1,p2)*mt^2
+          + 8*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          - 16*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 8*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 8*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 16*eta(p1,p4)*eta(p2,p3)*mt^2
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          + 24*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 8*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          - 32*eta(p1,p4)*eta(p2,p4)*mt^2
+          - 16*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+          - 16*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 24*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 24*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 8*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          - 8*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          - 8*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          + 8*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          + 8*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,p4))*
+      [N^2-1]*Qq*cw^-2*sw^2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          - 128/3*eta(p1,p2)*eta(p1,p2)*mt^4
+          - 128/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 128/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+          + 128/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)
+          - 128/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+          + 128/3*eta(p1,p4)*eta(p1,p2)*mt^4
+          + 128/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 128/3*eta(p1,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 128/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*mt^2
+          - 128/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 128/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          + 128/3*eta(p1,p4)*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          - 256/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          - 128/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+          - 128/3*eta(p1,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 128/3*eta(p1,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 128/3*eta(p1,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          + 128/3*eta(p2,p3)*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 128/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 128/3*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 128/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 128/3*eta(p2,p4)*eta(p1,p2)*mt^4
+          + 128/3*eta(p2,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 128/3*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 128/3*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 128/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          + 128/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 128/3*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          )
+
+       + prop(eta(p1,p1) + 2*eta(p1,p2) + eta(p2,p2))*prop(eta(p3,p3) + 2*eta(
+      p3,p4) + eta(p4,p4))*prop(eta(p2,p2) - 2*eta(p2,p3) - 2*eta(p2,p4) + 
+      eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))*prop( - mt^2 + eta(p1,p1) + 2*
+      eta(p1,p2) - 2*eta(p1,p4) + eta(p2,p2) - 2*eta(p2,p4) + eta(p4,p4))*
+      [N^2-1]*Qq*cw^-2*sw^2*aem*Pi*[N^(-1)]^2 * (
+          - 128/3*eta(p1,p2)*mt^4
+          - 64/3*eta(p1,p2)*eta(p1,p2)*mt^2
+          + 64/3*eta(p1,p3)*eta(p1,p2)*mt^2
+          - 64/3*eta(p1,p3)*eta(p1,p3)*eta(p2,p4)
+          + 128/3*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 64/3*eta(p1,p3)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 128/3*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p2)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p1,p3)
+          - 64*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          + 64/3*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)
+          + 256/3*eta(p1,p4)*eta(p2,p4)*mt^2
+          + 128/3*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+          + 128/3*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 64*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 64*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 64/3*eta(p3,p4)*eta(p1,p2)*eta(p1,p2)
+          + 64/3*eta(p3,p4)*eta(p1,p3)*eta(p1,p2)
+          + 64/3*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 64/3*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          - 64/3*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*prop(eta(p2,p2) - 2*
+      eta(p2,p3) - 2*eta(p2,p4) + eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*
+      [N^2-1]*I3q^2*cw^-2*sw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          + 16*eta(p1,p2)*mt^6
+          + 16*eta(p1,p3)*eta(p2,p4)*mt^4
+          - 32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+          + 16*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+          + 16*eta(p1,p4)*eta(p2,p3)*mt^4
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          + 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          + 32*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*mt^2
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p3,p4)
+          - 32*eta(p2,p3)*eta(p1,p2)*mt^4
+          - 32*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 32*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 16*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 16*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 32*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 32*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 32*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 32*eta(p2,p4)*eta(p1,p2)*mt^4
+          + 16*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 32*eta(p3,p4)*eta(p1,p2)*mt^4
+          + 32*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 32*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 32*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 16*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 16*eta(p3,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          )
+
+       + prop(eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*prop(eta(p2,p2) - 2*
+      eta(p2,p3) - 2*eta(p2,p4) + eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*
+      [N^2-1]*I3q^2*cw^-2*sw^-2*aem*Pi*[N^(-1)]^2 * (
+          - 16*eta(p1,p2)*mt^4
+          + 16*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 16*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 16*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          + 32*eta(p1,p4)*eta(p2,p4)*mt^2
+          + 16*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+          - 16*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 32*eta(p2,p3)*eta(p1,p3)*mt^2
+          - 16*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 32*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 16*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 16*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          - 16*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 16*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 16*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*prop(eta(p2,p2) - 2*
+      eta(p2,p3) - 2*eta(p2,p4) + eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*
+      [N^2-1]*Qq*I3q*cw^-2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          - 32*eta(p1,p2)*mt^6
+          - 32*eta(p1,p3)*eta(p2,p4)*mt^4
+          + 64*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+          - 32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+          - 32*eta(p1,p4)*eta(p2,p3)*mt^4
+          + 64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          - 64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          + 64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+          + 64*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          - 64*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*mt^2
+          + 64*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p3,p4)
+          + 64*eta(p2,p3)*eta(p1,p2)*mt^4
+          + 64*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 64*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 32*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 32*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 64*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 64*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 64*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          + 64*eta(p2,p4)*eta(p1,p2)*mt^4
+          - 32*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 64*eta(p3,p4)*eta(p1,p2)*mt^4
+          - 64*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 64*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 64*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 32*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 32*eta(p3,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          )
+
+       + prop(eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*prop(eta(p2,p2) - 2*
+      eta(p2,p3) - 2*eta(p2,p4) + eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*
+      [N^2-1]*Qq*I3q*cw^-2*aem*Pi*[N^(-1)]^2 * (
+          + 32*eta(p1,p2)*mt^4
+          - 32*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 32*eta(p1,p4)*eta(p2,p3)*mt^2
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          + 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          - 64*eta(p1,p4)*eta(p2,p4)*mt^2
+          - 32*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+          + 32*eta(p2,p3)*eta(p1,p2)*mt^2
+          - 64*eta(p2,p3)*eta(p1,p3)*mt^2
+          + 32*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          - 64*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          + 32*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          - 32*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          + 32*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 32*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 32*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          )
+
+       + prop(eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*prop(eta(p2,p2) - 2*
+      eta(p2,p3) - 2*eta(p2,p4) + eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*
+      [N^2-1]*Qq^2*cw^-2*sw^2*aem*Pi*mz^-2*[N^(-1)]^2 * (
+          + 32*eta(p1,p2)*mt^6
+          + 32*eta(p1,p3)*eta(p2,p4)*mt^4
+          - 64*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+          + 32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+          + 32*eta(p1,p4)*eta(p2,p3)*mt^4
+          - 64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+          + 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+          + 64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+          - 64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+          - 64*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+          + 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+          + 64*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*mt^2
+          - 64*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+          + 32*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p3,p4)
+          - 64*eta(p2,p3)*eta(p1,p2)*mt^4
+          - 64*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 64*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 32*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 32*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 64*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 64*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 64*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          - 64*eta(p2,p4)*eta(p1,p2)*mt^4
+          + 32*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 64*eta(p3,p4)*eta(p1,p2)*mt^4
+          + 64*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+          - 64*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          - 64*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+          + 32*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+          + 32*eta(p3,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+          )
+
+       + prop(eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*prop(eta(p2,p2) - 2*
+      eta(p2,p3) - 2*eta(p2,p4) + eta(p3,p3) + 2*eta(p3,p4) + eta(p4,p4))^2*
+      [N^2-1]*Qq^2*cw^-2*sw^2*aem*Pi*[N^(-1)]^2 * (
+          - 32*eta(p1,p2)*mt^4
+          + 32*eta(p1,p3)*eta(p2,p4)*mt^2
+          + 32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+          + 32*eta(p1,p4)*eta(p2,p3)*mt^2
+          + 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+          - 32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+          + 64*eta(p1,p4)*eta(p2,p4)*mt^2
+          + 32*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+          - 32*eta(p2,p3)*eta(p1,p2)*mt^2
+          + 64*eta(p2,p3)*eta(p1,p3)*mt^2
+          - 32*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+          + 64*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+          - 32*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+          + 32*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+          - 32*eta(p2,p4)*eta(p1,p2)*mt^2
+          - 32*eta(p3,p4)*eta(p1,p2)*mt^2
+          - 32*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+          )
+$
+/*
+my result 
+*/
+M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi)
+:=
+       + prop(2*mt^2 + 2*eta(p3,p4))^2*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,
+      p2) + 2*eta(p3,p4))^2*[N^2-1]*cw^-2*Qq^2*mz^-2 * (
+          + 32*eta(p1,p2)*sw^4*mt^6
+          - 64*eta(p1,p2)*eta(p4,p2)*sw^4*mt^4
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*sw^4*mt^4
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p3,p4)*sw^4*mt^4
+          + 32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*sw^4*mt^2
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4*mt^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          + 32*eta(p4,p2)*eta(p3,p1)*sw^4*mt^4
+          + 64*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4*mt^2
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*eta(p3,p4)*sw^4
+          + 32*eta(p3,p2)*eta(p4,p1)*sw^4*mt^4
+          + 64*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4*mt^2
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*eta(p3,p4)*sw^4
+          - 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          - 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          + 32*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          )
+
+       + prop(2*mt^2 + 2*eta(p3,p4))^2*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,
+      p2) + 2*eta(p3,p4))^2*[N^2-1]*cw^-2*Qq^2 * (
+          - 32*eta(p1,p2)*sw^4*mt^4
+          - 32*eta(p1,p2)*eta(p4,p2)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^4
+          - 32*eta(p1,p2)*eta(p3,p2)*sw^4*mt^2
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^4
+          - 32*eta(p1,p2)*eta(p3,p4)*sw^4*mt^2
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p4,p1)*sw^4*mt^2
+          + 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          + 32*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          + 32*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          + 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 64*eta(p3,p2)*eta(p3,p1)*sw^4*mt^2
+          + 32*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          )
+
+       + prop(2*mt^2 + 2*eta(p3,p4))^2*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,
+      p2) + 2*eta(p3,p4))^2*[N^2-1]*cw^-2*I3q*Qq*mz^-2 * (
+          - 32*eta(p1,p2)*sw^2*mt^6
+          + 64*eta(p1,p2)*eta(p4,p2)*sw^2*mt^4
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*sw^2*mt^4
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p3,p4)*sw^2*mt^4
+          - 32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*sw^2*mt^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2*mt^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          - 32*eta(p4,p2)*eta(p3,p1)*sw^2*mt^4
+          - 64*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^2*mt^2
+          - 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*eta(p3,p4)*sw^2
+          - 32*eta(p3,p2)*eta(p4,p1)*sw^2*mt^4
+          - 64*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2*mt^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*eta(p3,p4)*sw^2
+          + 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          + 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          )
+
+       + prop(2*mt^2 + 2*eta(p3,p4))^2*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,
+      p2) + 2*eta(p3,p4))^2*[N^2-1]*cw^-2*I3q*Qq * (
+          + 32*eta(p1,p2)*sw^2*mt^4
+          + 32*eta(p1,p2)*eta(p4,p2)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^2
+          + 32*eta(p1,p2)*eta(p3,p2)*sw^2*mt^2
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^2
+          + 32*eta(p1,p2)*eta(p3,p4)*sw^2*mt^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p4,p1)*sw^2*mt^2
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          - 32*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+          - 32*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 64*eta(p3,p2)*eta(p3,p1)*sw^2*mt^2
+          - 32*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          )
+
+       + prop(2*mt^2 + 2*eta(p3,p4))^2*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,
+      p2) + 2*eta(p3,p4))^2*[N^2-1]*cw^-2*I3q^2*mz^-2 * (
+          + 16*eta(p1,p2)*mt^6
+          - 32*eta(p1,p2)*eta(p4,p2)*mt^4
+          + 16*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*mt^2
+          - 32*eta(p1,p2)*eta(p3,p2)*mt^4
+          + 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*mt^2
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*mt^2
+          + 32*eta(p1,p2)*eta(p3,p4)*mt^4
+          + 16*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*mt^2
+          + 16*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          + 16*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          + 16*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)
+          + 16*eta(p4,p2)*eta(p3,p1)*mt^4
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*mt^2
+          + 16*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*eta(p3,p4)
+          + 16*eta(p3,p2)*eta(p4,p1)*mt^4
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*mt^2
+          + 16*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*eta(p3,p4)
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*mt^2
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)
+          + 16*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          )
+
+       + prop(2*mt^2 + 2*eta(p3,p4))^2*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,
+      p2) + 2*eta(p3,p4))^2*[N^2-1]*cw^-2*I3q^2 * (
+          - 16*eta(p1,p2)*mt^4
+          - 16*eta(p1,p2)*eta(p4,p2)*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)
+          - 16*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)
+          - 16*eta(p1,p2)*eta(p3,p2)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)
+          - 16*eta(p1,p2)*eta(p3,p4)*mt^2
+          + 16*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          + 32*eta(p4,p2)*eta(p4,p1)*mt^2
+          + 16*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)
+          - 16*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+          - 16*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          + 16*eta(p4,p2)*eta(p3,p1)*mt^2
+          + 16*eta(p3,p2)*eta(p4,p1)*mt^2
+          + 16*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          + 32*eta(p3,p2)*eta(p3,p1)*mt^2
+          + 16*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p4,p2) - 2*eta(p4,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*Qq^2*mz^-2 * (
+          + 64*eta(p1,p2)*eta(p1,p2)*sw^4*mt^4
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*sw^4*mt^4
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p1)*sw^4*mt^4
+          - 64*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*sw^4*mt^2
+          + 128*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          - 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^4*mt^2
+          - 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p4)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 64*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4*mt^2
+          - 64*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*eta(p3,p4)*sw^4
+          + 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p4,p2) - 2*eta(p4,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*Qq^2 * (
+          + 64*eta(p1,p2)*sw^4*mt^4
+          + 32*eta(p1,p2)*eta(p1,p2)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^4
+          + 96*eta(p1,p2)*eta(p4,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^4
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 32*eta(p1,p2)*eta(p3,p1)*sw^4*mt^2
+          - 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          + 96*eta(p1,p2)*eta(p3,p4)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*sw^4
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          - 128*eta(p4,p2)*eta(p4,p1)*sw^4*mt^2
+          - 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          + 96*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^4
+          - 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          - 64*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p4,p2) - 2*eta(p4,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*I3q*Qq*mz^-2 * (
+          - 64*eta(p1,p2)*eta(p1,p2)*sw^2*mt^4
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*sw^2*mt^4
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p1)*sw^2*mt^4
+          + 64*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*sw^2*mt^2
+          - 128*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          + 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^2*mt^2
+          + 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p4)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 64*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2*mt^2
+          + 64*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*eta(p3,p4)*sw^2
+          - 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p4,p2) - 2*eta(p4,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*I3q*Qq * (
+          - 64*eta(p1,p2)*sw^2*mt^4
+          - 32*eta(p1,p2)*eta(p1,p2)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^2
+          - 96*eta(p1,p2)*eta(p4,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^2
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 32*eta(p1,p2)*eta(p3,p1)*sw^2*mt^2
+          + 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          - 96*eta(p1,p2)*eta(p3,p4)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*sw^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          + 128*eta(p4,p2)*eta(p4,p1)*sw^2*mt^2
+          + 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          - 96*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+          - 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^2
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          + 64*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p4,p2) - 2*eta(p4,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*I3q^2*mz^-2 * (
+          + 16*eta(p1,p2)*eta(p1,p2)*mt^4
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*mt^2
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*mt^2
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*mt^4
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          + 48*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          + 16*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p2)*mt^4
+          + 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p1)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*mt^2
+          + 16*eta(p1,p2)*eta(p3,p1)*mt^4
+          + 16*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*mt^2
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p4)
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p4,p2) - 2*eta(p4,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*I3q^2 * (
+          + 24*eta(p1,p2)*mt^4
+          + 48*eta(p1,p2)*eta(p4,p2)*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)
+          + 24*eta(p1,p2)*eta(p3,p4)*mt^2
+          - 48*eta(p4,p2)*eta(p4,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+          - 8*eta(p4,p2)*eta(p3,p1)*mt^2
+          - 8*eta(p3,p2)*eta(p4,p1)*mt^2
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p3,p2) - 2*eta(p3,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*Qq^2*mz^-2 * (
+          - 64*eta(p1,p2)*eta(p1,p2)*sw^4*mt^4
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          - 128*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          + 64*eta(p1,p2)*eta(p3,p2)*sw^4*mt^4
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p1)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p3,p1)*sw^4*mt^4
+          + 64*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*sw^4*mt^2
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4*mt^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          + 64*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^4*mt^2
+          + 64*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*eta(p3,p4)*sw^4
+          + 64*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4*mt^2
+          + 64*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p4)*sw^4
+          + 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          - 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          + 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          - 64*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p3,p2) - 2*eta(p3,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*Qq^2 * (
+          - 64*eta(p1,p2)*sw^4*mt^4
+          - 32*eta(p1,p2)*eta(p1,p2)*sw^4*mt^2
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^4
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 32*eta(p1,p2)*eta(p4,p1)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          - 96*eta(p1,p2)*eta(p3,p2)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^4
+          - 96*eta(p1,p2)*eta(p3,p4)*sw^4*mt^2
+          - 32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*sw^4
+          + 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 96*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          + 64*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 128*eta(p3,p2)*eta(p3,p1)*sw^4*mt^2
+          + 64*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p3,p2) - 2*eta(p3,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*I3q*Qq*mz^-2 * (
+          + 64*eta(p1,p2)*eta(p1,p2)*sw^2*mt^4
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          + 128*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          - 64*eta(p1,p2)*eta(p3,p2)*sw^2*mt^4
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p1)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p3,p1)*sw^2*mt^4
+          - 64*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*sw^2*mt^2
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2*mt^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          - 64*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^2*mt^2
+          - 64*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*eta(p3,p4)*sw^2
+          - 64*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2*mt^2
+          - 64*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p4)*sw^2
+          - 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          + 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          - 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          + 64*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p3,p2) - 2*eta(p3,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*I3q*Qq * (
+          + 64*eta(p1,p2)*sw^2*mt^4
+          + 32*eta(p1,p2)*eta(p1,p2)*sw^2*mt^2
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 32*eta(p1,p2)*eta(p4,p1)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          + 96*eta(p1,p2)*eta(p3,p2)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^2
+          + 96*eta(p1,p2)*eta(p3,p4)*sw^2*mt^2
+          + 32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*sw^2
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 96*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+          - 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          - 64*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          + 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 128*eta(p3,p2)*eta(p3,p1)*sw^2*mt^2
+          - 64*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p3,p2) - 2*eta(p3,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*I3q^2*mz^-2 * (
+          - 16*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*mt^2
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*mt^2
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*mt^2
+          - 16*eta(p1,p2)*eta(p4,p2)*mt^4
+          + 16*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          - 16*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*mt^2
+          + 16*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+          - 16*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*mt^2
+          + 16*eta(p1,p2)*eta(p4,p1)*mt^4
+          + 16*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*mt^2
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p1)*mt^2
+          + 32*eta(p1,p2)*eta(p3,p1)*mt^4
+          + 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*mt^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p1)
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*mt^2
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*eta(p3,p4)
+          )
+
+       + prop(2*eta(p1,p2))*prop(2*mt^2 + 2*eta(p3,p4))*prop(2*eta(p1,p2) - 2*
+      eta(p3,p2) - 2*eta(p3,p1))*prop(2*mt^2 - 2*eta(p4,p2) - 2*eta(p3,p2) + 2
+      *eta(p3,p4))*[N^2-1]*cw^-2*I3q^2 * (
+          - 8*eta(p1,p2)*mt^4
+          - 16*eta(p1,p2)*eta(p1,p2)*mt^2
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)
+          + 16*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)
+          + 16*eta(p1,p2)*eta(p4,p1)*mt^2
+          + 16*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)
+          + 16*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)
+          + 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)
+          - 24*eta(p1,p2)*eta(p3,p4)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)
+          + 16*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)
+          - 16*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          + 24*eta(p4,p2)*eta(p3,p1)*mt^2
+          + 16*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+          + 24*eta(p3,p2)*eta(p4,p1)*mt^2
+          - 16*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)
+          + 16*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)
+          - 16*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          + 16*eta(p3,p2)*eta(p3,p1)*mt^2
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      ^2*[N^2-1]*cw^-2*Qq^2*mz^-2 * (
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p1)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 32*eta(p1,p2)*eta(p4,p1)*eta(p4,p1)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 32*eta(p4,p2)*eta(p4,p1)*eta(p4,p1)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*eta(p4,p1)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      ^2*[N^2-1]*cw^-2*Qq^2 * (
+          - 64*eta(p1,p2)*sw^4*mt^4
+          - 64*eta(p1,p2)*eta(p1,p2)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^4
+          + 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          + 32*eta(p1,p2)*eta(p3,p2)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p3,p1)*sw^4*mt^2
+          - 32*eta(p1,p2)*eta(p3,p4)*sw^4*mt^2
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 128*eta(p4,p2)*eta(p4,p1)*sw^4*mt^2
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      ^2*[N^2-1]*cw^-2*I3q*Qq*mz^-2 * (
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p1)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 32*eta(p1,p2)*eta(p4,p1)*eta(p4,p1)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p4,p1)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*eta(p4,p1)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      ^2*[N^2-1]*cw^-2*I3q*Qq * (
+          + 64*eta(p1,p2)*sw^2*mt^4
+          + 64*eta(p1,p2)*eta(p1,p2)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^2
+          - 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          - 32*eta(p1,p2)*eta(p3,p2)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p3,p1)*sw^2*mt^2
+          + 32*eta(p1,p2)*eta(p3,p4)*sw^2*mt^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 128*eta(p4,p2)*eta(p4,p1)*sw^2*mt^2
+          + 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      ^2*[N^2-1]*cw^-2*I3q^2*mz^-2 * (
+          - 16*eta(p1,p2)*mt^6
+          - 32*eta(p1,p2)*eta(p1,p2)*mt^4
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*mt^2
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p4,p1)*mt^2
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*mt^2
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p1)*mt^2
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*mt^2
+          + 16*eta(p1,p2)*eta(p4,p2)*mt^4
+          + 16*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+          + 16*eta(p1,p2)*eta(p4,p1)*mt^4
+          + 16*eta(p1,p2)*eta(p4,p1)*eta(p4,p1)*mt^2
+          + 16*eta(p1,p2)*eta(p3,p2)*mt^4
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)
+          + 16*eta(p1,p2)*eta(p3,p1)*mt^4
+          - 16*eta(p1,p2)*eta(p3,p4)*mt^4
+          + 16*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p4,p1)*mt^2
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)
+          + 16*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+          + 32*eta(p4,p2)*eta(p4,p1)*mt^4
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p4,p1)*mt^2
+          + 16*eta(p4,p2)*eta(p4,p1)*eta(p4,p1)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*mt^2
+          + 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)*mt^2
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*mt^2
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)
+          + 16*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*eta(p4,p1)
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      ^2*[N^2-1]*cw^-2*I3q^2 * (
+          + 16*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)
+          - 16*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)
+          + 16*eta(p1,p2)*eta(p4,p1)*eta(p3,p1)
+          - 16*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)
+          + 16*eta(p1,p2)*eta(p3,p2)*mt^2
+          + 16*eta(p1,p2)*eta(p3,p1)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p4)*mt^2
+          + 16*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          - 16*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)
+          + 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)
+          - 16*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+          + 16*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      *prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))*[N^2-1]*cw^-2*Qq^2*
+      mz^-2 * (
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p1)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p1)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p4,p1)*eta(p3,p1)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p1)*sw^4
+          - 128*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 64*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      *prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))*[N^2-1]*cw^-2*Qq^2
+       * (
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^4
+          + 32*eta(p1,p2)*eta(p4,p2)*sw^4*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^4
+          + 32*eta(p1,p2)*eta(p4,p1)*sw^4*mt^2
+          - 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          + 32*eta(p1,p2)*eta(p3,p2)*sw^4*mt^2
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^4
+          + 32*eta(p1,p2)*eta(p3,p1)*sw^4*mt^2
+          - 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          + 128*eta(p1,p2)*eta(p3,p4)*sw^4*mt^2
+          + 64*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*sw^4
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          - 128*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          - 128*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^4
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          + 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      *prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))*[N^2-1]*cw^-2*I3q*Qq*
+      mz^-2 * (
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p4,p1)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p1)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p4,p1)*eta(p3,p1)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p1)*sw^2
+          + 128*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 64*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      *prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))*[N^2-1]*cw^-2*I3q*Qq
+       * (
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*sw^2
+          - 32*eta(p1,p2)*eta(p4,p2)*sw^2*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^2
+          - 32*eta(p1,p2)*eta(p4,p1)*sw^2*mt^2
+          + 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          - 32*eta(p1,p2)*eta(p3,p2)*sw^2*mt^2
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^2
+          - 32*eta(p1,p2)*eta(p3,p1)*sw^2*mt^2
+          + 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          - 128*eta(p1,p2)*eta(p3,p4)*sw^2*mt^2
+          - 64*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*sw^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          + 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          + 128*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+          - 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          + 128*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*sw^2
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^2
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      *prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))*[N^2-1]*cw^-2*I3q^2*
+      mz^-2 * (
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*mt^2
+          + 16*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*mt^2
+          + 16*eta(p1,p2)*eta(p4,p1)*eta(p4,p1)*mt^2
+          - 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*mt^2
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)
+          + 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*mt^2
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*mt^2
+          + 16*eta(p1,p2)*eta(p3,p1)*eta(p3,p1)*mt^2
+          - 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*mt^2
+          + 32*eta(p1,p2)*eta(p3,p4)*mt^4
+          + 32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*mt^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          + 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)
+          + 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p1)
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*mt^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p3,p1)*mt^4
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*mt^2
+          - 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*mt^2
+          - 32*eta(p3,p2)*eta(p4,p1)*mt^4
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*mt^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)*eta(p3,p1)
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*mt^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*mt^2
+          + 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*mt^2
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p4,p2) - 2*eta(p4,p1))
+      *prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))*[N^2-1]*cw^-2*I3q^2
+       * (
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)
+          + 16*eta(p1,p2)*eta(p4,p2)*mt^2
+          - 16*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)
+          + 16*eta(p1,p2)*eta(p4,p1)*mt^2
+          - 16*eta(p1,p2)*eta(p4,p1)*eta(p3,p4)
+          + 16*eta(p1,p2)*eta(p3,p2)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)
+          + 16*eta(p1,p2)*eta(p3,p1)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)
+          + 32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)
+          + 16*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+          - 16*eta(p4,p2)*eta(p4,p1)*eta(p3,p1)
+          - 16*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+          - 16*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          + 16*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+          + 16*eta(p3,p2)*eta(p4,p1)*eta(p4,p1)
+          - 16*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)
+          + 16*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))
+      ^2*[N^2-1]*cw^-2*Qq^2*mz^-2 * (
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p1)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^4
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*sw^4*mt^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p1)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p1)*sw^4*mt^2
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          + 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p1)*sw^4
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*eta(p3,p1)*sw^4
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p1)*sw^4
+          + 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          + 32*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))
+      ^2*[N^2-1]*cw^-2*Qq^2 * (
+          - 64*eta(p1,p2)*sw^4*mt^4
+          - 64*eta(p1,p2)*eta(p1,p2)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4
+          + 32*eta(p1,p2)*eta(p4,p1)*sw^4*mt^2
+          + 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^4
+          - 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          - 32*eta(p1,p2)*eta(p3,p4)*sw^4*mt^2
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          + 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^4
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^4
+          + 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          + 128*eta(p3,p2)*eta(p3,p1)*sw^4*mt^2
+          + 64*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))
+      ^2*[N^2-1]*cw^-2*I3q*Qq*mz^-2 * (
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p1,p2)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p1,p2)*eta(p3,p1)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*sw^2*mt^2
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p1)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p1)*sw^2*mt^2
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          - 64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p1)*sw^2
+          - 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*eta(p3,p1)*sw^2
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p1)*sw^2
+          - 64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))
+      ^2*[N^2-1]*cw^-2*I3q*Qq * (
+          + 64*eta(p1,p2)*sw^2*mt^4
+          + 64*eta(p1,p2)*eta(p1,p2)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^2
+          - 32*eta(p1,p2)*eta(p4,p1)*sw^2*mt^2
+          - 32*eta(p1,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          + 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^2
+          + 32*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          + 32*eta(p1,p2)*eta(p3,p4)*sw^2*mt^2
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^2
+          - 32*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*sw^2
+          + 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*sw^2
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^2
+          - 128*eta(p3,p2)*eta(p3,p1)*sw^2*mt^2
+          - 64*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^2
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))
+      ^2*[N^2-1]*cw^-2*I3q^2*mz^-2 * (
+          - 16*eta(p1,p2)*mt^6
+          - 32*eta(p1,p2)*eta(p1,p2)*mt^4
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*mt^2
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p4,p1)*mt^2
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*mt^2
+          + 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p1)*mt^2
+          - 16*eta(p1,p2)*eta(p1,p2)*eta(p3,p4)*mt^2
+          + 16*eta(p1,p2)*eta(p4,p2)*mt^4
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          - 32*eta(p1,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)
+          + 16*eta(p1,p2)*eta(p4,p1)*mt^4
+          + 16*eta(p1,p2)*eta(p3,p2)*mt^4
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)
+          + 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*mt^2
+          - 32*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          + 64*eta(p1,p2)*eta(p3,p2)*eta(p3,p1)*mt^2
+          + 16*eta(p1,p2)*eta(p3,p1)*mt^4
+          + 16*eta(p1,p2)*eta(p3,p1)*eta(p3,p1)*mt^2
+          - 16*eta(p1,p2)*eta(p3,p4)*mt^4
+          + 16*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)
+          - 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*mt^2
+          + 32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p1)
+          + 16*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)*eta(p3,p1)
+          - 32*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*mt^2
+          + 16*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)*eta(p3,p1)
+          + 32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)
+          + 16*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          - 32*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)*mt^2
+          + 32*eta(p3,p2)*eta(p3,p1)*mt^4
+          - 32*eta(p3,p2)*eta(p3,p1)*eta(p3,p1)*mt^2
+          + 32*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*mt^2
+          )
+
+       + prop(2*eta(p1,p2))^2*prop(2*eta(p1,p2) - 2*eta(p3,p2) - 2*eta(p3,p1))
+      ^2*[N^2-1]*cw^-2*I3q^2 * (
+          + 16*eta(p1,p2)*eta(p4,p2)*mt^2
+          + 16*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)
+          + 16*eta(p1,p2)*eta(p4,p1)*mt^2
+          + 16*eta(p1,p2)*eta(p4,p1)*eta(p3,p1)
+          - 16*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)
+          - 16*eta(p1,p2)*eta(p3,p1)*eta(p3,p4)
+          - 16*eta(p1,p2)*eta(p3,p4)*mt^2
+          - 16*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+          + 16*eta(p4,p2)*eta(p3,p1)*eta(p3,p1)
+          - 16*eta(p3,p2)*eta(p4,p1)*eta(p3,p1)
+          + 16*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+          + 32*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)
+          )
+$
+/*
+load("momentum.mac");
+*/
+print("1st phase point");
+p1:[250,0,0,250]$
+p2:[250,0,0,-250]$
+p4:[176.93372604857203, 26.368868814661685, -11.508008041187844, 21.898673973331295]$
+p3:[198.55132608017917, -78.275175311272307, -55.243309144491299, -15.670443929684193]$
+batch("momentum.mac");
+prop(x) := 1/x;
+[Pi,aem,N]: [%pi, 1, 3];
+print("Professor Ferroglia's result is 0.000972345");
+F1: qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+print("The ratio F1/0.000972345, this shold be 1.0");
+F1/0.000972345, numer;
+print("Here is my \"bare\" result");
+R1: M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+print("The ratio F/R is");
+F1/R1, numer;
+kill(p3,p4);
+p3:[176.93372604857203, 26.368868814661685, -11.508008041187844, 21.898673973331295]$
+p4:[198.55132608017917, -78.275175311272307, -55.243309144491299, -15.670443929684193]$
+batch("momentum.mac");
+print("Here is my \"bare\" result");
+R1: M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+F1/R1, numer;
+/*
+print("Here is my \"renormalized\" result");
+r1: M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi)*%pi/(N^2*sw^2),Qq = 2/3, I3q = 1/2, numer ;
+print("The ratio F/r is");
+F1/r1, numer;
+*/
+print("2nd phase point");
+p1:[250,0,0,250]$
+p2:[250,0,0,-250]$
+p4:[180.71923187397661, -7.2805673914722444, 15.984223386683929, 48.504625658827038]$
+p3:[207.86863740101489, 28.860688849083665, -39.073539505384680, -104.17029118050952]$
+batch("momentum.mac");
+print("Professor Ferroglia's result is 0.00137727");
+F2: qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+F2/0.00137727;
+print("Here is my \"bare\" result");
+R2: M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+print("The ratio F/R is");
+F2/R2, numer;
+kill(p3,p4);
+p3:[180.71923187397661, -7.2805673914722444, 15.984223386683929, 48.504625658827038]$
+p4:[207.86863740101489, 28.860688849083665, -39.073539505384680, -104.17029118050952]$
+batch("momentum.mac");
+print("Here is my \"bare\" result");
+R2: M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+print("The ratio F/R is");
+F2/R2, numer;
+print("3rd phase point");
+p1:[250,0,0,250]$
+p2:[250,0,0,-250]$
+p4:[180.26438650520549, -25.072780166595496, -42.156869977137887, -9.5479343601843798]$
+p3:[193.04034502941821, 30.160149783660557, 23.366015535150147, -76.228141077394227]$
+batch("momentum.mac");
+print("Professor Ferroglia's result is 0.0014709");
+F3: qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+F3/0.0014709;
+print("Here is my \"bare\" result");
+R3: M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+print("The ratio F/R is");
+F3/R3, numer;
+kill(p3,p4);
+p3:[180.26438650520549, -25.072780166595496, -42.156869977137887, -9.5479343601843798]$
+p4:[193.04034502941821, 30.160149783660557, 23.366015535150147, -76.228141077394227]$
+batch("momentum.mac");
+print("Here is my \"bare\" result");
+R3: M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
+print("The ratio F/R is");
+F3/R3, numer;
+print("fin");
