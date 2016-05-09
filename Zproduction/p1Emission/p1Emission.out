@@ -1,0 +1,692 @@
+
+NIL
+(%o1)                                done
+(%i2) 
+read and interpret file: /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/qqttZconsistency.mac
+(%i3) qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,qQ,I3q,aem,sw,cw,Pi):=
+                     (prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3))^2
+                      *prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3)-2*eta(p2,p4)
+                                      -2*eta(p2,p3)+eta(p2,p2))
+                       ^2*[N^2-1]*Qq^2*sw^2*aem*Pi*[1/N]^2
+                      *((-32*eta(p3,p4)*eta(p2,p4)*eta(p1,p2))
+                       -32*eta(p3,p4)*eta(p1,p2)*mt^2
+                       -32*eta(p2,p4)*eta(p1,p2)*mt^2
+                       +32*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+                       -32*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+                       +64*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+                       -32*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+                       +64*eta(p2,p3)*eta(p1,p3)*mt^2
+                       -32*eta(p2,p3)*eta(p1,p2)*mt^2
+                       +32*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+                       +64*eta(p1,p4)*eta(p2,p4)*mt^2
+                       -32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+                       +32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+                       +32*eta(p1,p4)*eta(p2,p3)*mt^2
+                       +32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+                       +32*eta(p1,p3)*eta(p2,p4)*mt^2-32*eta(p1,p2)*mt^4))
+                      /cw^2
+                     +(prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3))^2
+                      *prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3)-2*eta(p2,p4)
+                                      -2*eta(p2,p3)+eta(p2,p2))
+                       ^2*[N^2-1]*Qq^2*sw^2*aem*Pi*[1/N]^2
+                      *(32*eta(p3,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+                       +32*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+                       -64*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+                       -64*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+                       +64*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+                       +64*eta(p3,p4)*eta(p1,p2)*mt^4
+                       +32*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+                       -64*eta(p2,p4)*eta(p1,p2)*mt^4
+                       -64*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+                       -64*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+                       +64*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+                       +32*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+                       +32*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+                       +64*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+                       -64*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+                       -64*eta(p2,p3)*eta(p1,p2)*mt^4
+                       +32*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p3,p4)
+                       -64*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+                       +64*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*mt^2
+                       +32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+                       -64*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+                       -64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+                       +64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+                       +32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+                       -64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+                       +32*eta(p1,p4)*eta(p2,p3)*mt^4
+                       +32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+                       -64*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+                       +32*eta(p1,p3)*eta(p2,p4)*mt^4+(+32)*eta(p1,p2)*mt^6))
+                      /(cw^2*mz^2)
+                     +(prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3))^2
+                      *prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3)-2*eta(p2,p4)
+                                      -2*eta(p2,p3)+eta(p2,p2))
+                       ^2*[N^2-1]*Qq*I3q*aem*Pi*[1/N]^2
+                      *(32*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)
+                       +32*eta(p3,p4)*eta(p1,p2)*mt^2
+                       +32*eta(p2,p4)*eta(p1,p2)*mt^2
+                       -32*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+                       +32*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+                       -64*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+                       +32*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+                       -64*eta(p2,p3)*eta(p1,p3)*mt^2
+                       +32*eta(p2,p3)*eta(p1,p2)*mt^2
+                       -32*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+                       -64*eta(p1,p4)*eta(p2,p4)*mt^2
+                       +32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+                       -32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+                       -32*eta(p1,p4)*eta(p2,p3)*mt^2
+                       -32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+                       -32*eta(p1,p3)*eta(p2,p4)*mt^2+(+32)*eta(p1,p2)*mt^4))
+                      /cw^2
+                     +(prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3))^2
+                      *prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3)-2*eta(p2,p4)
+                                      -2*eta(p2,p3)+eta(p2,p2))
+                       ^2*[N^2-1]*Qq*I3q*aem*Pi*[1/N]^2
+                      *((-32*eta(p3,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4))
+                       -32*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+                       +64*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+                       +64*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+                       -64*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+                       -64*eta(p3,p4)*eta(p1,p2)*mt^4
+                       -32*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+                       +64*eta(p2,p4)*eta(p1,p2)*mt^4
+                       +64*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+                       +64*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+                       -64*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+                       -32*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+                       -32*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+                       -64*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+                       +64*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+                       +64*eta(p2,p3)*eta(p1,p2)*mt^4
+                       -32*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p3,p4)
+                       +64*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+                       -64*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*mt^2
+                       -32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+                       +64*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+                       +64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+                       -64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+                       -32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+                       +64*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+                       -32*eta(p1,p4)*eta(p2,p3)*mt^4
+                       -32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+                       +64*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+                       -32*eta(p1,p3)*eta(p2,p4)*mt^4-32*eta(p1,p2)*mt^6))
+                      /(cw^2*mz^2)
+                     +(prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3))^2
+                      *prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3)-2*eta(p2,p4)
+                                      -2*eta(p2,p3)+eta(p2,p2))
+                       ^2*[N^2-1]*I3q^2*aem*Pi*[1/N]^2
+                      *((-16*eta(p3,p4)*eta(p2,p4)*eta(p1,p2))
+                       -16*eta(p3,p4)*eta(p1,p2)*mt^2
+                       -16*eta(p2,p4)*eta(p1,p2)*mt^2
+                       +16*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)
+                       -16*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)
+                       +32*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)
+                       -16*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+                       +32*eta(p2,p3)*eta(p1,p3)*mt^2
+                       -16*eta(p2,p3)*eta(p1,p2)*mt^2
+                       +16*eta(p1,p4)*eta(p3,p4)*eta(p2,p4)
+                       +32*eta(p1,p4)*eta(p2,p4)*mt^2
+                       -16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)
+                       +16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)
+                       +16*eta(p1,p4)*eta(p2,p3)*mt^2
+                       +16*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+                       +16*eta(p1,p3)*eta(p2,p4)*mt^2-16*eta(p1,p2)*mt^4))
+                      /(cw^2*sw^2)
+                     +((+prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3))^2)
+                      *prop(eta(p4,p4)+2*eta(p3,p4)+eta(p3,p3)-2*eta(p2,p4)
+                                      -2*eta(p2,p3)+eta(p2,p2))
+                       ^2*[N^2-1]*I3q^2*aem*Pi*[1/N]^2
+                      *(16*eta(p3,p4)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+                       +16*eta(p3,p4)*eta(p3,p4)*eta(p1,p2)*mt^2
+                       -32*eta(p3,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+                       -32*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+                       +32*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)*mt^2
+                       +32*eta(p3,p4)*eta(p1,p2)*mt^4
+                       +16*eta(p2,p4)*eta(p2,p4)*eta(p1,p2)*mt^2
+                       -32*eta(p2,p4)*eta(p1,p2)*mt^4
+                       -32*eta(p2,p3)*eta(p3,p4)*eta(p1,p3)*eta(p2,p4)
+                       -32*eta(p2,p3)*eta(p3,p4)*eta(p1,p2)*mt^2
+                       +32*eta(p2,p3)*eta(p2,p4)*eta(p1,p2)*mt^2
+                       +16*eta(p2,p3)*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)
+                       +16*eta(p2,p3)*eta(p2,p3)*eta(p1,p2)*mt^2
+                       +32*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)
+                       -32*eta(p2,p3)*eta(p1,p3)*eta(p2,p4)*mt^2
+                       -32*eta(p2,p3)*eta(p1,p2)*mt^4
+                       +16*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p3,p4)
+                       -32*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*eta(p2,p4)
+                       +32*eta(p1,p4)*eta(p2,p3)*eta(p3,p4)*mt^2
+                       +16*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*eta(p2,p4)
+                       -32*eta(p1,p4)*eta(p2,p3)*eta(p2,p4)*mt^2
+                       -32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p3,p4)
+                       +32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p4)
+                       +16*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*eta(p2,p3)
+                       -32*eta(p1,p4)*eta(p2,p3)*eta(p2,p3)*mt^2
+                       +16*eta(p1,p4)*eta(p2,p3)*mt^4
+                       +16*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*eta(p2,p4)
+                       -32*eta(p1,p3)*eta(p2,p4)*eta(p2,p4)*mt^2
+                       +16*eta(p1,p3)*eta(p2,p4)*mt^4+(+16)*eta(p1,p2)*mt^6))
+                      /(cw^2*sw^2*mz^2)
+(%i4) M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi):=
+        (prop(2*eta(p3,p4)+2*mt^2)^2*prop(
+                                     2*eta(p3,p4)-2*eta(p3,p2)-2*eta(p4,p2)
+                                                 +2*mt^2)
+                                     ^2*[N^2-1]*I3q^2
+                                    *(16*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)
+                                     +32*eta(p3,p2)*eta(p3,p1)*mt^2
+                                     +16*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+                                     +16*eta(p3,p2)*eta(p4,p1)*mt^2
+                                     +16*eta(p4,p2)*eta(p3,p1)*mt^2
+                                     -16*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+                                     -16*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+                                     +16*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)
+                                     +32*eta(p4,p2)*eta(p4,p1)*mt^2
+                                     +16*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+                                     -16*eta(p1,p2)*eta(p3,p4)*mt^2
+                                     -16*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)
+                                     -16*eta(p1,p2)*eta(p3,p2)*mt^2
+                                     -16*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)
+                                     +32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)
+                                     -16*eta(p1,p2)*eta(p4,p2)*mt^2
+                                     -16*eta(p1,p2)*mt^4))
+         /cw^2
+        +(prop(2*eta(p3,p4)+2*mt^2)^2*prop(
+                                      2*eta(p3,p4)-2*eta(p3,p2)-2*eta(p4,p2)
+                                                  +2*mt^2)
+                                      ^2*[N^2-1]*I3q^2
+                                     *(16*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)
+                                         *eta(p4,p1)
+                                      -32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *eta(p3,p4)
+                                      -32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *mt^2
+                                      +16*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)
+                                         *eta(p3,p4)
+                                      +32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)
+                                         *mt^2+16*eta(p3,p2)*eta(p4,p1)*mt^4
+                                      +16*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+                                         *eta(p3,p4)
+                                      +32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+                                         *mt^2+16*eta(p4,p2)*eta(p3,p1)*mt^4
+                                      -32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+                                         *eta(p3,p4)
+                                      -32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+                                         *mt^2
+                                      +16*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)
+                                         *eta(p3,p1)
+                                      +32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)
+                                         *eta(p4,p1)
+                                      -32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *eta(p3,p4)
+                                      -32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *mt^2
+                                      -32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+                                         *eta(p3,p4)
+                                      -32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+                                         *mt^2
+                                      +32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)
+                                         *eta(p3,p1)
+                                      +16*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)
+                                         *eta(p4,p1)
+                                      +16*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)
+                                         *eta(p3,p1)
+                                      +16*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)
+                                         *mt^2+32*eta(p1,p2)*eta(p3,p4)*mt^4
+                                      -32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)
+                                         *mt^2
+                                      +16*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)
+                                         *mt^2-32*eta(p1,p2)*eta(p3,p2)*mt^4
+                                      -32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)
+                                         *mt^2
+                                      +32*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)
+                                         *mt^2
+                                      +16*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)
+                                         *mt^2-32*eta(p1,p2)*eta(p4,p2)*mt^4
+                                      +(+16)*eta(p1,p2)*mt^6))
+         /(cw^2*mz^2)
+        +(prop(2*eta(p3,p4)+2*mt^2)^2*prop(
+                                      2*eta(p3,p4)-2*eta(p3,p2)-2*eta(p4,p2)
+                                                  +2*mt^2)
+                                      ^2*[N^2-1]*I3q*Qq
+                                     *((-32*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)
+                                           *sw^2)
+                                      -64*eta(p3,p2)*eta(p3,p1)*sw^2*mt^2
+                                      -32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *sw^2
+                                      -32*eta(p3,p2)*eta(p4,p1)*sw^2*mt^2
+                                      -32*eta(p4,p2)*eta(p3,p1)*sw^2*mt^2
+                                      +32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+                                         *sw^2
+                                      +32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *sw^2
+                                      -32*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)
+                                         *sw^2
+                                      -64*eta(p4,p2)*eta(p4,p1)*sw^2*mt^2
+                                      -32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+                                         *sw^2
+                                      +32*eta(p1,p2)*eta(p3,p4)*sw^2*mt^2
+                                      +32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)
+                                         *sw^2
+                                      +32*eta(p1,p2)*eta(p3,p2)*sw^2*mt^2
+                                      +32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)
+                                         *sw^2
+                                      -64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)
+                                         *sw^2
+                                      +32*eta(p1,p2)*eta(p4,p2)*sw^2*mt^2
+                                      +(+32)*eta(p1,p2)*sw^2*mt^4))
+         /cw^2
+        +(prop(2*eta(p3,p4)+2*mt^2)^2*prop(
+                                      2*eta(p3,p4)-2*eta(p3,p2)-2*eta(p4,p2)
+                                                  +2*mt^2)
+                                      ^2*[N^2-1]*I3q*Qq
+                                     *((-32*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)
+                                           *eta(p4,p1)*sw^2)
+                                      +64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *eta(p3,p4)*sw^2
+                                      +64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *sw^2*mt^2
+                                      -32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)
+                                         *eta(p3,p4)*sw^2
+                                      -64*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)
+                                         *sw^2*mt^2
+                                      -32*eta(p3,p2)*eta(p4,p1)*sw^2*mt^4
+                                      -32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+                                         *eta(p3,p4)*sw^2
+                                      -64*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)
+                                         *sw^2*mt^2
+                                      -32*eta(p4,p2)*eta(p3,p1)*sw^2*mt^4
+                                      +64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+                                         *eta(p3,p4)*sw^2
+                                      +64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+                                         *sw^2*mt^2
+                                      -32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)
+                                         *eta(p3,p1)*sw^2
+                                      -64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)
+                                         *eta(p4,p1)*sw^2
+                                      +64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *eta(p3,p4)*sw^2
+                                      +64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *sw^2*mt^2
+                                      +64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+                                         *eta(p3,p4)*sw^2
+                                      +64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+                                         *sw^2*mt^2
+                                      -64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)
+                                         *eta(p3,p1)*sw^2
+                                      -32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)
+                                         *eta(p4,p1)*sw^2
+                                      -32*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)
+                                         *eta(p3,p1)*sw^2
+                                      -32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)
+                                         *sw^2*mt^2
+                                      -64*eta(p1,p2)*eta(p3,p4)*sw^2*mt^4
+                                      +64*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)
+                                         *sw^2*mt^2
+                                      -32*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)
+                                         *sw^2*mt^2
+                                      +64*eta(p1,p2)*eta(p3,p2)*sw^2*mt^4
+                                      +64*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)
+                                         *sw^2*mt^2
+                                      -64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)
+                                         *sw^2*mt^2
+                                      -32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)
+                                         *sw^2*mt^2
+                                      +64*eta(p1,p2)*eta(p4,p2)*sw^2*mt^4
+                                      -32*eta(p1,p2)*sw^2*mt^6))
+         /(cw^2*mz^2)
+        +(prop(2*eta(p3,p4)+2*mt^2)^2*prop(
+                                      2*eta(p3,p4)-2*eta(p3,p2)-2*eta(p4,p2)
+                                                  +2*mt^2)
+                                      ^2*[N^2-1]*Qq^2
+                                     *(32*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)
+                                         *sw^4
+                                      +64*eta(p3,p2)*eta(p3,p1)*sw^4*mt^2
+                                      +32*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *sw^4
+                                      +32*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+                                      +32*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+                                      -32*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)
+                                         *sw^4
+                                      -32*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)
+                                         *sw^4
+                                      +32*eta(p4,p2)*eta(p4,p1)*eta(p3,p4)
+                                         *sw^4
+                                      +64*eta(p4,p2)*eta(p4,p1)*sw^4*mt^2
+                                      +32*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)
+                                         *sw^4
+                                      -32*eta(p1,p2)*eta(p3,p4)*sw^4*mt^2
+                                      -32*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)
+                                         *sw^4
+                                      -32*eta(p1,p2)*eta(p3,p2)*sw^4*mt^2
+                                      -32*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)
+                                         *sw^4
+                                      +64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)
+                                         *sw^4
+                                      -32*eta(p1,p2)*eta(p4,p2)*sw^4*mt^2
+                                      -32*eta(p1,p2)*sw^4*mt^4))
+         /cw^2
+        +((+prop(2*eta(p3,p4)+2*mt^2)^2)
+         *prop(2*eta(p3,p4)-2*eta(p3,p2)-2*eta(p4,p2)+2*mt^2)^2*[N^2-1]*Qq^2
+         *(32*eta(p3,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          -64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          -64*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          +32*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*eta(p3,p4)*sw^4
+          +64*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4*mt^2
+          +32*eta(p3,p2)*eta(p4,p1)*sw^4*mt^4
+          +32*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*eta(p3,p4)*sw^4
+          +64*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4*mt^2
+          +32*eta(p4,p2)*eta(p3,p1)*sw^4*mt^4
+          -64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          -64*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4*mt^2
+          +32*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          +64*eta(p4,p2)*eta(p3,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          -64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*eta(p3,p4)*sw^4
+          -64*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4*mt^2
+          -64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*eta(p3,p4)*sw^4
+          -64*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4*mt^2
+          +64*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p3,p1)*sw^4
+          +32*eta(p4,p2)*eta(p4,p2)*eta(p3,p2)*eta(p4,p1)*sw^4
+          +32*eta(p4,p2)*eta(p4,p2)*eta(p4,p2)*eta(p3,p1)*sw^4
+          +32*eta(p1,p2)*eta(p3,p4)*eta(p3,p4)*sw^4*mt^2
+          +64*eta(p1,p2)*eta(p3,p4)*sw^4*mt^4
+          -64*eta(p1,p2)*eta(p3,p2)*eta(p3,p4)*sw^4*mt^2
+          +32*eta(p1,p2)*eta(p3,p2)*eta(p3,p2)*sw^4*mt^2
+          -64*eta(p1,p2)*eta(p3,p2)*sw^4*mt^4
+          -64*eta(p1,p2)*eta(p4,p2)*eta(p3,p4)*sw^4*mt^2
+          +64*eta(p1,p2)*eta(p4,p2)*eta(p3,p2)*sw^4*mt^2
+          +32*eta(p1,p2)*eta(p4,p2)*eta(p4,p2)*sw^4*mt^2
+          -64*eta(p1,p2)*eta(p4,p2)*sw^4*mt^4+(+32)*eta(p1,p2)*sw^4*mt^6))
+         /(cw^2*mz^2)
+(%i5) print("1st phase point")
+1st phase point 
+(%o5)                           1st phase point
+(%i6) p1:[250,0,0,250]
+(%i7) p2:[250,0,0,-250]
+(%i8) p4:[176.933726048572,26.36886881466168,-11.50800804118784,
+          21.8986739733313]
+(%i9) p3:[198.5513260801792,-78.2751753112723,-55.2433091444913,
+          -15.67044392968419]
+(%i10) batch("momentum.mac")
+
+read and interpret file: /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i11) pInitial:p2+p1
+(%o11)                          [500, 0, 0, 0]
+(%i12) pSemiFinal:p4+p3
+(%o12) [375.4850521287512, - 51.90630649661063, - 66.75131718567914, 
+                                                             6.228230043647102]
+(%i13) pZ:pInitial-pSemiFinal
+(%o13) [124.5149478712488, 51.90630649661063, 66.75131718567914, 
+                                                           - 6.228230043647102]
+(%i14) eta(p,q):=p[1]*q[1]-sum(p[i]*q[i],i,2,length(p))
+(%o14)         eta(p, q) := p  q  - sum(p  q , i, 2, length(p))
+                             1  1        i  i
+(%i15) mz:sqrt(eta(pZ,pZ))
+(%o15)                         91.18759999999996
+(%i16) mt:sqrt(eta(p3,p3))
+(%o16)                               173.2
+(%i17) mw:80.419
+(%o17)                              80.419
+(%i18) sw:sqrt(1-mw^2/mz^2)
+(%o18)                        0.4714230687517944
+(%i19) cw:mw/mz
+(%o19)                        0.8819071891353653
+(%o20) /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i21) prop(x):=1/x
+                                            1
+(%o21)                           prop(x) := -
+                                            x
+(%i22) [Pi,aem,N]:[%pi,1,3]
+(%o22)                            [%pi, 1, 3]
+(%i23) print("Professor Ferroglia's result is 0.000972345")
+Professor Ferroglia's result is 0.000972345 
+(%o23)            Professor Ferroglia's result is 0.000972345
+(%i24) ev(F1:qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi),
+          Qq = 2/3,I3q = 1/2,bfloat)
+(%o24)                      [5.693784159016735b-4]
+(%i25) print("The ratio F1/0.000972345, this shold be 1.0")
+The ratio F1/0.000972345, this shold be 1.0 
+(%o25)            The ratio F1/0.000972345, this shold be 1.0
+(%i26) ev(F1/9.72345e-4,numer)
+(%o26)                       [0.5855724212102428]
+(%i27) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o27)                     Here is my "bare" result
+(%i28) ev(R1:M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o28)                      [3.625060822881559b-4]
+(%i29) print("The ratio F/R is")
+The ratio F/R is 
+(%o29)                         The ratio F/R is
+(%i30) ev(F1/R1,numer)
+(%o30)                        [1.570672724462247]
+(%i31) kill(p3,p4)
+(%o31)                               done
+(%i32) p3:[176.933726048572,26.36886881466168,-11.50800804118784,
+           21.8986739733313]
+(%i33) p4:[198.5513260801792,-78.2751753112723,-55.2433091444913,
+           -15.67044392968419]
+(%i34) batch("momentum.mac")
+
+read and interpret file: /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i35) pInitial:p2+p1
+(%o35)                          [500, 0, 0, 0]
+(%i36) pSemiFinal:p4+p3
+(%o36) [375.4850521287512, - 51.90630649661063, - 66.75131718567914, 
+                                                             6.228230043647102]
+(%i37) pZ:pInitial-pSemiFinal
+(%o37) [124.5149478712488, 51.90630649661063, 66.75131718567914, 
+                                                           - 6.228230043647102]
+(%i38) eta(p,q):=p[1]*q[1]-sum(p[i]*q[i],i,2,length(p))
+(%o38)         eta(p, q) := p  q  - sum(p  q , i, 2, length(p))
+                             1  1        i  i
+(%i39) mz:sqrt(eta(pZ,pZ))
+(%o39)                         91.18759999999996
+(%i40) mt:sqrt(eta(p3,p3))
+(%o40)                               173.2
+(%i41) mw:80.419
+(%o41)                              80.419
+(%i42) sw:sqrt(1-mw^2/mz^2)
+(%o42)                        0.4714230687517944
+(%i43) cw:mw/mz
+(%o43)                        0.8819071891353653
+(%o44) /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i45) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o45)                     Here is my "bare" result
+(%i46) ev(R1:M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o46)                      [3.625060822881557b-4]
+(%i47) ev(F1/R1,numer)
+(%o47)                        [1.570672724462248]
+(%i48) print("2nd phase point")
+2nd phase point 
+(%o48)                          2nd phase point
+(%i49) p1:[250,0,0,250]
+(%i50) p2:[250,0,0,-250]
+(%i51) p4:[180.7192318739766,-7.280567391472244,15.98422338668393,
+           48.50462565882704]
+(%i52) p3:[207.8686374010149,28.86068884908367,-39.07353950538468,
+           -104.1702911805095]
+(%i53) batch("momentum.mac")
+
+read and interpret file: /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i54) pInitial:p2+p1
+(%o54)                          [500, 0, 0, 0]
+(%i55) pSemiFinal:p4+p3
+(%o55) [388.5878692749915, 21.58012145761142, - 23.08931611870075, 
+                                                           - 55.66566552168248]
+(%i56) pZ:pInitial-pSemiFinal
+(%o56) [111.4121307250085, - 21.58012145761142, 23.08931611870075, 
+                                                             55.66566552168248]
+(%i57) eta(p,q):=p[1]*q[1]-sum(p[i]*q[i],i,2,length(p))
+(%o57)         eta(p, q) := p  q  - sum(p  q , i, 2, length(p))
+                             1  1        i  i
+(%i58) mz:sqrt(eta(pZ,pZ))
+(%o58)                         91.18760000000003
+(%i59) mt:sqrt(eta(p3,p3))
+(%o59)                               173.2
+(%i60) mw:80.419
+(%o60)                              80.419
+(%i61) sw:sqrt(1-mw^2/mz^2)
+(%o61)                        0.4714230687517958
+(%i62) cw:mw/mz
+(%o62)                        0.8819071891353646
+(%o63) /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i64) print("Professor Ferroglia's result is 0.00137727")
+Professor Ferroglia's result is 0.00137727 
+(%o64)            Professor Ferroglia's result is 0.00137727
+(%i65) ev(F2:qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi),
+          Qq = 2/3,I3q = 1/2,bfloat)
+(%o65)                      [5.228710518463788b-4]
+(%i66) F2/0.00137727
+(%o66)                      [3.796430996437727b-1]
+(%i67) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o67)                     Here is my "bare" result
+(%i68) ev(R2:M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o68)                      [3.328962448401854b-4]
+(%i69) print("The ratio F/R is")
+The ratio F/R is 
+(%o69)                         The ratio F/R is
+(%i70) ev(F2/R2,numer)
+(%o70)                        [1.570672724462228]
+(%i71) kill(p3,p4)
+(%o71)                               done
+(%i72) p3:[180.7192318739766,-7.280567391472244,15.98422338668393,
+           48.50462565882704]
+(%i73) p4:[207.8686374010149,28.86068884908367,-39.07353950538468,
+           -104.1702911805095]
+(%i74) batch("momentum.mac")
+
+read and interpret file: /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i75) pInitial:p2+p1
+(%o75)                          [500, 0, 0, 0]
+(%i76) pSemiFinal:p4+p3
+(%o76) [388.5878692749915, 21.58012145761142, - 23.08931611870075, 
+                                                           - 55.66566552168248]
+(%i77) pZ:pInitial-pSemiFinal
+(%o77) [111.4121307250085, - 21.58012145761142, 23.08931611870075, 
+                                                             55.66566552168248]
+(%i78) eta(p,q):=p[1]*q[1]-sum(p[i]*q[i],i,2,length(p))
+(%o78)         eta(p, q) := p  q  - sum(p  q , i, 2, length(p))
+                             1  1        i  i
+(%i79) mz:sqrt(eta(pZ,pZ))
+(%o79)                         91.18760000000003
+(%i80) mt:sqrt(eta(p3,p3))
+(%o80)                               173.2
+(%i81) mw:80.419
+(%o81)                              80.419
+(%i82) sw:sqrt(1-mw^2/mz^2)
+(%o82)                        0.4714230687517958
+(%i83) cw:mw/mz
+(%o83)                        0.8819071891353646
+(%o84) /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i85) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o85)                     Here is my "bare" result
+(%i86) ev(R2:M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o86)                      [3.328962448401852b-4]
+(%i87) print("The ratio F/R is")
+The ratio F/R is 
+(%o87)                         The ratio F/R is
+(%i88) ev(F2/R2,numer)
+(%o88)                        [1.570672724462228]
+(%i89) print("3rd phase point")
+3rd phase point 
+(%o89)                          3rd phase point
+(%i90) p1:[250,0,0,250]
+(%i91) p2:[250,0,0,-250]
+(%i92) p4:[180.2643865052055,-25.0727801665955,-42.15686997713789,
+           -9.54793436018438]
+(%i93) p3:[193.0403450294182,30.16014978366056,23.36601553515015,
+           -76.22814107739423]
+(%i94) batch("momentum.mac")
+
+read and interpret file: /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i95) pInitial:p2+p1
+(%o95)                          [500, 0, 0, 0]
+(%i96) pSemiFinal:p4+p3
+(%o96) [373.3047315346237, 5.087369617065061, - 18.79085444198774, 
+                                                           - 85.77607543757861]
+(%i97) pZ:pInitial-pSemiFinal
+(%o97) [126.6952684653763, - 5.087369617065061, 18.79085444198774, 
+                                                             85.77607543757861]
+(%i98) eta(p,q):=p[1]*q[1]-sum(p[i]*q[i],i,2,length(p))
+(%o98)         eta(p, q) := p  q  - sum(p  q , i, 2, length(p))
+                             1  1        i  i
+(%i99) mz:sqrt(eta(pZ,pZ))
+(%o99)                         91.18759999999999
+(%i100) mt:sqrt(eta(p3,p3))
+(%o100)                              173.2
+(%i101) mw:80.419
+(%o101)                             80.419
+(%i102) sw:sqrt(1-mw^2/mz^2)
+(%o102)                        0.471423068751795
+(%i103) cw:mw/mz
+(%o103)                       0.8819071891353649
+(%o104) /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i105) print("Professor Ferroglia's result is 0.0014709")
+Professor Ferroglia's result is 0.0014709 
+(%o105)            Professor Ferroglia's result is 0.0014709
+(%i106) ev(F3:qqttZtreelevel(p1,p2,p3,p4,mt,mw,mz,N,Qq,I3q,aem,sw,cw,Pi),
+           Qq = 2/3,I3q = 1/2,bfloat)
+(%o106)                     [5.778581066959291b-4]
+(%i107) F3/0.0014709
+(%o107)                     [3.928602261852805b-1]
+(%i108) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o108)                    Here is my "bare" result
+(%i109) ev(R3:M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o109)                     [3.679048459275814b-4]
+(%i110) print("The ratio F/R is")
+The ratio F/R is 
+(%o110)                        The ratio F/R is
+(%i111) ev(F3/R3,numer)
+(%o111)                       [1.570672724462224]
+(%i112) kill(p3,p4)
+(%o112)                              done
+(%i113) p3:[180.2643865052055,-25.0727801665955,-42.15686997713789,
+            -9.54793436018438]
+(%i114) p4:[193.0403450294182,30.16014978366056,23.36601553515015,
+            -76.22814107739423]
+(%i115) batch("momentum.mac")
+
+read and interpret file: /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i116) pInitial:p2+p1
+(%o116)                         [500, 0, 0, 0]
+(%i117) pSemiFinal:p4+p3
+(%o117) [373.3047315346237, 5.087369617065061, - 18.79085444198774, 
+                                                           - 85.77607543757861]
+(%i118) pZ:pInitial-pSemiFinal
+(%o118) [126.6952684653763, - 5.087369617065061, 18.79085444198774, 
+                                                             85.77607543757861]
+(%i119) eta(p,q):=p[1]*q[1]-sum(p[i]*q[i],i,2,length(p))
+(%o119)        eta(p, q) := p  q  - sum(p  q , i, 2, length(p))
+                             1  1        i  i
+(%i120) mz:sqrt(eta(pZ,pZ))
+(%o120)                        91.18759999999999
+(%i121) mt:sqrt(eta(p3,p3))
+(%o121)                              173.2
+(%i122) mw:80.419
+(%o122)                             80.419
+(%i123) sw:sqrt(1-mw^2/mz^2)
+(%o123)                        0.471423068751795
+(%i124) cw:mw/mz
+(%o124)                       0.8819071891353649
+(%o125) /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/momentum.mac
+(%i126) print("Here is my \"bare\" result")
+Here is my "bare" result 
+(%o126)                    Here is my "bare" result
+(%i127) ev(R3:M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi),Qq = 2/3,I3q = 1/2,bfloat)
+(%o127)                     [3.679048459275803b-4]
+(%i128) print("The ratio F/R is")
+The ratio F/R is 
+(%o128)                        The ratio F/R is
+(%i129) ev(F3/R3,numer)
+(%o129)                       [1.570672724462229]
+(%i130) print("fin")
+fin 
+(%o130)                               fin
+(%o130) 
+       /Users/rdsAir/Documents/FORM/Zproduction/p1Emission/qqttZconsistency.mac
+(%i131) 
