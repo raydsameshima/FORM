@@ -3930,7 +3930,7 @@ p4:[198.55132608017917, -78.275175311272307, -55.243309144491299, -15.6704439296
 batch("momentum.mac");
 print("Here is my \"bare\" result");
 R1: M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
-F1/R1, numer;
+ratio1:F1/R1, numer;
 /*
 print("Here is my \"renormalized\" result");
 r1: M(p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi)*%pi/(N^2*sw^2),Qq = 2/3, I3q = 1/2, numer ;
@@ -3957,7 +3957,7 @@ batch("momentum.mac");
 print("Here is my \"bare\" result");
 R2: M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
 print("The ratio F/R is");
-F2/R2, numer;
+ratio2:F2/R2, numer;
 print("3rd phase point");
 p1:[250,0,0,250]$
 p2:[250,0,0,-250]$
@@ -3978,5 +3978,8 @@ batch("momentum.mac");
 print("Here is my \"bare\" result");
 R3: M (p1,p2,p3,p4,mt,mw,mz,N,aem,sw,cw,Pi), Qq = 2/3, I3q = 1/2, bfloat;
 print("The ratio F/R is");
-F3/R3, numer;
+ratio3:F3/R3, numer;
+print("The ratios are consistent:");
+[ratio1,ratio2,ratio3];
+[ratio2/ratio1, ratio3/ratio1];
 print("fin");
